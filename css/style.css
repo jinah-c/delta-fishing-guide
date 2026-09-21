@@ -535,7 +535,7 @@ a.item-card:hover {
   vertical-align: 2px;
 }
 
-/* 썸네일: 투명 누끼 이미지를 물 느낌 밝은 하늘·파랑 배경 위에 올리는 프레임 */
+/* 썸네일: 투명 누끼 이미지를 은은한 수중 유리톤 배경 위에 올리는 프레임 */
 .thumb {
   --tone: #d8d1dc;
   position: relative;
@@ -547,11 +547,13 @@ a.item-card:hover {
   border-radius: 14px;
   overflow: hidden;
   background:
-    radial-gradient(circle at 50% 26%, rgba(255, 255, 255, .5), transparent 60%),
-    linear-gradient(180deg, #d6efff 0%, #9ed3f5 46%, #59a9de 100%);
-  border: 1px solid rgba(88, 158, 208, .55);
-  color: color-mix(in srgb, var(--tone) 45%, #1c4a6e);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .35), 0 10px 24px rgba(0, 0, 0, .18);
+    linear-gradient(165deg, rgba(255, 255, 255, .16) 0 1px, transparent 1px 38%),
+    radial-gradient(circle at 72% 18%, rgba(190, 240, 255, .18), transparent 30%),
+    radial-gradient(circle at 20% 78%, rgba(42, 168, 203, .2), transparent 48%),
+    linear-gradient(155deg, #101821 0%, #173247 50%, #0b1119 100%);
+  border: 1px solid color-mix(in srgb, #7fc9e8 30%, rgba(255, 255, 255, .08));
+  color: color-mix(in srgb, var(--tone) 54%, #9bd9ef);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08), 0 10px 24px rgba(0, 0, 0, .22);
 }
 .thumb::before {
   content: "";
@@ -560,9 +562,9 @@ a.item-card:hover {
   width: 26%;
   aspect-ratio: 1;
   border-radius: 999px;
-  background: color-mix(in srgb, var(--tone) 10%, transparent);
-  filter: blur(8px);
-  opacity: .65;
+  background: rgba(172, 232, 255, .16);
+  filter: blur(10px);
+  opacity: .7;
 }
 .thumb::after {
   content: "";
@@ -570,8 +572,8 @@ a.item-card:hover {
   inset: auto 7% 14% 7%;
   height: 18px;
   border-radius: 999px;
-  background: radial-gradient(ellipse at center, rgba(10, 45, 70, .38), transparent 68%);
-  opacity: .7;
+  background: radial-gradient(ellipse at center, rgba(0, 8, 14, .48), transparent 68%);
+  opacity: .78;
 }
 .thumb img {
   position: relative;
@@ -579,13 +581,13 @@ a.item-card:hover {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 16px 12px rgba(10, 45, 70, .35));
+  filter: drop-shadow(0 16px 12px rgba(0, 8, 14, .38));
 }
 .thumb svg { width: 62%; height: auto; opacity: .85; }
 .thumb-ph {
   position: absolute; left: 0; right: 0; bottom: 6px;
   text-align: center; font-size: 10px; font-weight: 800;
-  color: rgba(21, 58, 86, .8);
+  color: rgba(202, 233, 244, .72);
 }
 .thumb-lg { width: 480px; border-radius: 24px; }
 .thumb-lg .thumb-ph { font-size: 12px; bottom: 14px; }
