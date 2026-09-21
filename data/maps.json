@@ -6,7 +6,7 @@
       "nameEn": "Layali Grove",
       "nameCn": "长弓溪谷",
       "difficulty": "이지",
-      "note": "낚시터 5곳으로 가장 많음. 낚시꾼 NPC(조 리드) 스폰 유일 맵. 방사능 그루퍼를 제외한 전 어종을 이 맵에서 잡을 수 있음. 낚시는 현재 이지 난이도(롱보우·AZ3·제로댐)에서만 가능.",
+      "note": "낚시터 5곳으로 가장 많음. 낚시꾼 NPC(조 리드) 스폰 유일 맵. 피콕하인드(방사능 그루퍼)를 제외한 전 어종을 이 맵에서 잡을 수 있음. 낚시는 현재 이지 난이도(롱보우·AZ3·제로댐)에서만 가능.",
       "mapImage": "img/longbow.jpg",
       "spots": [
         {
@@ -72,7 +72,7 @@
           "nameCn": "储藏站码头",
           "nameConfirmed": false,
           "coord": null,
-          "description": "아이언 돔(플래그십 임무) 구역 내부의 부두 수역. 사파이어 가물치(찌낚시 소장급) 포인트. 동굴과 함께 코인 파밍 추천 스팟.",
+          "description": "아이언 돔(플래그십 임무) 구역 내부의 부두 수역. 사파이어 오스카(찌낚시 소장급) 포인트. 동굴과 함께 코인 파밍 추천 스팟.",
           "fishIds": [
             "sapphire-snakehead",
             "saddled-bichir"
@@ -96,7 +96,7 @@
           "nameCn": "大坝河滩",
           "nameConfirmed": false,
           "coord": null,
-          "description": "댐 하류 강변 수역. 제로댐의 유일한 낚시터. 톱마우스 컬터·자이언트 브라운 송어 포인트.",
+          "description": "댐 하류 강변 수역. 제로댐의 유일한 낚시터. 백조어(톱마우스 컬터)·자이언트 브라운 송어 포인트.",
           "fishIds": [
             "topmouth-culter",
             "saddled-bichir",
@@ -112,7 +112,7 @@
       "nameEn": "AZ3",
       "nameCn": "AZ3(核电站)",
       "difficulty": "이지",
-      "note": "낚시터 2곳. 40레벨 승급 대상어(방사능 그루퍼) 출현 맵. (지도 이미지는 임시본 — 마커 아이콘 포함, 교체 필요)",
+      "note": "낚시터 2곳. 40레벨 승급 대상어(피콕하인드) 출현 맵. (지도 이미지는 임시본 — 마커 아이콘 포함, 교체 필요)",
       "mapImage": "img/az3.webp",
       "spots": [
         {
@@ -122,7 +122,7 @@
           "nameCn": "核电站外海",
           "nameConfirmed": false,
           "coord": null,
-          "description": "원전 앞바다(방사능 오염수). 방사능 그루퍼 유일 출현지 + 대서양 연어·빅아이 타폰·새끼상어 포인트.",
+          "description": "원전 앞바다(방사능 오염수). 피콕하인드(방사능 그루퍼) 유일 출현지 + 대서양 연어·빅아이 타폰·새끼상어 포인트.",
           "fishIds": [
             "radioactive-grouper",
             "baby-shark",

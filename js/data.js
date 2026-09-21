@@ -7,7 +7,7 @@ const DATA = {
       "nameEn": "Layali Grove",
       "nameCn": "长弓溪谷",
       "difficulty": "이지",
-      "note": "낚시터 5곳으로 가장 많음. 낚시꾼 NPC(조 리드) 스폰 유일 맵. 방사능 그루퍼를 제외한 전 어종을 이 맵에서 잡을 수 있음. 낚시는 현재 이지 난이도(롱보우·AZ3·제로댐)에서만 가능.",
+      "note": "낚시터 5곳으로 가장 많음. 낚시꾼 NPC(조 리드) 스폰 유일 맵. 피콕하인드(방사능 그루퍼)를 제외한 전 어종을 이 맵에서 잡을 수 있음. 낚시는 현재 이지 난이도(롱보우·AZ3·제로댐)에서만 가능.",
       "mapImage": "img/longbow.jpg",
       "spots": [
         {
@@ -73,7 +73,7 @@ const DATA = {
           "nameCn": "储藏站码头",
           "nameConfirmed": false,
           "coord": null,
-          "description": "아이언 돔(플래그십 임무) 구역 내부의 부두 수역. 사파이어 가물치(찌낚시 소장급) 포인트. 동굴과 함께 코인 파밍 추천 스팟.",
+          "description": "아이언 돔(플래그십 임무) 구역 내부의 부두 수역. 사파이어 오스카(찌낚시 소장급) 포인트. 동굴과 함께 코인 파밍 추천 스팟.",
           "fishIds": [
             "sapphire-snakehead",
             "saddled-bichir"
@@ -97,7 +97,7 @@ const DATA = {
           "nameCn": "大坝河滩",
           "nameConfirmed": false,
           "coord": null,
-          "description": "댐 하류 강변 수역. 제로댐의 유일한 낚시터. 톱마우스 컬터·자이언트 브라운 송어 포인트.",
+          "description": "댐 하류 강변 수역. 제로댐의 유일한 낚시터. 백조어(톱마우스 컬터)·자이언트 브라운 송어 포인트.",
           "fishIds": [
             "topmouth-culter",
             "saddled-bichir",
@@ -113,7 +113,7 @@ const DATA = {
       "nameEn": "AZ3",
       "nameCn": "AZ3(核电站)",
       "difficulty": "이지",
-      "note": "낚시터 2곳. 40레벨 승급 대상어(방사능 그루퍼) 출현 맵. (지도 이미지는 임시본 — 마커 아이콘 포함, 교체 필요)",
+      "note": "낚시터 2곳. 40레벨 승급 대상어(피콕하인드) 출현 맵. (지도 이미지는 임시본 — 마커 아이콘 포함, 교체 필요)",
       "mapImage": "img/az3.webp",
       "spots": [
         {
@@ -123,7 +123,7 @@ const DATA = {
           "nameCn": "核电站外海",
           "nameConfirmed": false,
           "coord": null,
-          "description": "원전 앞바다(방사능 오염수). 방사능 그루퍼 유일 출현지 + 대서양 연어·빅아이 타폰·새끼상어 포인트.",
+          "description": "원전 앞바다(방사능 오염수). 피콕하인드(방사능 그루퍼) 유일 출현지 + 대서양 연어·빅아이 타폰·새끼상어 포인트.",
           "fishIds": [
             "radioactive-grouper",
             "baby-shark",
@@ -147,10 +147,10 @@ const DATA = {
   "fish": [
     {
       "id": "tilapia",
-      "image": null,
+      "image": "img/fish/tilapia.png",
       "nameEn": "Tilapia",
       "nameKr": "틸라피아",
-      "nameKrConfirmed": false,
+      "nameKrConfirmed": true,
       "rarity": "일반",
       "size": "중형",
       "method": [
@@ -163,10 +163,10 @@ const DATA = {
     },
     {
       "id": "sharpbelly",
-      "image": null,
+      "image": "img/fish/sharpbelly.png",
       "nameEn": "Sharpbelly",
-      "nameKr": null,
-      "nameKrConfirmed": false,
+      "nameKr": "피라미",
+      "nameKrConfirmed": true,
       "rarity": "일반",
       "size": "소형",
       "method": [
@@ -178,10 +178,10 @@ const DATA = {
     },
     {
       "id": "banded-barb",
-      "image": null,
+      "image": "img/fish/banded-barb.png",
       "nameEn": "Banded Barb",
-      "nameKr": null,
-      "nameKrConfirmed": false,
+      "nameKr": "줄무늬 물고기",
+      "nameKrConfirmed": true,
       "rarity": "일반",
       "size": "초소형",
       "method": [
@@ -193,10 +193,10 @@ const DATA = {
     },
     {
       "id": "redtail",
-      "image": null,
+      "image": "img/fish/redtail.png",
       "nameEn": "Redtail",
-      "nameKr": null,
-      "nameKrConfirmed": false,
+      "nameKr": "레드테일캣피시",
+      "nameKrConfirmed": true,
       "rarity": "일반",
       "size": "중형",
       "method": [
@@ -209,10 +209,10 @@ const DATA = {
     },
     {
       "id": "bighead-carp",
-      "image": null,
+      "image": "img/fish/bighead-carp.png",
       "nameEn": "Bighead Carp",
       "nameKr": "대두어",
-      "nameKrConfirmed": false,
+      "nameKrConfirmed": true,
       "rarity": "일반",
       "size": "대형",
       "method": [
@@ -224,10 +224,10 @@ const DATA = {
     },
     {
       "id": "black-carp",
-      "image": null,
+      "image": "img/fish/black-carp.png",
       "nameEn": "Black Carp",
-      "nameKr": "청어(흑잉어)",
-      "nameKrConfirmed": false,
+      "nameKr": "청어",
+      "nameKrConfirmed": true,
       "rarity": "일반",
       "size": "대형",
       "method": [
@@ -239,10 +239,10 @@ const DATA = {
     },
     {
       "id": "striped-bass",
-      "image": null,
+      "image": "img/fish/striped-bass.png",
       "nameEn": "Striped Bass",
-      "nameKr": "줄무늬 배스",
-      "nameKrConfirmed": false,
+      "nameKr": "줄무늬농어",
+      "nameKrConfirmed": true,
       "rarity": "일반",
       "size": "대형",
       "method": [
@@ -254,10 +254,10 @@ const DATA = {
     },
     {
       "id": "mullet",
-      "image": null,
+      "image": "img/fish/mullet.png",
       "nameEn": "Mullet",
       "nameKr": "숭어",
-      "nameKrConfirmed": false,
+      "nameKrConfirmed": true,
       "rarity": "일반",
       "size": "중형",
       "method": [
@@ -270,25 +270,25 @@ const DATA = {
     },
     {
       "id": "zander",
-      "image": null,
+      "image": "img/fish/zander.png",
       "nameEn": "Zander",
-      "nameKr": "잰더(파이크퍼치)",
-      "nameKrConfirmed": false,
+      "nameKr": "파이크퍼치(잰더)",
+      "nameKrConfirmed": true,
       "rarity": "일반",
       "size": "중형",
       "method": [
         "루어"
       ],
       "spotIds": [],
-      "bait": "그린 스피너 2종 또는 정밀 헌팅 루어",
+      "bait": "그린 스피너 2종 또는 정밀 포식 루어",
       "tips": "20레벨 승급 제출 대상 (2.5kg 초과 개체). 루어 전용이며 숭어보다 출현 수역이 적음."
     },
     {
       "id": "ruby-cichlid",
-      "image": null,
+      "image": "img/fish/ruby-cichlid.png",
       "nameEn": "Ruby Cichlid",
-      "nameKr": null,
-      "nameKrConfirmed": false,
+      "nameKr": "루비피시",
+      "nameKrConfirmed": true,
       "rarity": "희귀",
       "size": "소형",
       "method": [
@@ -300,10 +300,10 @@ const DATA = {
     },
     {
       "id": "shortnose-bichir",
-      "image": null,
+      "image": "img/fish/shortnose-bichir.png",
       "nameEn": "Shortnose Bichir",
-      "nameKr": null,
-      "nameKrConfirmed": false,
+      "nameKr": "숏노즈 폴립테루스",
+      "nameKrConfirmed": true,
       "rarity": "희귀",
       "size": "소형",
       "method": [
@@ -316,10 +316,10 @@ const DATA = {
     },
     {
       "id": "longnose-elephantfish",
-      "image": null,
+      "image": "img/fish/longnose-elephantfish.png",
       "nameEn": "Longnose Elephantfish",
-      "nameKr": null,
-      "nameKrConfirmed": false,
+      "nameKr": "엘리펀트노즈피시",
+      "nameKrConfirmed": true,
       "rarity": "희귀",
       "size": "소형",
       "method": [
@@ -331,10 +331,10 @@ const DATA = {
     },
     {
       "id": "topmouth-culter",
-      "image": null,
+      "image": "img/fish/topmouth-culter.png",
       "nameEn": "Topmouth Culter",
-      "nameKr": "톱마우스 컬터(백조어)",
-      "nameKrConfirmed": false,
+      "nameKr": "백조어(톱마우스 컬터)",
+      "nameKrConfirmed": true,
       "rarity": "희귀",
       "size": "대형",
       "method": [
@@ -344,15 +344,15 @@ const DATA = {
         "longbow-serenity-bay",
         "zerodam-riverbank"
       ],
-      "bait": "고대비 자극 스푼 / 정밀 헌팅 루어 / 고주파 테일스윙 소프트 베이트",
+      "bait": "고대비 자극 스푼 / 정밀 포식 루어 / 고빈도 테일 웜",
       "tips": "30레벨 승급 제출 대상. 그로브 베이·댐 강변 2곳에서만 출현. 블루·퍼플 등급 모두 제출 인정."
     },
     {
       "id": "giraffe-catfish",
-      "image": null,
+      "image": "img/fish/giraffe-catfish.png",
       "nameEn": "Giraffe Catfish",
-      "nameKr": null,
-      "nameKrConfirmed": false,
+      "nameKr": "지라프캣피시",
+      "nameKrConfirmed": true,
       "rarity": "희귀",
       "size": "중형",
       "method": [
@@ -364,10 +364,10 @@ const DATA = {
     },
     {
       "id": "saddled-bichir",
-      "image": null,
+      "image": "img/fish/saddled-bichir.png",
       "nameEn": "Ansorge's Bichir (Saddled Bichir)",
-      "nameKr": "안소르기 비커",
-      "nameKrConfirmed": false,
+      "nameKr": "엔드리케리 폴립테루스",
+      "nameKrConfirmed": true,
       "rarity": "희귀",
       "size": "중형",
       "method": [
@@ -400,10 +400,10 @@ const DATA = {
     },
     {
       "id": "pike",
-      "image": null,
+      "image": "img/fish/pike.png",
       "nameEn": "Pike",
-      "nameKr": "파이크",
-      "nameKrConfirmed": false,
+      "nameKr": "강꼬치고기(파이크)",
+      "nameKrConfirmed": true,
       "rarity": "희귀",
       "size": "대형",
       "method": [
@@ -415,10 +415,10 @@ const DATA = {
     },
     {
       "id": "african-butterflyfish",
-      "image": null,
+      "image": "img/fish/african-butterflyfish.png",
       "nameEn": "African Butterflyfish",
-      "nameKr": null,
-      "nameKrConfirmed": false,
+      "nameKr": "아프리카나비고기",
+      "nameKrConfirmed": true,
       "rarity": "희귀",
       "size": "초소형",
       "method": [
@@ -430,7 +430,7 @@ const DATA = {
     },
     {
       "id": "north-african-catfish",
-      "image": null,
+      "image": "img/fish/north-african-catfish.png",
       "nameEn": "North African Catfish",
       "nameKr": "북아프리카메기",
       "nameKrConfirmed": true,
@@ -448,10 +448,10 @@ const DATA = {
     },
     {
       "id": "radioactive-grouper",
-      "image": null,
+      "image": "img/fish/radioactive-grouper.png",
       "nameEn": "Radioactive Grouper",
-      "nameKr": "방사능 그루퍼(커뮤니티: 피콕하인드)",
-      "nameKrConfirmed": false,
+      "nameKr": "피콕하인드(방사능 그루퍼)",
+      "nameKrConfirmed": true,
       "rarity": "희귀",
       "size": "대형",
       "method": [
@@ -465,10 +465,10 @@ const DATA = {
     },
     {
       "id": "sapphire-snakehead",
-      "image": null,
+      "image": "img/fish/sapphire-snakehead.png",
       "nameEn": "Sapphire Snakehead",
-      "nameKr": "사파이어 가물치",
-      "nameKrConfirmed": false,
+      "nameKr": "사파이어 오스카",
+      "nameKrConfirmed": true,
       "rarity": "소장(레드)",
       "size": "소형",
       "method": [
@@ -512,7 +512,7 @@ const DATA = {
         "longbow-waterway",
         "zerodam-riverbank"
       ],
-      "bait": "심해 대형 어류 진동 루어 / 정밀 헌팅 루어",
+      "bait": "심해 대형 어류 진동 루어 / 정밀 포식 루어",
       "tips": "그로브 수로·댐 강변 양쪽에서 포획 사례 확인. 근거리 수로 파이팅이 어려운 편."
     },
     {
@@ -550,7 +550,7 @@ const DATA = {
         "longbow-canal",
         "az3-offshore"
       ],
-      "bait": "골드 도금 경기용 루어 / 고주파 테일스윙 소프트 베이트",
+      "bait": "골드 컴피티션 루어 / 고빈도 테일 웜",
       "tips": "최고 난도로 꼽히는 레드. 노리다 보면 새끼상어·타폰이 대신 걸리는 일이 잦음. 깊고 먼 포인트 위주."
     },
     {
@@ -585,7 +585,7 @@ const DATA = {
         "longbow-canal",
         "az3-offshore"
       ],
-      "bait": "골드 도금 경기용 루어 / 심층 탐지 루어 (공식 추천 미끼 없음)",
+      "bait": "골드 컴피티션 루어 / 심층 탐지 루어 (공식 추천 미끼 없음)",
       "tips": "2x4 초대형 소장급. 포획 시 전용 배지 획득. 운하·AZ3 외해에서 출현."
     }
   ],
@@ -617,9 +617,9 @@ const DATA = {
             "condition": "2.5kg 초과"
           }
         ],
-        "requirement": "기준 무게를 넘는 숭어·잰더 각 1마리 제출 — 제출은 인벤토리가 아니라 조 리드 옆 바구니에 물고기를 넣고 대화 → '물고기 제출'",
+        "requirement": "기준 무게를 넘는 숭어·파이크퍼치(잰더) 각 1마리 제출 — 제출은 인벤토리가 아니라 조 리드 옆 바구니에 물고기를 넣고 대화 → '물고기 제출'",
         "reward": "금속 루어 낚싯대",
-        "guide": "숭어는 여러 수역에서 찌낚시(일반 미끼)로도 잡히고, 잰더는 루어 전용(그린 스피너 2종·정밀 헌팅 루어). 무게 미달이면 다시 잡아야 하므로 큰 개체 위주로."
+        "guide": "숭어는 여러 수역에서 찌낚시(일반 미끼)로도 잡히고, 파이크퍼치(잰더)는 루어 전용(그린 스피너 2종·정밀 포식 루어). 무게 미달이면 다시 잡아야 하므로 큰 개체 위주로."
       },
       {
         "level": 30,
@@ -634,9 +634,9 @@ const DATA = {
             "condition": null
           }
         ],
-        "requirement": "톱마우스 컬터 제출 → 이어서 안소르기 비커 제출 (순차 요구)",
+        "requirement": "백조어(톱마우스 컬터) 제출 → 이어서 엔드리케리 폴립테루스 제출 (순차 요구)",
         "reward": "하이카본 루어 낚싯대",
-        "guide": "컬터는 그로브 베이·댐 강변 2곳에서만 — 고대비 스푼·정밀 헌팅 루어·고주파 테일스윙. 비커는 베이·동굴·부두·댐 등 널리 출현, 찌·루어 무관. 미리 잡아둔 개체 제출도 인정."
+        "guide": "백조어(컬터)는 그로브 베이·댐 강변 2곳에서만 — 고대비 자극 스푼·정밀 포식 루어·고빈도 테일 웜. 엔드리케리 폴립테루스는 베이·동굴·부두·댐 등 널리 출현, 찌·루어 무관. 미리 잡아둔 개체 제출도 인정."
       },
       {
         "level": 40,
@@ -655,9 +655,9 @@ const DATA = {
             "condition": null
           }
         ],
-        "requirement": "북아프리카메기 → 방사능 그루퍼 → 새끼상어 순차 제출 (전부 루어 전용)",
+        "requirement": "북아프리카메기 → 피콕하인드(방사능 그루퍼) → 새끼상어 순차 제출 (전부 루어 전용)",
         "reward": "레벨 50 구간 해금 + 전 요원 '낚시꾼의 노래' 음성 대사",
-        "guide": "메기는 그로브 수로·운하(심층 탐지 루어·딥워터 다이버), 그루퍼는 AZ3 외해 전용(심해 진동 루어·형광 스푼), 새끼상어는 광범위 출현(심해 진동·스틸볼). 좋은 장비일수록 조우율이 올라가므로 세팅을 갖추고 도전."
+        "guide": "메기는 그로브 수로·운하(심층 탐지 루어·딥워터 다이버), 피콕하인드(그루퍼)는 AZ3 외해 전용(심해 진동 루어·형광 스푼), 새끼상어는 광범위 출현(심해 진동·스틸볼). 좋은 장비일수록 조우율이 올라가므로 세팅을 갖추고 도전."
       }
     ]
   },
@@ -693,35 +693,41 @@ const DATA = {
     ]
   },
   "gear": {
-    "_note": "클래스(등급) 숫자 표기와 한국어 명칭은 인게임 검증 필요. 실전 꿀팁은 만렙 유저 공략 영상 기준.",
+    "_note": "명칭·가격은 인게임 상점/도감 스크린샷 기준(2026-09-21 확인). 가격 단위는 낚시 코인(입문용 찌낚싯대만 화폐 아이콘이 다름). 실전 꿀팁은 만렙 유저 공략 영상 기준.",
     "rods": [
       {
         "id": "starter-float-rod",
-        "image": null,
-        "nameKr": "스타터 찌낚시대",
+        "image": "img/gear/starter-float-rod.png",
+        "nameKr": "입문용 찌낚싯대",
         "method": "찌낚시",
-        "unlock": "조 리드 입문 의뢰 완료"
+        "unlock": "조 리드 입문 의뢰 완료",
+        "price": 100000,
+        "note": "가격 화폐 아이콘이 타 장비와 다름(일반 화폐로 추정)"
       },
       {
         "id": "fiberglass-lure-rod",
-        "image": null,
-        "nameKr": "파이버글래스 루어대",
+        "image": "img/gear/fiberglass-lure-rod.png",
+        "nameKr": "GFRP 루어 낚싯대",
         "method": "루어",
-        "unlock": "10레벨 입문 평가 보상"
+        "unlock": "10레벨 입문 평가 보상",
+        "price": 200
       },
       {
         "id": "metal-lure-rod",
-        "image": null,
-        "nameKr": "금속 루어대",
+        "image": "img/gear/metal-lure-rod.png",
+        "nameKr": "금속 루어 낚싯대",
         "method": "루어",
-        "unlock": "20레벨 무게 평가 보상"
+        "unlock": "20레벨 무게 평가 보상",
+        "price": 2000
       },
       {
         "id": "high-carbon-lure-rod",
         "image": null,
-        "nameKr": "하이카본 루어대",
+        "nameKr": "하이카본 루어 낚싯대",
         "method": "루어",
-        "unlock": "30레벨 어종 평가 보상"
+        "unlock": "30레벨 어종 평가 보상",
+        "price": 5000,
+        "note": "보유 한도 2개"
       }
     ],
     "reels": [
@@ -732,23 +738,31 @@ const DATA = {
       },
       {
         "tier": 2,
-        "image": null,
-        "nameEn": "2000H High-Speed"
+        "image": "img/gear/reel-t2.png",
+        "nameEn": "2000H High-Speed",
+        "nameKr": "2000H 고속 스피닝릴",
+        "price": 5000
       },
       {
         "tier": 3,
-        "image": null,
-        "nameEn": "2500D Strong-Drag"
+        "image": "img/gear/reel-t3.png",
+        "nameEn": "2500D Strong-Drag",
+        "nameKr": "2500D 강력 브레이크 스피닝릴",
+        "price": 10000
       },
       {
         "tier": 4,
-        "image": null,
-        "nameEn": "3000XH Ultra-High-Speed"
+        "image": "img/gear/reel-t4.png",
+        "nameEn": "3000XH Ultra-High-Speed",
+        "nameKr": "3000XH 초고속 스피닝릴",
+        "price": 20000
       },
       {
         "tier": 5,
-        "image": null,
-        "nameEn": "4000D Heavy-Drag"
+        "image": "img/gear/reel-t5.png",
+        "nameEn": "4000D Heavy-Drag",
+        "nameKr": "4000D 헤비 드래그 스피닝릴",
+        "note": "구매 제한 1 · 릴링 속도 +2.5 / 릴링 시 스태미나 감소 +45 / 억제력 +35"
       }
     ],
     "lines": [
@@ -793,24 +807,27 @@ const DATA = {
       },
       {
         "id": "enhanced-attractant-dough",
-        "image": null,
+        "image": "img/gear/enhanced-attractant-dough.png",
         "nameEn": "Enhanced Attractant Dough Bait",
-        "nameKr": "강화 유인 반죽 미끼",
-        "note": null
+        "nameKr": "강화 유인 미끼",
+        "note": null,
+        "price": 10
       },
       {
         "id": "refined-competition-dough",
-        "image": null,
+        "image": "img/gear/refined-competition-dough.png",
         "nameEn": "Refined Competition Dough Bait",
-        "nameKr": "정제 경기용 반죽 미끼",
-        "note": null
+        "nameKr": "고급 컴피티션 루어",
+        "note": "반죽 미끼(인게임 표기가 '루어')",
+        "price": 15
       },
       {
         "id": "secret-bloodworm",
-        "image": null,
+        "image": "img/gear/secret-bloodworm.png",
         "nameEn": "Secret Bloodworm Bait",
-        "nameKr": "비전 지렁이 미끼",
-        "note": null
+        "nameKr": "적색 벌레 특제 미끼",
+        "note": null,
+        "price": 50
       }
     ],
     "lures": [
@@ -821,54 +838,69 @@ const DATA = {
       },
       {
         "id": "high-contrast-spoon",
-        "image": null,
-        "nameEn": "High-Contrast Stimulus Spoon"
+        "image": "img/gear/high-contrast-spoon.png",
+        "nameEn": "High-Contrast Stimulus Spoon",
+        "nameKr": "고대비 자극 스푼",
+        "price": 13
       },
       {
         "id": "fluorescent-vibrating-spoon",
-        "image": null,
-        "nameEn": "Fluorescent Vibrating Spoon"
+        "image": "img/gear/fluorescent-vibrating-spoon.png",
+        "nameEn": "Fluorescent Vibrating Spoon",
+        "nameKr": "형광 진동 스푼",
+        "price": 13
       },
       {
         "id": "precision-hunting-lure",
-        "image": null,
-        "nameEn": "Precision Hunting Lure"
+        "image": "img/gear/precision-hunting-lure.png",
+        "nameEn": "Precision Hunting Lure",
+        "nameKr": "정밀 포식 루어",
+        "price": 16
       },
       {
         "id": "deepwater-detection-lure",
-        "image": null,
+        "image": "img/gear/deepwater-detection-lure.png",
         "nameEn": "Deepwater Detection Lure",
         "nameKr": "심층 탐지 루어",
-        "note": "북아프리카메기용 (3클)"
+        "note": "북아프리카메기용 (3클)",
+        "price": 17
       },
       {
         "id": "high-freq-tail-swing",
-        "image": null,
+        "image": "img/gear/high-freq-tail-swing.png",
         "nameEn": "High-Frequency Tail-Swing Soft Bait",
-        "nameKr": "고주파 테일스윙 소프트 베이트",
-        "note": "30레벨 승급 대상어용 (보라)"
+        "nameKr": "고빈도 테일 웜",
+        "note": "30레벨 승급 대상어용 (보라)",
+        "price": 19
       },
       {
         "id": "territorial-stimulus-lure",
-        "image": null,
-        "nameEn": "Territorial Stimulus Lure"
+        "image": "img/gear/territorial-stimulus-lure.png",
+        "nameEn": "Territorial Stimulus Lure",
+        "nameKr": "영역 자극 루어",
+        "price": 19
       },
       {
         "id": "deep-diving-giant-vibration",
-        "image": null,
+        "image": "img/gear/deep-diving-giant-vibration.png",
         "nameEn": "Deep-Diving Giant Vibration Lure",
         "nameKr": "심해 대형 어류 진동 루어",
-        "note": "방사능 그루퍼·새끼상어용 (5클)"
+        "note": "피콕하인드·새끼상어용 (5클)",
+        "price": 20
       },
       {
         "id": "steel-ball-acoustic",
-        "image": null,
-        "nameEn": "Steel-Ball Acoustic Lure"
+        "image": "img/gear/steel-ball-acoustic.png",
+        "nameEn": "Steel-Ball Acoustic Lure",
+        "nameKr": "스틸볼 사운드 루어",
+        "price": 19
       },
       {
         "id": "gold-plated-competition",
-        "image": null,
-        "nameEn": "Gold-Plated Competition Lure"
+        "image": "img/gear/gold-plated-competition.png",
+        "nameEn": "Gold-Plated Competition Lure",
+        "nameKr": "골드 컴피티션 루어",
+        "price": 21
       }
     ],
     "mechanics": {
