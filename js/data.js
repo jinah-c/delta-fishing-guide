@@ -147,7 +147,7 @@ const DATA = {
   "fish": [
     {
       "id": "tilapia",
-      "image": "img/fish/tilapia.png",
+      "image": "img/fish/tilapia.png?v=fish-cutout",
       "nameEn": "Tilapia",
       "nameKr": "틸라피아",
       "nameKrConfirmed": true,
@@ -163,7 +163,7 @@ const DATA = {
     },
     {
       "id": "sharpbelly",
-      "image": "img/fish/sharpbelly.png",
+      "image": "img/fish/sharpbelly.png?v=fish-cutout",
       "nameEn": "Sharpbelly",
       "nameKr": "피라미",
       "nameKrConfirmed": true,
@@ -178,7 +178,7 @@ const DATA = {
     },
     {
       "id": "banded-barb",
-      "image": "img/fish/banded-barb.png",
+      "image": "img/fish/banded-barb.png?v=fish-cutout",
       "nameEn": "Banded Barb",
       "nameKr": "줄무늬 물고기",
       "nameKrConfirmed": true,
@@ -193,7 +193,7 @@ const DATA = {
     },
     {
       "id": "redtail",
-      "image": "img/fish/redtail.png",
+      "image": "img/fish/redtail.png?v=fish-cutout",
       "nameEn": "Redtail",
       "nameKr": "레드테일캣피시",
       "nameKrConfirmed": true,
@@ -209,7 +209,7 @@ const DATA = {
     },
     {
       "id": "bighead-carp",
-      "image": "img/fish/bighead-carp.png",
+      "image": "img/fish/bighead-carp.png?v=fish-cutout",
       "nameEn": "Bighead Carp",
       "nameKr": "대두어",
       "nameKrConfirmed": true,
@@ -224,7 +224,7 @@ const DATA = {
     },
     {
       "id": "black-carp",
-      "image": "img/fish/black-carp.png",
+      "image": "img/fish/black-carp.png?v=fish-cutout",
       "nameEn": "Black Carp",
       "nameKr": "청어",
       "nameKrConfirmed": true,
@@ -239,7 +239,7 @@ const DATA = {
     },
     {
       "id": "striped-bass",
-      "image": "img/fish/striped-bass.png",
+      "image": "img/fish/striped-bass.png?v=fish-cutout",
       "nameEn": "Striped Bass",
       "nameKr": "줄무늬농어",
       "nameKrConfirmed": true,
@@ -254,7 +254,7 @@ const DATA = {
     },
     {
       "id": "mullet",
-      "image": "img/fish/mullet.png",
+      "image": "img/fish/mullet.png?v=fish-cutout",
       "nameEn": "Mullet",
       "nameKr": "숭어",
       "nameKrConfirmed": true,
@@ -270,7 +270,7 @@ const DATA = {
     },
     {
       "id": "zander",
-      "image": "img/fish/zander.png",
+      "image": "img/fish/zander.png?v=fish-cutout",
       "nameEn": "Zander",
       "nameKr": "파이크퍼치(잰더)",
       "nameKrConfirmed": true,
@@ -285,7 +285,7 @@ const DATA = {
     },
     {
       "id": "ruby-cichlid",
-      "image": "img/fish/ruby-cichlid.png",
+      "image": "img/fish/ruby-cichlid.png?v=fish-cutout",
       "nameEn": "Ruby Cichlid",
       "nameKr": "루비피시",
       "nameKrConfirmed": true,
@@ -300,7 +300,7 @@ const DATA = {
     },
     {
       "id": "shortnose-bichir",
-      "image": "img/fish/shortnose-bichir.png",
+      "image": "img/fish/shortnose-bichir.png?v=fish-cutout",
       "nameEn": "Shortnose Bichir",
       "nameKr": "숏노즈 폴립테루스",
       "nameKrConfirmed": true,
@@ -316,7 +316,7 @@ const DATA = {
     },
     {
       "id": "longnose-elephantfish",
-      "image": "img/fish/longnose-elephantfish.png",
+      "image": "img/fish/longnose-elephantfish.png?v=fish-cutout",
       "nameEn": "Longnose Elephantfish",
       "nameKr": "엘리펀트노즈피시",
       "nameKrConfirmed": true,
@@ -331,7 +331,7 @@ const DATA = {
     },
     {
       "id": "topmouth-culter",
-      "image": "img/fish/topmouth-culter.png",
+      "image": "img/fish/topmouth-culter.png?v=fish-cutout",
       "nameEn": "Topmouth Culter",
       "nameKr": "백조어(톱마우스 컬터)",
       "nameKrConfirmed": true,
@@ -349,7 +349,7 @@ const DATA = {
     },
     {
       "id": "giraffe-catfish",
-      "image": "img/fish/giraffe-catfish.png",
+      "image": "img/fish/giraffe-catfish.png?v=fish-cutout",
       "nameEn": "Giraffe Catfish",
       "nameKr": "지라프캣피시",
       "nameKrConfirmed": true,
@@ -364,7 +364,7 @@ const DATA = {
     },
     {
       "id": "saddled-bichir",
-      "image": "img/fish/saddled-bichir.png",
+      "image": "img/fish/saddled-bichir.png?v=fish-cutout",
       "nameEn": "Ansorge's Bichir (Saddled Bichir)",
       "nameKr": "엔드리케리 폴립테루스",
       "nameKrConfirmed": true,
@@ -400,7 +400,7 @@ const DATA = {
     },
     {
       "id": "pike",
-      "image": "img/fish/pike.png",
+      "image": "img/fish/pike.png?v=fish-cutout",
       "nameEn": "Pike",
       "nameKr": "강꼬치고기(파이크)",
       "nameKrConfirmed": true,
@@ -415,7 +415,7 @@ const DATA = {
     },
     {
       "id": "african-butterflyfish",
-      "image": "img/fish/african-butterflyfish.png",
+      "image": "img/fish/african-butterflyfish.png?v=fish-cutout",
       "nameEn": "African Butterflyfish",
       "nameKr": "아프리카나비고기",
       "nameKrConfirmed": true,
@@ -430,7 +430,7 @@ const DATA = {
     },
     {
       "id": "north-african-catfish",
-      "image": "img/fish/north-african-catfish.png",
+      "image": "img/fish/north-african-catfish.png?v=fish-cutout",
       "nameEn": "North African Catfish",
       "nameKr": "북아프리카메기",
       "nameKrConfirmed": true,
@@ -448,7 +448,7 @@ const DATA = {
     },
     {
       "id": "radioactive-grouper",
-      "image": "img/fish/radioactive-grouper.png",
+      "image": "img/fish/radioactive-grouper.png?v=fish-cutout",
       "nameEn": "Radioactive Grouper",
       "nameKr": "피콕하인드(방사능 그루퍼)",
       "nameKrConfirmed": true,
@@ -465,7 +465,7 @@ const DATA = {
     },
     {
       "id": "sapphire-snakehead",
-      "image": "img/fish/sapphire-snakehead.png",
+      "image": "img/fish/sapphire-snakehead.png?v=fish-cutout",
       "nameEn": "Sapphire Snakehead",
       "nameKr": "사파이어 오스카",
       "nameKrConfirmed": true,
