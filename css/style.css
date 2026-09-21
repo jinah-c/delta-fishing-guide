@@ -480,7 +480,7 @@ a.item-card:hover {
   vertical-align: 2px;
 }
 
-/* 썸네일: 실제 이미지(object-fit: contain) 또는 플레이스홀더 */
+/* 썸네일: 실제 이미지(object-fit: cover) 또는 플레이스홀더 */
 .thumb {
   --tone: #d8d1dc;
   position: relative;
