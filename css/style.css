@@ -1,7 +1,7 @@
 @font-face {
-  font-family: 'NostalgicMongtori';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-1@1.0/Griun_Mongtori-Rg.woff2') format('woff2');
-  font-weight: normal;
+  font-family: 'AyoungSYearning2019Handwriting';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/2607161334@2019/2019/Griun_AhyoungsHandwriteIn2019-Rg.woff2') format('woff2');
+  font-weight: 400;
   font-display: swap;
 }
 
@@ -40,7 +40,7 @@ body {
     linear-gradient(135deg, rgba(255, 62, 181, .08) 0 1px, transparent 1px 120px),
     linear-gradient(180deg, #050506 0%, #0b090d 48%, #050506 100%);
   color: var(--text);
-  font-family: "NostalgicMongtori", "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif;
+  font-family: "AyoungSYearning2019Handwriting", "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
 }
