@@ -79,6 +79,35 @@
     return locs.map(l => esc(l.map.nameKr + " · " + l.spot.nameKr)).join(", ");
   }
 
+  function fishLocLinks(f) {
+    const locs = fishSpots(f);
+    if (!locs.length) return "출현 수역 미확정 (인게임 도감 확인 필요)";
+    return locs.map(l => `<a href="#/map/${l.map.id}">${esc(l.map.nameKr)} · ${esc(l.spot.nameKr)}</a>`).join(", ");
+  }
+
+  function missionFishCard(x) {
+    const f = fishById(x.fishId);
+    if (!f) return "";
+    const bait = x.bait || f.bait || "정보 없음";
+    return `<div class="mission-fish-card">
+      ${fishThumb(f)}
+      <div class="mission-fish-body">
+        <div class="mission-fish-title">
+          <a href="#/fish/${f.id}">${fishName(f, true)}</a>
+          ${x.condition ? `<span class="badge badge-size">${esc(x.condition)}</span>` : ""}
+          ${rarityBadge(f)}
+        </div>
+        <dl class="prep-list">
+          <dt>필요 낚싯대</dt><dd>${esc(x.rod || "정보 없음")}</dd>
+          <dt>낚시줄</dt><dd>${esc(x.line || "정보 없음")}</dd>
+          <dt>미끼/루어</dt><dd>${esc(bait)}</dd>
+          <dt>출현장소</dt><dd>${fishLocLinks(f)}</dd>
+          ${x.note ? `<dt>팁</dt><dd>${esc(x.note)}</dd>` : ""}
+        </dl>
+      </div>
+    </div>`;
+  }
+
   function fishCard(f) {
     return `<a class="item-card" href="#/fish/${f.id}">
       ${fishThumb(f)}
@@ -241,10 +270,7 @@
     <div class="mission">
       <div class="mission-head"><span class="lv">Lv ${c.level}</span><h3>${esc(c.nameKr)}</h3></div>
       <div class="req">${esc(c.requirement)}</div>
-      ${c.fish.length ? `<div class="fish-links">${c.fish.map(x => {
-        const f = fishById(x.fishId);
-        return f ? `<a href="#/fish/${f.id}">${fishName(f)}${x.condition ? " · " + esc(x.condition) : ""} ${rarityBadge(f)}</a>` : "";
-      }).join("")}</div>` : ""}
+      ${c.fish.length ? `<div class="mission-fish-list">${c.fish.map(missionFishCard).join("")}</div>` : ""}
       <div class="reward">보상: ${esc(c.reward)}</div>
       <div class="guide">${esc(c.guide)}</div>
     </div>`).join("")}

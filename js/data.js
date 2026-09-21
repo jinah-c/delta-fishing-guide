@@ -610,11 +610,19 @@ const DATA = {
         "fish": [
           {
             "fishId": "mullet",
-            "condition": "1.5kg 초과"
+            "condition": "1.5kg 초과",
+            "rod": "입문용 찌낚싯대 권장 (루어도 가능)",
+            "line": "기본~25 lb 이상",
+            "bait": "일반 미끼 찌낚시 권장",
+            "note": "큰 개체가 필요하므로 무게 미달이면 다시 잡아야 함"
           },
           {
             "fishId": "zander",
-            "condition": "2.5kg 초과"
+            "condition": "2.5kg 초과",
+            "rod": "GFRP 루어 낚싯대 이상",
+            "line": "25 lb 이상 권장",
+            "bait": "그린 스피너 2종 또는 정밀 포식 루어",
+            "note": "루어 전용. 숭어보다 출현 수역이 적어 무게 초과 개체를 챙겨둘 것"
           }
         ],
         "requirement": "기준 무게를 넘는 숭어·파이크퍼치(잰더) 각 1마리 제출 — 제출은 인벤토리가 아니라 조 리드 옆 바구니에 물고기를 넣고 대화 → '물고기 제출'",
@@ -627,11 +635,19 @@ const DATA = {
         "fish": [
           {
             "fishId": "topmouth-culter",
-            "condition": "블루·퍼플 인정"
+            "condition": "블루·퍼플 인정",
+            "rod": "금속 루어 낚싯대 이상",
+            "line": "40 lb 이상 권장",
+            "bait": "고대비 자극 스푼 / 정밀 포식 루어 / 고빈도 테일 웜",
+            "note": "그로브 베이·댐 강변 2곳에서만 출현"
           },
           {
             "fishId": "saddled-bichir",
-            "condition": null
+            "condition": null,
+            "rod": "금속 루어 낚싯대 이상 또는 찌낚싯대",
+            "line": "40 lb 이상 권장",
+            "bait": "찌낚시·루어 모두 가능",
+            "note": "백조어 제출 후 순차 요구. 미리 잡아둔 개체도 제출 가능"
           }
         ],
         "requirement": "백조어(톱마우스 컬터) 제출 → 이어서 엔드리케리 폴립테루스 제출 (순차 요구)",
@@ -644,15 +660,27 @@ const DATA = {
         "fish": [
           {
             "fishId": "north-african-catfish",
-            "condition": "퍼플·골드 인정"
+            "condition": "퍼플·골드 인정",
+            "rod": "하이카본 루어 낚싯대 권장",
+            "line": "퍼플 이상 낚시줄 권장",
+            "bait": "심층 탐지 루어(딥워터 프로브) / 딥워터 다이버",
+            "note": "40레벨 최종 평가 1번째 제출어"
           },
           {
             "fishId": "radioactive-grouper",
-            "condition": "퍼플·골드 인정"
+            "condition": "퍼플·골드 인정",
+            "rod": "하이카본 루어 낚싯대 권장",
+            "line": "퍼플~골드 낚시줄 권장",
+            "bait": "심해 대형 어류 진동 루어 / 형광 진동 스푼",
+            "note": "AZ3 외해 전용. 롱보우에서는 잡히지 않음"
           },
           {
             "fishId": "baby-shark",
-            "condition": null
+            "condition": null,
+            "rod": "하이카본 루어 낚싯대 권장",
+            "line": "골드 낚시줄 권장",
+            "bait": "심해 대형 어류 진동 루어 / 스틸볼 사운드 루어",
+            "note": "강한 파이팅. 줄을 40m 이상 끌고 나갈 수 있어 릴·줄 세팅 중요"
           }
         ],
         "requirement": "북아프리카메기 → 피콕하인드(방사능 그루퍼) → 새끼상어 순차 제출 (전부 루어 전용)",

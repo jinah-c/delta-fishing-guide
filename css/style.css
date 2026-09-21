@@ -325,6 +325,53 @@ h3 { font-size: 17px; margin: 18px 0 8px; font-weight: 900; }
 .mission .req { margin: 11px 0 5px; font-size: 15px; color: var(--text); }
 .mission .reward { color: var(--lime-soft); font-size: 14px; margin-top: 8px; font-weight: 850; }
 .mission .guide { color: var(--text-dim); font-size: 14px; margin-top: 9px; padding-top: 9px; border-top: 1px dashed rgba(255, 255, 255, .14); }
+.mission-fish-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 12px 0;
+}
+.mission-fish-card {
+  display: flex;
+  gap: 13px;
+  align-items: flex-start;
+  padding: 12px;
+  border-radius: calc(var(--radius) - 6px);
+  background: rgba(255, 255, 255, .035);
+  border: 1px solid rgba(255, 255, 255, .08);
+}
+.mission-fish-card .thumb {
+  width: 150px;
+  border-radius: 12px;
+}
+.mission-fish-body {
+  flex: 1;
+  min-width: 0;
+}
+.mission-fish-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 9px;
+  font-weight: 950;
+}
+.prep-list {
+  display: grid;
+  grid-template-columns: 82px minmax(0, 1fr);
+  gap: 6px 10px;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.42;
+}
+.prep-list dt {
+  color: var(--accent-2);
+  font-weight: 950;
+}
+.prep-list dd {
+  margin: 0;
+  color: var(--text);
+}
 
 .notice {
   background: rgba(255, 62, 181, .08);
@@ -430,6 +477,7 @@ h3 { font-size: 17px; margin: 18px 0 8px; font-weight: 900; }
 }
 .cards-2 > .spot-card,
 .cards-2 > .mission { margin-bottom: 0; }
+.cards-2 > .mission { align-self: start; }
 .cards-2 > .row { align-items: flex-start; }
 
 /* ── 이미지 왼쪽 + 정보 오른쪽 아이템 카드 (물고기·장비·미끼) ── */
@@ -551,6 +599,9 @@ a.item-card:hover {
   .thumb { width: 140px; border-radius: 12px; }
   .thumb-ph { display: none; }
   .item-title { font-size: 16px; }
+  .mission-fish-card { flex-direction: column; gap: 10px; padding: 11px; }
+  .mission-fish-card .thumb { width: 100%; max-width: 220px; align-self: center; }
+  .prep-list { grid-template-columns: 82px minmax(0, 1fr); font-size: 13px; }
   .fish-hero { flex-direction: column; gap: 16px; }
   .thumb-lg { width: 100%; max-width: 400px; aspect-ratio: 16 / 9; align-self: center; }
   .thumb-lg .thumb-ph { display: block; }
