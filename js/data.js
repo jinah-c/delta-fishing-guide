@@ -499,7 +499,7 @@ const DATA = {
     },
     {
       "id": "giant-brown-trout",
-      "image": null,
+      "image": "img/fish/giant-brown-trout.png?v=red3",
       "nameEn": "Giant Brown Trout",
       "nameKr": "자이언트 브라운 송어",
       "nameKrConfirmed": false,
@@ -537,7 +537,7 @@ const DATA = {
     },
     {
       "id": "atlantic-salmon",
-      "image": null,
+      "image": "img/fish/atlantic-salmon.png?v=red3",
       "nameEn": "Atlantic Salmon",
       "nameKr": "대서양 연어",
       "nameKrConfirmed": false,
@@ -555,7 +555,7 @@ const DATA = {
     },
     {
       "id": "tigerfish",
-      "image": null,
+      "image": "img/fish/tigerfish.png?v=red3",
       "nameEn": "Tigerfish",
       "nameKr": "타이거피시",
       "nameKrConfirmed": false,
