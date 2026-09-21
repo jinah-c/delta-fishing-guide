@@ -528,7 +528,7 @@ a.item-card:hover {
   vertical-align: 2px;
 }
 
-/* 썸네일: 투명 누끼 이미지를 다크핑크 배경 위에 올리는 프레임 */
+/* 썸네일: 투명 누끼 이미지를 차분한 다크 배경 위에 올리는 프레임 */
 .thumb {
   --tone: #d8d1dc;
   position: relative;
@@ -540,23 +540,23 @@ a.item-card:hover {
   border-radius: 14px;
   overflow: hidden;
   background:
-    radial-gradient(circle at 68% 28%, rgba(200, 255, 79, .18), transparent 18%),
-    radial-gradient(circle at 35% 52%, color-mix(in srgb, var(--tone) 24%, transparent), transparent 54%),
-    linear-gradient(135deg, rgba(255, 62, 181, .22), transparent 42%),
-    #141118;
-  border: 1px solid color-mix(in srgb, var(--tone) 32%, transparent);
+    radial-gradient(circle at 50% 45%, color-mix(in srgb, var(--tone) 13%, transparent), transparent 70%),
+    linear-gradient(180deg, rgba(255, 255, 255, .035), rgba(255, 255, 255, .012)),
+    #0c0b0f;
+  border: 1px solid color-mix(in srgb, var(--tone) 24%, rgba(255, 255, 255, .08));
   color: var(--tone);
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,.035), 0 14px 30px rgba(0,0,0,.2);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.028), 0 10px 24px rgba(0,0,0,.18);
 }
 .thumb::before {
   content: "";
   position: absolute;
-  inset: -20% 6% auto auto;
-  width: 38%;
+  inset: 14% 12% auto auto;
+  width: 26%;
   aspect-ratio: 1;
   border-radius: 999px;
-  background: rgba(200, 255, 79, .14);
-  filter: blur(1px);
+  background: color-mix(in srgb, var(--tone) 10%, transparent);
+  filter: blur(8px);
+  opacity: .65;
 }
 .thumb::after {
   content: "";
