@@ -1,0 +1,34 @@
+{
+  "_note": "nameKr가 null이면 인게임 한국어 명칭 미확인(임시 번역). spotIds 비어있으면 출현 수역 미확정 — 인게임 도감으로 보강 필요.",
+  "fish": [
+    { "id": "tilapia", "image": null, "nameEn": "Tilapia", "nameKr": "틸라피아", "nameKrConfirmed": false, "rarity": "일반", "size": "중형", "method": ["찌낚시", "루어"], "spotIds": [], "bait": null, "tips": null },
+    { "id": "sharpbelly", "image": null, "nameEn": "Sharpbelly", "nameKr": null, "nameKrConfirmed": false, "rarity": "일반", "size": "소형", "method": ["찌낚시"], "spotIds": [], "bait": null, "tips": null },
+    { "id": "banded-barb", "image": null, "nameEn": "Banded Barb", "nameKr": null, "nameKrConfirmed": false, "rarity": "일반", "size": "초소형", "method": ["찌낚시"], "spotIds": [], "bait": null, "tips": null },
+    { "id": "redtail", "image": null, "nameEn": "Redtail", "nameKr": null, "nameKrConfirmed": false, "rarity": "일반", "size": "중형", "method": ["찌낚시", "루어"], "spotIds": [], "bait": null, "tips": null },
+    { "id": "bighead-carp", "image": null, "nameEn": "Bighead Carp", "nameKr": "대두어", "nameKrConfirmed": false, "rarity": "일반", "size": "대형", "method": ["찌낚시"], "spotIds": [], "bait": null, "tips": null },
+    { "id": "black-carp", "image": null, "nameEn": "Black Carp", "nameKr": "청어(흑잉어)", "nameKrConfirmed": false, "rarity": "일반", "size": "대형", "method": ["루어"], "spotIds": [], "bait": null, "tips": null },
+    { "id": "striped-bass", "image": null, "nameEn": "Striped Bass", "nameKr": "줄무늬 배스", "nameKrConfirmed": false, "rarity": "일반", "size": "대형", "method": ["루어"], "spotIds": [], "bait": null, "tips": null },
+    { "id": "mullet", "image": null, "nameEn": "Mullet", "nameKr": "숭어", "nameKrConfirmed": false, "rarity": "일반", "size": "중형", "method": ["루어"], "spotIds": [], "bait": null, "tips": "20레벨 승급 제출 대상 (1.5kg 초과 개체). 롱보우 수역에서 루어로." },
+    { "id": "zander", "image": null, "nameEn": "Zander", "nameKr": "잰더(파이크퍼치)", "nameKrConfirmed": false, "rarity": "일반", "size": "중형", "method": ["루어"], "spotIds": [], "bait": null, "tips": "20레벨 승급 제출 대상 (2.5kg 초과 개체). 롱보우 수역에서 루어로." },
+
+    { "id": "ruby-cichlid", "image": null, "nameEn": "Ruby Cichlid", "nameKr": null, "nameKrConfirmed": false, "rarity": "희귀", "size": "소형", "method": ["찌낚시"], "spotIds": [], "bait": null, "tips": null },
+    { "id": "shortnose-bichir", "image": null, "nameEn": "Shortnose Bichir", "nameKr": null, "nameKrConfirmed": false, "rarity": "희귀", "size": "소형", "method": ["찌낚시", "루어"], "spotIds": [], "bait": null, "tips": null },
+    { "id": "longnose-elephantfish", "image": null, "nameEn": "Longnose Elephantfish", "nameKr": null, "nameKrConfirmed": false, "rarity": "희귀", "size": "소형", "method": ["찌낚시"], "spotIds": [], "bait": null, "tips": null },
+    { "id": "topmouth-culter", "image": null, "nameEn": "Topmouth Culter", "nameKr": "톱마우스 컬터(백조어)", "nameKrConfirmed": false, "rarity": "희귀", "size": "대형", "method": ["루어"], "spotIds": ["longbow-serenity-bay"], "bait": "고주파 테일스윙 소프트 베이트(보라 등급) 권장", "tips": "30레벨 승급 제출 대상. 세레니티 베이 수역." },
+    { "id": "giraffe-catfish", "image": null, "nameEn": "Giraffe Catfish", "nameKr": null, "nameKrConfirmed": false, "rarity": "희귀", "size": "중형", "method": ["루어"], "spotIds": [], "bait": null, "tips": null },
+    { "id": "saddled-bichir", "image": null, "nameEn": "Saddled Bichir (Endlicher's Bichir)", "nameKr": "엔들리허 비커", "nameKrConfirmed": false, "rarity": "희귀", "size": "중형", "method": ["찌낚시", "루어"], "spotIds": ["longbow-serenity-bay"], "bait": "고주파 테일스윙 소프트 베이트(보라 등급) 권장", "tips": "30레벨 승급 제출 대상. 세레니티 베이 수역." },
+    { "id": "mirror-carp", "image": null, "nameEn": "Mirror Carp", "nameKr": "미러 카프(거울잉어)", "nameKrConfirmed": false, "rarity": "희귀", "size": "중형", "method": ["루어"], "spotIds": [], "bait": null, "tips": null },
+    { "id": "pike", "image": null, "nameEn": "Pike", "nameKr": "파이크", "nameKrConfirmed": false, "rarity": "희귀", "size": "대형", "method": ["루어"], "spotIds": [], "bait": null, "tips": null },
+    { "id": "african-butterflyfish", "image": null, "nameEn": "African Butterflyfish", "nameKr": null, "nameKrConfirmed": false, "rarity": "희귀", "size": "초소형", "method": ["찌낚시"], "spotIds": [], "bait": null, "tips": null },
+    { "id": "north-african-catfish", "image": null, "nameEn": "North African Catfish", "nameKr": "북아프리카메기", "nameKrConfirmed": true, "rarity": "희귀", "size": "대형", "method": ["루어"], "spotIds": ["longbow-canal"], "bait": "심층 탐지 루어(3클래스)", "tips": "40레벨 승급 제출 대상. 롱보우 아랫수역(운하). 하이카본 루어대 + 5클 낚시줄 + 4클 스피닝릴 권장." },
+    { "id": "radioactive-grouper", "image": null, "nameEn": "Radioactive Grouper", "nameKr": "방사능 그루퍼(커뮤니티: 피콕하인드)", "nameKrConfirmed": false, "rarity": "희귀", "size": "대형", "method": ["루어"], "spotIds": ["az3-offshore"], "bait": "심해 대형 어류 진동 루어(5클래스)", "tips": "40레벨 승급 제출 대상. AZ3 외해." },
+
+    { "id": "sapphire-snakehead", "image": null, "nameEn": "Sapphire Snakehead", "nameKr": "사파이어 가물치", "nameKrConfirmed": false, "rarity": "소장(레드)", "size": "소형", "method": ["찌낚시"], "spotIds": [], "bait": null, "tips": "찌낚시로 잡는 유일한 소장급." },
+    { "id": "platinum-silver-arowana", "image": null, "nameEn": "Platinum Silver Arowana", "nameKr": "플래티넘 실버 아로와나", "nameKrConfirmed": false, "rarity": "소장(레드)", "size": "대형", "method": ["루어"], "spotIds": [], "bait": null, "tips": null },
+    { "id": "giant-brown-trout", "image": null, "nameEn": "Giant Brown Trout", "nameKr": "자이언트 브라운 송어", "nameKrConfirmed": false, "rarity": "소장(레드)", "size": "대형", "method": ["루어"], "spotIds": [], "bait": null, "tips": null },
+    { "id": "baby-shark", "image": null, "nameEn": "Baby Shark", "nameKr": "새끼상어", "nameKrConfirmed": true, "rarity": "소장(레드)", "size": "거대", "method": ["루어"], "spotIds": ["longbow-canal"], "bait": "심해 대형 어류 진동 루어(5클래스)", "tips": "40레벨 승급 제출 대상. 롱보우 아랫수역(운하)." },
+    { "id": "atlantic-salmon", "image": null, "nameEn": "Atlantic Salmon", "nameKr": "대서양 연어", "nameKrConfirmed": false, "rarity": "소장(레드)", "size": "대형", "method": ["루어"], "spotIds": [], "bait": null, "tips": null },
+    { "id": "tigerfish", "image": null, "nameEn": "Tigerfish", "nameKr": "타이거피시", "nameKrConfirmed": false, "rarity": "소장(레드)", "size": "대형", "method": ["루어"], "spotIds": [], "bait": null, "tips": null },
+    { "id": "bigeye-tarpon", "image": null, "nameEn": "Bigeye Tarpon", "nameKr": "빅아이 타폰", "nameKrConfirmed": false, "rarity": "소장(레드)", "size": "거대", "method": ["루어"], "spotIds": [], "bait": null, "tips": null }
+  ]
+}

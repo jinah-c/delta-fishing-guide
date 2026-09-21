@@ -1,0 +1,20 @@
+{
+  "npc": {
+    "id": "joe-reed",
+    "nameKr": "조 리드",
+    "nameEn": "Joe Reed",
+    "communityAlias": "조아재",
+    "map": "longbow",
+    "spawnRule": "한 매치에 롱보우 낚시터 3곳 중 1곳에 랜덤 스폰. 누군가 NPC를 죽이면 그 매치에서는 더 이상 등장하지 않음.",
+    "spawnSpots": [
+      { "spotId": null, "coord": null, "note": "스폰 3곳 위치 미확정 — 지도 이미지 확보 후 마킹 필요" },
+      { "spotId": null, "coord": null, "note": "" },
+      { "spotId": null, "coord": null, "note": "" }
+    ],
+    "roles": [
+      "최초 낚시 해금: 대화 후 입문 의뢰 완료 시 첫 낚싯대 지급",
+      "낚시 레벨 10/20/30/40 승급 평가 진행 (미통과 시 다음 레벨 구간 진행 불가)",
+      "최초 해금 시 대화를 7~8회 반복해야 퀘스트 대화가 열린다는 커뮤니티 제보 있음(검증 필요)"
+    ]
+  }
+}

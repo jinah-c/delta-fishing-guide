@@ -1,0 +1,125 @@
+{
+  "maps": [
+    {
+      "id": "longbow",
+      "nameKr": "롱보우",
+      "nameEn": "Layali Grove",
+      "nameCn": "长弓溪谷",
+      "difficulty": "이지",
+      "note": "낚시터 5곳으로 가장 많음. 낚시꾼 NPC(조 리드)가 스폰되는 유일한 맵.",
+      "mapImage": "img/longbow.jpg",
+      "spots": [
+        {
+          "id": "longbow-serenity-bay",
+          "nameKr": "고요한 만 (세레니티 베이)",
+          "nameEn": "Serenity Bay",
+          "nameCn": "溪谷静水湾",
+          "nameConfirmed": false,
+          "coord": null,
+          "description": "S11에 추가된 신규 수역. 맵 좌상단 방향. 20레벨 승급 대상어(톱마우스 컬터, 엔들리허 비커) 출현 수역.",
+          "fishIds": [
+            "topmouth-culter",
+            "saddled-bichir"
+          ]
+        },
+        {
+          "id": "longbow-cavern",
+          "nameKr": "동굴 수역",
+          "nameEn": "Cavern",
+          "nameCn": "溪谷岩洞",
+          "nameConfirmed": false,
+          "coord": null,
+          "description": "S11 신규 북사면 동굴(North Slope Caves) 내부 수역.",
+          "fishIds": []
+        },
+        {
+          "id": "longbow-waterway",
+          "nameKr": "수로",
+          "nameEn": "Waterway",
+          "nameCn": "溪谷水道",
+          "nameConfirmed": false,
+          "coord": null,
+          "description": "계곡 수로 구간.",
+          "fishIds": []
+        },
+        {
+          "id": "longbow-canal",
+          "nameKr": "운하 (아랫수역)",
+          "nameEn": "Canal",
+          "nameCn": "溪谷运河",
+          "nameConfirmed": false,
+          "coord": null,
+          "description": "맵 하단 수역. 커뮤니티에서 '롱보우 아랫수역'으로 불림. 30/40레벨 승급 대상어(북아프리카메기, 새끼상어) 포인트.",
+          "fishIds": [
+            "north-african-catfish",
+            "baby-shark"
+          ]
+        },
+        {
+          "id": "longbow-storage-dock",
+          "nameKr": "저장소 부두",
+          "nameEn": "Storage Station Dock",
+          "nameCn": "储藏站码头",
+          "nameConfirmed": false,
+          "coord": null,
+          "description": "S11 신규 하브크 지하 부두(Haavk Underground Dock) 연계 수역.",
+          "fishIds": []
+        }
+      ]
+    },
+    {
+      "id": "zero-dam",
+      "nameKr": "제로댐",
+      "nameEn": "Zero Dam",
+      "nameCn": "零号大坝",
+      "difficulty": "이지",
+      "note": "낚시터 1곳.",
+      "mapImage": "img/zero-dam.jpg",
+      "spots": [
+        {
+          "id": "zerodam-riverbank",
+          "nameKr": "댐 강변",
+          "nameEn": "Dam Riverbank",
+          "nameCn": "大坝河滩",
+          "nameConfirmed": false,
+          "coord": null,
+          "description": "댐 하류 강변 수역.",
+          "fishIds": []
+        }
+      ]
+    },
+    {
+      "id": "az3",
+      "nameKr": "AZ3",
+      "nameEn": "AZ3",
+      "nameCn": "AZ3(核电站)",
+      "difficulty": "이지",
+      "note": "낚시터 2곳. 40레벨 승급 대상어(방사능 그루퍼) 출현 맵. (지도 이미지는 임시본 — 마커 아이콘 포함, 교체 필요)",
+      "mapImage": "img/az3.webp",
+      "spots": [
+        {
+          "id": "az3-offshore",
+          "nameKr": "외해",
+          "nameEn": "Offshore",
+          "nameCn": "核电站外海",
+          "nameConfirmed": false,
+          "coord": null,
+          "description": "원전 외해 수역. 방사능 그루퍼(피콕하인드) 포인트.",
+          "fishIds": [
+            "radioactive-grouper"
+          ]
+        },
+        {
+          "id": "az3-waterway",
+          "nameKr": "수로",
+          "nameEn": "Waterway",
+          "nameCn": "核电站水道",
+          "nameConfirmed": false,
+          "coord": null,
+          "description": "원전 수로 구간.",
+          "fishIds": []
+        }
+      ]
+    }
+  ]
+}
