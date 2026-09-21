@@ -1,46 +1,192 @@
 {
-  "_note": "2차 단계 콘텐츠용 초안. 클래스(등급) 숫자 표기와 한국어 명칭은 인게임 검증 필요.",
+  "_note": "클래스(등급) 숫자 표기와 한국어 명칭은 인게임 검증 필요. 실전 꿀팁은 만렙 유저 공략 영상 기준.",
   "rods": [
-    { "id": "starter-float-rod", "image": null, "nameKr": "스타터 찌낚시대", "method": "찌낚시", "unlock": "조 리드 입문 의뢰 완료" },
-    { "id": "fiberglass-lure-rod", "image": null, "nameKr": "파이버글래스 루어대", "method": "루어", "unlock": "10레벨 입문 평가 보상" },
-    { "id": "metal-lure-rod", "image": null, "nameKr": "금속 루어대", "method": "루어", "unlock": "20레벨 무게 평가 보상" },
-    { "id": "high-carbon-lure-rod", "image": null, "nameKr": "하이카본 루어대", "method": "루어", "unlock": "30레벨 어종 평가 보상" }
+    {
+      "id": "starter-float-rod",
+      "image": null,
+      "nameKr": "스타터 찌낚시대",
+      "method": "찌낚시",
+      "unlock": "조 리드 입문 의뢰 완료"
+    },
+    {
+      "id": "fiberglass-lure-rod",
+      "image": null,
+      "nameKr": "파이버글래스 루어대",
+      "method": "루어",
+      "unlock": "10레벨 입문 평가 보상"
+    },
+    {
+      "id": "metal-lure-rod",
+      "image": null,
+      "nameKr": "금속 루어대",
+      "method": "루어",
+      "unlock": "20레벨 무게 평가 보상"
+    },
+    {
+      "id": "high-carbon-lure-rod",
+      "image": null,
+      "nameKr": "하이카본 루어대",
+      "method": "루어",
+      "unlock": "30레벨 어종 평가 보상"
+    }
   ],
   "reels": [
-    { "tier": 1, "image": null, "nameEn": "1000 All-Purpose" },
-    { "tier": 2, "image": null, "nameEn": "2000H High-Speed" },
-    { "tier": 3, "image": null, "nameEn": "2500D Strong-Drag" },
-    { "tier": 4, "image": null, "nameEn": "3000XH Ultra-High-Speed" },
-    { "tier": 5, "image": null, "nameEn": "4000D Heavy-Drag" }
+    {
+      "tier": 1,
+      "image": null,
+      "nameEn": "1000 All-Purpose"
+    },
+    {
+      "tier": 2,
+      "image": null,
+      "nameEn": "2000H High-Speed"
+    },
+    {
+      "tier": 3,
+      "image": null,
+      "nameEn": "2500D Strong-Drag"
+    },
+    {
+      "tier": 4,
+      "image": null,
+      "nameEn": "3000XH Ultra-High-Speed"
+    },
+    {
+      "tier": 5,
+      "image": null,
+      "nameEn": "4000D Heavy-Drag"
+    }
   ],
   "lines": [
-    { "tier": 1, "image": null, "nameEn": "Basic" },
-    { "tier": 2, "image": null, "nameEn": "Gray-Label" },
-    { "tier": 3, "image": null, "nameEn": "25 lb" },
-    { "tier": 4, "image": null, "nameEn": "40 lb" },
-    { "tier": 5, "image": null, "nameEn": "60 lb" },
-    { "tier": 6, "image": null, "nameEn": "Amber" }
+    {
+      "tier": 1,
+      "image": null,
+      "nameEn": "Basic"
+    },
+    {
+      "tier": 2,
+      "image": null,
+      "nameEn": "Gray-Label"
+    },
+    {
+      "tier": 3,
+      "image": null,
+      "nameEn": "25 lb"
+    },
+    {
+      "tier": 4,
+      "image": null,
+      "nameEn": "40 lb"
+    },
+    {
+      "tier": 5,
+      "image": null,
+      "nameEn": "60 lb"
+    },
+    {
+      "tier": 6,
+      "image": null,
+      "nameEn": "Amber"
+    }
   ],
   "floatBaits": [
-    { "id": "basic-grain-dough", "image": null, "nameEn": "Basic Grain Dough Bait", "nameKr": "기본 곡물 반죽 미끼", "note": "무료 기본 지급" },
-    { "id": "enhanced-attractant-dough", "image": null, "nameEn": "Enhanced Attractant Dough Bait", "nameKr": "강화 유인 반죽 미끼", "note": null },
-    { "id": "refined-competition-dough", "image": null, "nameEn": "Refined Competition Dough Bait", "nameKr": "정제 경기용 반죽 미끼", "note": null },
-    { "id": "secret-bloodworm", "image": null, "nameEn": "Secret Bloodworm Bait", "nameKr": "비전 지렁이 미끼", "note": null }
+    {
+      "id": "basic-grain-dough",
+      "image": null,
+      "nameEn": "Basic Grain Dough Bait",
+      "nameKr": "기본 곡물 반죽 미끼",
+      "note": "무료 기본 지급"
+    },
+    {
+      "id": "enhanced-attractant-dough",
+      "image": null,
+      "nameEn": "Enhanced Attractant Dough Bait",
+      "nameKr": "강화 유인 반죽 미끼",
+      "note": null
+    },
+    {
+      "id": "refined-competition-dough",
+      "image": null,
+      "nameEn": "Refined Competition Dough Bait",
+      "nameKr": "정제 경기용 반죽 미끼",
+      "note": null
+    },
+    {
+      "id": "secret-bloodworm",
+      "image": null,
+      "nameEn": "Secret Bloodworm Bait",
+      "nameKr": "비전 지렁이 미끼",
+      "note": null
+    }
   ],
   "lures": [
-    { "id": "standard-spoon", "image": null, "nameEn": "Standard Spoon" },
-    { "id": "high-contrast-spoon", "image": null, "nameEn": "High-Contrast Stimulus Spoon" },
-    { "id": "fluorescent-vibrating-spoon", "image": null, "nameEn": "Fluorescent Vibrating Spoon" },
-    { "id": "precision-hunting-lure", "image": null, "nameEn": "Precision Hunting Lure" },
-    { "id": "deepwater-detection-lure", "image": null, "nameEn": "Deepwater Detection Lure", "nameKr": "심층 탐지 루어", "note": "북아프리카메기용 (3클)" },
-    { "id": "high-freq-tail-swing", "image": null, "nameEn": "High-Frequency Tail-Swing Soft Bait", "nameKr": "고주파 테일스윙 소프트 베이트", "note": "30레벨 승급 대상어용 (보라)" },
-    { "id": "territorial-stimulus-lure", "image": null, "nameEn": "Territorial Stimulus Lure" },
-    { "id": "deep-diving-giant-vibration", "image": null, "nameEn": "Deep-Diving Giant Vibration Lure", "nameKr": "심해 대형 어류 진동 루어", "note": "방사능 그루퍼·새끼상어용 (5클)" },
-    { "id": "steel-ball-acoustic", "image": null, "nameEn": "Steel-Ball Acoustic Lure" },
-    { "id": "gold-plated-competition", "image": null, "nameEn": "Gold-Plated Competition Lure" }
+    {
+      "id": "standard-spoon",
+      "image": null,
+      "nameEn": "Standard Spoon"
+    },
+    {
+      "id": "high-contrast-spoon",
+      "image": null,
+      "nameEn": "High-Contrast Stimulus Spoon"
+    },
+    {
+      "id": "fluorescent-vibrating-spoon",
+      "image": null,
+      "nameEn": "Fluorescent Vibrating Spoon"
+    },
+    {
+      "id": "precision-hunting-lure",
+      "image": null,
+      "nameEn": "Precision Hunting Lure"
+    },
+    {
+      "id": "deepwater-detection-lure",
+      "image": null,
+      "nameEn": "Deepwater Detection Lure",
+      "nameKr": "심층 탐지 루어",
+      "note": "북아프리카메기용 (3클)"
+    },
+    {
+      "id": "high-freq-tail-swing",
+      "image": null,
+      "nameEn": "High-Frequency Tail-Swing Soft Bait",
+      "nameKr": "고주파 테일스윙 소프트 베이트",
+      "note": "30레벨 승급 대상어용 (보라)"
+    },
+    {
+      "id": "territorial-stimulus-lure",
+      "image": null,
+      "nameEn": "Territorial Stimulus Lure"
+    },
+    {
+      "id": "deep-diving-giant-vibration",
+      "image": null,
+      "nameEn": "Deep-Diving Giant Vibration Lure",
+      "nameKr": "심해 대형 어류 진동 루어",
+      "note": "방사능 그루퍼·새끼상어용 (5클)"
+    },
+    {
+      "id": "steel-ball-acoustic",
+      "image": null,
+      "nameEn": "Steel-Ball Acoustic Lure"
+    },
+    {
+      "id": "gold-plated-competition",
+      "image": null,
+      "nameEn": "Gold-Plated Competition Lure"
+    }
   ],
   "mechanics": {
-    "float": "찌가 가라앉는 타이밍에 반응. 미끼 소모형. 레벨링 속도가 가장 빠름(잡는 즉시 경험치, 탈출·인벤토리 불필요).",
+    "float": "찌가 가라앉는 타이밍에 반응. 미끼 소모형. 레벨링 속도가 가장 빠름(잡는 즉시 경험치, 탈출·인벤토리 불필요). 동굴·저장소 부두에서 찌낚시하면 낚시 화폐(와일드 쇼어 코인) 수익도 최상.",
     "lure": "희귀·소장급 대부분은 루어 낚시로만. 장력 게이지 관리 — 물고기가 움직이는 반대 방향으로 당기고, 당기는 중 짧은 클릭으로 거리를 좁히며 장력을 낮춘다. 줄이 빨간색이 되면 즉시 손을 뗄 것(끊어짐)."
-  }
+  },
+  "tips": [
+    "장비 4종(낚싯대·릴·낚시줄·루어)의 등급이 전부 어획 등급과 레어 조우율에 영향 — 풀세팅이면 블루 미만이 거의 안 잡히고, 레드 조우율도 크게 오름. 레드가 안 보이면 장비부터 점검.",
+    "골드 낚시줄은 상점 구매가 주당 3개 제한. 대신 그로브 베이 집 주변 바닥·테이블에서 필드 스폰을 주울 수 있음. 단, 낚시줄은 안전상자에 못 넣으니 탈출까지 지켜야 함.",
+    "퍼플·골드 낚시줄 내구도는 20 — 물고기 20마리 잡으면 끝. 레이드 중 줄 교체 불가라서 끊기면 탈출 후 재정비가 답. 레드 사냥 세션이면 루어 40개쯤 챙겨가는 걸 추천.",
+    "낚싯대는 2자루(하이카본 루어대 x2) 운용 추천 — 금속 루어대까지 쓰면 3자루도 가능. 릴·줄은 퍼플 이상으로.",
+    "캐스팅할 때 시선을 아래로 내리면 최단거리로 던져짐 → 여유 줄이 10~15m 생겨서 대물 파이팅이 훨씬 수월. 실제로 레드 대부분이 짧은 캐스팅에서 잡혔다는 후기.",
+    "레벨링은 찌낚시 연타가 최속. 루어 낚시는 30레벨 이후부터 권장."
+  ]
 }

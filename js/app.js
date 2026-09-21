@@ -257,7 +257,7 @@
     return `<h1>빨간 물고기 (소장급)</h1>
     <p class="page-desc">가장 희귀한 소장급 ${reds.length}종. 대부분 루어 낚시로만 잡을 수 있어요.</p>
     <div class="cards-2">${reds.map(fishCard).join("")}</div>
-    <div class="notice">소장급 출현 수역은 대부분 미확정 — 인게임 도감·커뮤니티 제보로 계속 보강 예정.</div>`;
+    <div class="notice">출현 수역·추천 루어는 만렙 유저 공략 영상 기준 — 인게임 표기·한국어 명칭은 확인되는 대로 계속 보강 예정.</div>`;
   }
 
   function pageNpc() {
@@ -298,6 +298,8 @@
     <div class="mission"><div class="mission-head"><h3>찌낚시</h3></div><div class="guide">${esc(g.mechanics.float)}</div></div>
     <div class="mission"><div class="mission-head"><h3>루어 낚시</h3></div><div class="guide">${esc(g.mechanics.lure)}</div></div>
     </div>
+    ${g.tips && g.tips.length ? `<h2>실전 꿀팁</h2>
+    <div class="cards-2">${g.tips.map(t => `<div class="row">${esc(t)}</div>`).join("")}</div>` : ""}
     <div class="notice">${esc(g._note)}</div>`;
   }
 
