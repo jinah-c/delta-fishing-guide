@@ -485,8 +485,8 @@ a.item-card:hover {
   --tone: #d8d1dc;
   position: relative;
   flex: none;
-  width: 104px;
-  aspect-ratio: 1;
+  width: 150px;
+  aspect-ratio: 16 / 10;
   display: grid;
   place-items: center;
   border-radius: 14px;
@@ -497,14 +497,14 @@ a.item-card:hover {
   border: 1px solid color-mix(in srgb, var(--tone) 30%, transparent);
   color: var(--tone);
 }
-.thumb img { width: 100%; height: 100%; object-fit: contain; padding: 8px; }
+.thumb img { width: 100%; height: 100%; object-fit: contain; padding: 4px; }
 .thumb svg { width: 62%; height: auto; opacity: .85; }
 .thumb-ph {
   position: absolute; left: 0; right: 0; bottom: 6px;
   text-align: center; font-size: 10px; font-weight: 800;
   color: var(--muted);
 }
-.thumb-lg { width: 240px; border-radius: 24px; }
+.thumb-lg { width: 360px; border-radius: 24px; }
 .thumb-lg .thumb-ph { font-size: 12px; bottom: 14px; }
 .tone-common { --tone: #d8d1dc; }
 .tone-rare { --tone: var(--purple); }
@@ -519,10 +519,10 @@ a.item-card:hover {
 @media (max-width: 760px) {
   .cards-2 { grid-template-columns: 1fr; gap: 10px; }
   .item-card { gap: 12px; padding: 12px 40px 12px 12px; }
-  .thumb { width: 76px; border-radius: 12px; }
+  .thumb { width: 110px; border-radius: 12px; }
   .thumb-ph { display: none; }
   .item-title { font-size: 16px; }
   .fish-hero { flex-direction: column; gap: 16px; }
-  .thumb-lg { width: 100%; max-width: 280px; aspect-ratio: 4 / 3; align-self: center; }
+  .thumb-lg { width: 100%; max-width: 340px; aspect-ratio: 16 / 10; align-self: center; }
   .thumb-lg .thumb-ph { display: block; }
 }
