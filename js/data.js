@@ -823,41 +823,43 @@ const DATA = {
       {
         "tier": 1,
         "image": null,
-        "nameEn": "Basic"
+        "nameEn": "Basic Line",
+        "nameKr": "기본 낚싯줄"
       },
       {
         "tier": 2,
-        "image": "img/gear/line-t2.png?v=gear3",
-        "nameEn": "Gray-Label",
+        "image": "img/gear/line-t2.png?v=gear4",
+        "nameEn": "Gray-Label Line",
         "nameKr": "그레이 라벨 낚싯줄",
         "price": 200
       },
       {
         "tier": 3,
-        "image": "img/gear/line-t3.png?v=gear3",
-        "nameEn": "25 lb",
+        "image": "img/gear/line-t3.png?v=gear4",
+        "nameEn": "25 lb Line",
         "nameKr": "25파운드 낚싯줄",
         "price": 400
       },
       {
         "tier": 4,
-        "image": "img/gear/line-t4.png?v=gear3",
-        "nameEn": "40 lb",
+        "image": "img/gear/line-t4.png?v=gear4",
+        "nameEn": "40 lb Line",
         "nameKr": "40파운드 낚싯줄",
         "price": 2300
       },
       {
         "tier": 5,
-        "image": "img/gear/line-t5.png?v=gear3",
-        "nameEn": "60 lb",
+        "image": "img/gear/line-t5.png?v=gear4",
+        "nameEn": "60 lb Line",
         "price": 2700,
-        "note": "구매 제한 · 2,700 코인 — 레드 3종 사냥 기준 권장 라인",
+        "note": "구매 제한 · 레드 3종 사냥 기준 권장 라인",
         "nameKr": "60파운드 낚싯줄"
       },
       {
         "tier": 6,
         "image": null,
-        "nameEn": "Amber"
+        "nameEn": "Amber Line",
+        "nameKr": "앰버 낚싯줄"
       }
     ],
     "floatBaits": [

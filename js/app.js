@@ -328,11 +328,21 @@
 
   function pageGear() {
     const g = DATA.gear;
-    const tierCard = kind => t => itemCard(t, kind,
+    const priceText = price => price == null ? "" : `<div class="item-price"><span class="coin" aria-hidden="true"></span>${Number(price).toLocaleString("ko-KR")}</div>`;
+    const tierCard = kind => t => {
+      if (kind === "line") {
+        return itemCard(t, kind,
+          `<span class="tier">${t.tier}클</span> ${esc(t.nameKr || t.nameEn)}`,
+          t.nameKr ? esc(t.nameEn) : null,
+          [priceText(t.price), t.note ? esc(t.note) : null].filter(Boolean).join(""),
+          t.tier >= 5 ? "tone-red" : t.tier >= 3 ? "tone-rare" : "tone-common");
+      }
+      return itemCard(t, kind,
       `<span class="tier">${t.tier}클</span> ${esc(t.nameEn)}`,
       t.nameKr ? esc(t.nameKr) : null,
       [t.unlock ? `🔓 ${esc(t.unlock)}` : null, t.note ? esc(t.note) : null].filter(Boolean).join("<br>") || null,
       t.tier >= 5 ? "tone-red" : t.tier >= 3 ? "tone-rare" : "tone-common");
+    };
     const namedCard = kind => b => itemCard(b, kind,
       esc(b.nameKr || b.nameEn), b.nameKr ? esc(b.nameEn) : null, b.note ? esc(b.note) : null, "tone-lime");
     return `<h1>장비 · 미끼</h1>
