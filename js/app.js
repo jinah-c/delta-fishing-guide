@@ -140,7 +140,7 @@
     return `
     <div class="hero">
       <h1>델타포스 낚시 가이드</h1>
-      <p>S11 "재정향" 신규 낚시 콘텐츠 정리 — 맵별 낚시터부터 승급 대상어, 빨간 물고기까지.</p>
+      <p>신규 낚시 콘텐츠 정리 , 맵별 낚시터부터 승급미션 물고기 정보까지 :&gt;</p>
     </div>
     <div class="quick">
       <a href="#/maps"><div class="q-title">🗺️ 맵 · 낚시터</div><div class="q-sub">낚시 가능한 맵 ${DATA.maps.length}곳, 낚시터 ${DATA.maps.reduce((n, m) => n + m.spots.length, 0)}곳</div></a>
@@ -151,7 +151,7 @@
       <a href="#/gear"><div class="q-title">🧰 장비 · 미끼</div><div class="q-sub">낚싯대·릴·낚시줄·미끼·루어 정리</div></a>
     </div>
     <h2>시작하기 요약</h2>
-    <div class="notice">${esc(DATA.missions.unlock.requirement)}<br>${esc(DATA.missions.unlock.note)}</div>`;
+    <div class="notice"><ul>${DATA.missions.unlock.conditions.map(condition => `<li>${esc(condition)}</li>`).join("")}</ul></div>`;
   }
 
   function pageMaps() {
@@ -262,8 +262,8 @@
     const ms = DATA.missions;
     return `<h1>승급 가이드</h1>
     <p class="page-desc">낚시 레벨 상한 50. 10/20/30/40레벨마다 조 리드에게 승급 평가를 통과해야 다음 구간 진행 가능.</p>
-    <h2>낚시 해금</h2>
-    <div class="notice">${esc(ms.unlock.requirement)}<br>${esc(ms.unlock.note)}</div>
+    <h2>낚시 해금조건</h2>
+    <div class="notice"><ul>${ms.unlock.conditions.map(condition => `<li>${esc(condition)}</li>`).join("")}</ul></div>
     <h2>승급 평가</h2>
     <div class="cards-2">
     ${ms.certifications.map(c => `

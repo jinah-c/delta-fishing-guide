@@ -148,7 +148,7 @@ h3 { font-size: 17px; margin: 18px 0 8px; font-weight: 900; }
 }
 .hero h1 {
   max-width: 720px;
-  font-size: clamp(36px, 8vw, 76px);
+  font-size: clamp(32px, 6vw, 60px);
   margin-bottom: 14px;
 }
 .hero h1::first-line { color: var(--text); }
@@ -390,6 +390,8 @@ h3 { font-size: 17px; margin: 18px 0 8px; font-weight: 900; }
   color: var(--text-dim);
   margin: 14px 0;
 }
+.notice ul { padding-left: 22px; }
+.notice li + li { margin-top: 6px; }
 
 .tbl {
   width: 100%;
@@ -466,6 +468,7 @@ h3 { font-size: 17px; margin: 18px 0 8px; font-weight: 900; }
   .hero { min-height: 330px; padding: 28px 20px; }
   .hero::before { inset: 12px; opacity: .35; }
   .hero::after { right: 12px; bottom: 10px; }
+  .hero h1 { font-size: 34px; }
   h1 { font-size: 30px; }
   h2 { font-size: 20px; }
   .grid { grid-template-columns: 1fr; }
