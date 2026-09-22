@@ -400,7 +400,7 @@
     <p class="page-desc">낚싯대는 승급 보상으로 해금. 릴·낚시줄은 클래스(등급)가 높을수록 상위 어종 대응.</p>
     <h2>낚싯대</h2>
     <div class="cards-2">${g.rods.map(r => itemCard(r, "rod", rodTitle(r),
-      null,
+      r.nameEn ? esc(r.nameEn) : null,
       [priceText(r.price, r.currencyLabel), `🔓 ${esc(r.unlock)}`, r.note ? esc(r.note) : null].filter(Boolean).join("<br>"), tierTone(r))).join("")}</div>
     <h2>스피닝 릴</h2>
     <div class="cards-2">${g.reels.map(tierCard("reel")).join("")}</div>
