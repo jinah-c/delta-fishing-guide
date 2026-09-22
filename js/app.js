@@ -330,11 +330,11 @@
     const g = DATA.gear;
     const priceText = price => price == null ? "" : `<div class="item-price"><span class="coin" aria-hidden="true"></span>${Number(price).toLocaleString("ko-KR")}</div>`;
     const tierCard = kind => t => {
-      if (kind === "line") {
+      if (kind === "line" || kind === "reel") {
         return itemCard(t, kind,
           `<span class="tier">${t.tier}클</span> ${esc(t.nameKr || t.nameEn)}`,
           t.nameKr ? esc(t.nameEn) : null,
-          [priceText(t.price), t.note ? esc(t.note) : null].filter(Boolean).join(""),
+          [priceText(t.price), t.unlock ? `🔓 ${esc(t.unlock)}` : null, t.note ? esc(t.note) : null].filter(Boolean).join("<br>"),
           t.tier >= 5 ? "tone-red" : t.tier >= 3 ? "tone-rare" : "tone-common");
       }
       return itemCard(t, kind,
