@@ -39,7 +39,8 @@
   }
 
   const rarityBadge = f =>
-    `<span class="badge ${RARITY_BADGE[f.rarity] || "badge-common"}">${esc(f.rarity)}</span>`;
+    `<span class="badge ${RARITY_BADGE[f.rarity] || "badge-common"}">${esc(f.rarity)}</span>` +
+    (f.rarityAlt ? ` <span class="badge badge-gold">${esc(f.rarityAlt)}</span>` : "");
 
   const methodBadges = f =>
     f.method.map(m => `<span class="badge badge-method">${esc(m)}</span>`).join(" ");
