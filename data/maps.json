@@ -5,8 +5,8 @@
       "nameKr": "롱보우",
       "nameEn": "Layali Grove",
       "nameCn": "长弓溪谷",
-      "difficulty": "이지",
-      "note": "낚시터 5곳으로 가장 많음. 낚시꾼 NPC(조 리드) 스폰 유일 맵. 피콕하인드(방사능 그루퍼)를 제외한 전 어종을 이 맵에서 잡을 수 있음. 낚시는 현재 이지 난이도(롱보우·AZ3·제로댐)에서만 가능.",
+      "difficulty": "정규",
+      "note": "낚시터 5곳으로 가장 많음. 낚시꾼 NPC(조 리드) 스폰 유일 맵. 피콕하인드(방사능 그루퍼)를 제외한 전 어종을 이 맵에서 잡을 수 있음. 낚시는 현재 정규 난이도(롱보우·AZ3·제로댐)에서만 가능.",
       "mapImage": "img/longbow.jpg",
       "spots": [
         {
@@ -85,7 +85,7 @@
       "nameKr": "제로댐",
       "nameEn": "Zero Dam",
       "nameCn": "零号大坝",
-      "difficulty": "이지",
+      "difficulty": "정규",
       "note": "낚시터 1곳.",
       "mapImage": "img/zero-dam.jpg",
       "spots": [
@@ -111,7 +111,7 @@
       "nameKr": "AZ3",
       "nameEn": "AZ3",
       "nameCn": "AZ3(核电站)",
-      "difficulty": "이지",
+      "difficulty": "정규",
       "note": "낚시터 2곳. 40레벨 승급 대상어(피콕하인드) 출현 맵. (지도 이미지는 임시본 — 마커 아이콘 포함, 교체 필요)",
       "mapImage": "img/az3.webp",
       "spots": [
