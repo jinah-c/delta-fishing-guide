@@ -9,7 +9,7 @@
   const RARITY_BADGE = {
     "일반": "badge-common",
     "희귀": "badge-rare",
-    "소장(레드)": "badge-red"
+    "레드": "badge-red"
   };
 
   const fishById = id => DATA.fish.find(f => f.id === id);
@@ -57,7 +57,7 @@
     trap: '<path d="M12 12h40l-4 24H16z" fill="currentColor"/><path d="M20 12l2 24M28 12v24M36 12v24M44 12l-2 24M13 20h38M14 28h36" stroke="#050506" stroke-width="1.6"/><path d="M10 12h44" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>'
   };
 
-  const RARITY_TONE = { "일반": "tone-common", "희귀": "tone-rare", "소장(레드)": "tone-red" };
+  const RARITY_TONE = { "일반": "tone-common", "희귀": "tone-rare", "레드": "tone-red" };
   const TIER_TONE = {
     1: "tone-common",
     2: "tone-green",
@@ -186,7 +186,7 @@
   /* ── Pages ── */
 
   function pageHome() {
-    const redCount = DATA.fish.filter(f => f.rarity === "소장(레드)").length;
+    const redCount = DATA.fish.filter(f => f.rarity === "레드").length;
     return `
     <div class="hero">
       <h1>델타포스 낚시 가이드</h1>
@@ -253,7 +253,7 @@
   }
 
   function pageFish(params) {
-    const rarities = ["전체", "일반", "희귀", "소장(레드)"];
+    const rarities = ["전체", "일반", "희귀", "레드"];
     const methods = ["전체", "찌낚시", "루어"];
     // 잘못된 쿼리값(공유 링크 오타 등)은 "전체"로 보정
     let rarity = params.get("rarity") || "전체";
@@ -347,7 +347,7 @@
   }
 
   function pageRed() {
-    const reds = DATA.fish.filter(f => f.rarity === "소장(레드)");
+    const reds = DATA.fish.filter(f => f.rarity === "레드");
     return `<h1>빨간 물고기 (소장급)</h1>
     <p class="page-desc">가장 희귀한 소장급 ${reds.length}종. 대부분 루어 낚시로만 잡을 수 있어요.</p>
     <div class="cards-2">${reds.map(fishCard).join("")}</div>

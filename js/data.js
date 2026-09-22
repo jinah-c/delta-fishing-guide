@@ -469,7 +469,7 @@ const DATA = {
       "nameEn": "Sapphire Snakehead",
       "nameKr": "사파이어 오스카",
       "nameKrConfirmed": true,
-      "rarity": "소장(레드)",
+      "rarity": "레드",
       "size": "소형",
       "method": [
         "찌낚시"
@@ -486,7 +486,7 @@ const DATA = {
       "nameEn": "Platinum Silver Arowana",
       "nameKr": "플래티넘 실버 아로와나",
       "nameKrConfirmed": false,
-      "rarity": "소장(레드)",
+      "rarity": "레드",
       "size": "대형",
       "method": [
         "루어"
@@ -503,7 +503,7 @@ const DATA = {
       "nameEn": "Giant Brown Trout",
       "nameKr": "자이언트 브라운 송어",
       "nameKrConfirmed": false,
-      "rarity": "소장(레드)",
+      "rarity": "레드",
       "size": "대형",
       "method": [
         "루어"
@@ -521,7 +521,7 @@ const DATA = {
       "nameEn": "Baby Shark",
       "nameKr": "새끼상어",
       "nameKrConfirmed": true,
-      "rarity": "소장(레드)",
+      "rarity": "레드",
       "rarityAlt": "노랑(골드) 인정",
       "size": "거대",
       "method": [
@@ -542,7 +542,7 @@ const DATA = {
       "nameEn": "Atlantic Salmon",
       "nameKr": "대서양 연어",
       "nameKrConfirmed": false,
-      "rarity": "소장(레드)",
+      "rarity": "레드",
       "size": "대형",
       "method": [
         "루어"
@@ -560,7 +560,7 @@ const DATA = {
       "nameEn": "Tigerfish",
       "nameKr": "타이거피시",
       "nameKrConfirmed": false,
-      "rarity": "소장(레드)",
+      "rarity": "레드",
       "size": "대형",
       "method": [
         "루어"
@@ -577,7 +577,7 @@ const DATA = {
       "nameEn": "Bigeye Tarpon (Indo-Pacific Tarpon)",
       "nameKr": "빅아이 타폰",
       "nameKrConfirmed": false,
-      "rarity": "소장(레드)",
+      "rarity": "레드",
       "size": "거대",
       "method": [
         "루어"
