@@ -58,6 +58,14 @@
   };
 
   const RARITY_TONE = { "일반": "tone-common", "희귀": "tone-rare", "소장(레드)": "tone-red" };
+  const TIER_TONE = {
+    1: "tone-common",
+    2: "tone-green",
+    3: "tone-blue",
+    4: "tone-rare",
+    5: "tone-gold",
+    6: "tone-red"
+  };
 
   function thumb(obj, kind, tone, size) {
     const inner = obj.image
@@ -124,6 +132,19 @@
   }
 
   // 장비·미끼 카드 (링크 없음). kind: rod | reel | line | bait | lure
+  function gradeBadge(obj) {
+    if (!obj.tier) return "";
+    return ` <span class="grade-badge grade-t${obj.tier}">${esc(obj.gradeLabel || `${obj.tier}클`)}</span>`;
+  }
+
+  function gearTitle(obj) {
+    return `${esc(obj.nameKr || obj.nameEn)}${gradeBadge(obj)}`;
+  }
+
+  function tierTone(obj) {
+    return TIER_TONE[obj.tier] || "tone-common";
+  }
+
   function itemCard(obj, kind, title, sub, note, tone) {
     return `<div class="item-card">
       ${thumb(obj, kind, tone)}
@@ -332,28 +353,28 @@
     const tierCard = kind => t => {
       if (kind === "line" || kind === "reel") {
         return itemCard(t, kind,
-          `<span class="tier">${t.tier}클</span> ${esc(t.nameKr || t.nameEn)}`,
+          gearTitle(t),
           t.nameKr ? esc(t.nameEn) : null,
           [priceText(t.price), t.unlock ? `🔓 ${esc(t.unlock)}` : null, t.note ? esc(t.note) : null].filter(Boolean).join("<br>"),
-          t.tier >= 5 ? "tone-red" : t.tier >= 3 ? "tone-rare" : "tone-common");
+          tierTone(t));
       }
       return itemCard(t, kind,
-      `<span class="tier">${t.tier}클</span> ${esc(t.nameEn)}`,
+      gearTitle(t),
       t.nameKr ? esc(t.nameKr) : null,
       [t.unlock ? `🔓 ${esc(t.unlock)}` : null, t.note ? esc(t.note) : null].filter(Boolean).join("<br>") || null,
-      t.tier >= 5 ? "tone-red" : t.tier >= 3 ? "tone-rare" : "tone-common");
+      tierTone(t));
     };
     const namedCard = kind => b => itemCard(b, kind,
-      esc(b.nameKr || b.nameEn),
+      gearTitle(b),
       b.nameKr ? esc(b.nameEn) : null,
       [priceText(b.price), b.note ? esc(b.note) : null].filter(Boolean).join("<br>") || null,
-      "tone-lime");
+      tierTone(b));
     return `<h1>장비 · 미끼</h1>
     <p class="page-desc">낚싯대는 승급 보상으로 해금. 릴·낚시줄은 클래스(등급)가 높을수록 상위 어종 대응.</p>
     <h2>낚싯대</h2>
-    <div class="cards-2">${g.rods.map(r => itemCard(r, "rod", esc(r.nameKr),
+    <div class="cards-2">${g.rods.map(r => itemCard(r, "rod", gearTitle(r),
       `<span class="badge badge-method">${esc(r.method)}</span>`,
-      [priceText(r.price, r.currencyLabel), `🔓 ${esc(r.unlock)}`, r.note ? esc(r.note) : null].filter(Boolean).join("<br>"), "tone-red")).join("")}</div>
+      [priceText(r.price, r.currencyLabel), `🔓 ${esc(r.unlock)}`, r.note ? esc(r.note) : null].filter(Boolean).join("<br>"), tierTone(r))).join("")}</div>
     <h2>스피닝 릴</h2>
     <div class="cards-2">${g.reels.map(tierCard("reel")).join("")}</div>
     <h2>낚시줄</h2>

@@ -8,7 +8,8 @@
       "method": "찌낚시",
       "unlock": "조 리드 입문 의뢰 완료",
       "price": 100000,
-      "currencyLabel": "테크닉 코인"
+      "currencyLabel": "테크닉 코인",
+      "tier": 1
     },
     {
       "id": "fiberglass-lure-rod",
@@ -16,7 +17,8 @@
       "nameKr": "GFRP 루어 낚싯대",
       "method": "루어",
       "unlock": "10레벨 입문 평가 보상",
-      "price": 200
+      "price": 200,
+      "tier": 2
     },
     {
       "id": "metal-lure-rod",
@@ -24,7 +26,8 @@
       "nameKr": "금속 루어 낚싯대",
       "method": "루어",
       "unlock": "20레벨 무게 평가 보상",
-      "price": 2000
+      "price": 2000,
+      "tier": 3
     },
     {
       "id": "high-carbon-lure-rod",
@@ -33,7 +36,8 @@
       "method": "루어",
       "unlock": "30레벨 어종 평가 보상",
       "price": 5000,
-      "note": "보유 한도 2개 · 최대 장력 200 / 장력 감소 배율 20 / 장력 회복 48 / 릴링 속도 8 / 릴링 중 스태미나 감소 30"
+      "note": "보유 한도 2개 · 최대 장력 200 / 장력 감소 배율 20 / 장력 회복 48 / 릴링 속도 8 / 릴링 중 스태미나 감소 30",
+      "tier": 4
     }
   ],
   "reels": [
@@ -123,7 +127,8 @@
       "nameEn": "Enhanced Attractant Dough Bait",
       "nameKr": "강화 유인 미끼",
       "note": null,
-      "price": 10
+      "price": 10,
+      "tier": 2
     },
     {
       "id": "refined-competition-dough",
@@ -131,7 +136,8 @@
       "nameEn": "Refined Competition Dough Bait",
       "nameKr": "고급 컴피티션 루어",
       "note": "반죽 미끼(인게임 표기가 '루어')",
-      "price": 15
+      "price": 15,
+      "tier": 4
     },
     {
       "id": "secret-bloodworm",
@@ -139,7 +145,8 @@
       "nameEn": "Secret Bloodworm Bait",
       "nameKr": "적색 벌레 특제 미끼",
       "note": null,
-      "price": 50
+      "price": 50,
+      "tier": 5
     }
   ],
   "lures": [
@@ -148,21 +155,24 @@
       "image": "img/gear/high-contrast-spoon.png?v=gear6",
       "nameEn": "High-Contrast Stimulus Spoon",
       "nameKr": "고대비 자극 스푼",
-      "price": 13
+      "price": 13,
+      "tier": 2
     },
     {
       "id": "fluorescent-vibrating-spoon",
       "image": "img/gear/fluorescent-vibrating-spoon.png?v=gear6",
       "nameEn": "Fluorescent Vibrating Spoon",
       "nameKr": "형광 진동 스푼",
-      "price": 13
+      "price": 13,
+      "tier": 2
     },
     {
       "id": "precision-hunting-lure",
       "image": "img/gear/precision-hunting-lure.png?v=gear6",
       "nameEn": "Precision Hunting Lure",
       "nameKr": "정밀 포식 루어",
-      "price": 16
+      "price": 16,
+      "tier": 3
     },
     {
       "id": "deepwater-detection-lure",
@@ -170,7 +180,8 @@
       "nameEn": "Deepwater Detection Lure",
       "nameKr": "심층 탐지 루어",
       "note": "북아프리카메기용 (3클)",
-      "price": 17
+      "price": 17,
+      "tier": 3
     },
     {
       "id": "high-freq-tail-swing",
@@ -178,14 +189,16 @@
       "nameEn": "High-Frequency Tail-Swing Soft Bait",
       "nameKr": "고빈도 테일 웜",
       "note": "30레벨 승급 대상어용 (보라)",
-      "price": 19
+      "price": 19,
+      "tier": 4
     },
     {
       "id": "territorial-stimulus-lure",
       "image": "img/gear/territorial-stimulus-lure.png?v=gear6",
       "nameEn": "Territorial Stimulus Lure",
       "nameKr": "영역 자극 루어",
-      "price": 19
+      "price": 19,
+      "tier": 4
     },
     {
       "id": "deep-diving-giant-vibration",
@@ -193,21 +206,24 @@
       "nameEn": "Deep-Diving Giant Vibration Lure",
       "nameKr": "심해 대형 어류 진동 루어",
       "note": "피콕하인드·새끼상어용 (5클)",
-      "price": 20
+      "price": 20,
+      "tier": 5
     },
     {
       "id": "steel-ball-acoustic",
       "image": "img/gear/steel-ball-acoustic.png?v=gear6",
       "nameEn": "Steel-Ball Acoustic Lure",
       "nameKr": "스틸볼 사운드 루어",
-      "price": 19
+      "price": 19,
+      "tier": 5
     },
     {
       "id": "gold-plated-competition",
       "image": "img/gear/gold-plated-competition.png?v=gear6",
       "nameEn": "Gold-Plated Competition Lure",
       "nameKr": "골드 컴피티션 루어",
-      "price": 21
+      "price": 21,
+      "tier": 5
     }
   ],
   "mechanics": {

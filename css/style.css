@@ -580,6 +580,26 @@ a.item-card:hover {
 }
 .item-body { min-width: 0; flex: 1; }
 .item-title { font-weight: 950; font-size: 17px; line-height: 1.3; }
+.grade-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 20px;
+  margin-left: 7px;
+  padding: 2px 8px 3px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 1000;
+  line-height: 1;
+  vertical-align: 2px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .18), 0 4px 12px rgba(0, 0, 0, .22);
+}
+.grade-t1 { background: linear-gradient(135deg, #575963, #2e3038); }
+.grade-t2 { background: linear-gradient(135deg, #1fbf7c, #0b6d4e); }
+.grade-t3 { background: linear-gradient(135deg, #47a7ff, #2455d8); }
+.grade-t4 { background: linear-gradient(135deg, #b46cff, #5a28c9); }
+.grade-t5 { background: linear-gradient(135deg, #df9b53, #8f4b25); }
+.grade-t6 { background: linear-gradient(135deg, #ff6dd9, #9f244f); }
 .item-sub { color: var(--text-dim); font-size: 14px; margin-top: 2px; }
 .item-badges { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 9px; }
 .item-meta { color: var(--text-dim); font-size: 14px; margin-top: 8px; }
@@ -695,7 +715,10 @@ a.item-card:hover {
 .thumb-lg { width: 480px; border-radius: 24px; }
 .thumb-lg .thumb-ph { font-size: 13px; bottom: 14px; }
 .tone-common { --tone: #d8d1dc; }
+.tone-green { --tone: #38d98e; }
+.tone-blue { --tone: #5db1ff; }
 .tone-rare { --tone: var(--purple); }
+.tone-gold { --tone: #df9b53; }
 .tone-red { --tone: var(--accent); }
 .tone-lime { --tone: var(--lime); }
 
