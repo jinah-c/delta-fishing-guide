@@ -470,6 +470,35 @@ h3 { font-size: 17px; margin: 18px 0 8px; font-weight: 900; }
 .notice ul { padding-left: 22px; }
 .notice li + li { margin-top: 6px; }
 
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  align-items: start;
+}
+.tip-panel {
+  margin: 0;
+  color: var(--text);
+}
+.tip-list {
+  margin: 0;
+  padding-left: 22px;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.5;
+}
+.tip-list li + li { margin-top: 7px; }
+.tip-list li::marker {
+  color: var(--accent-2);
+  font-weight: 1000;
+}
+.tip-list-compact {
+  font-size: 14px;
+  line-height: 1.42;
+  padding-left: 18px;
+}
+.tip-list-compact li + li { margin-top: 5px; }
+
 .tbl {
   width: 100%;
   border-collapse: separate;
@@ -771,6 +800,7 @@ a.item-card:hover {
 
 @media (max-width: 760px) {
   .cards-2 { grid-template-columns: 1fr; gap: 10px; }
+  .tips-grid { grid-template-columns: 1fr; gap: 10px; }
   .item-card { gap: 12px; padding: 12px 40px 12px 12px; }
   .thumb { width: 140px; border-radius: 12px; }
   .thumb-ph { display: none; }

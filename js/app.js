@@ -95,6 +95,23 @@
     return locs.map(l => `<a href="#/map/${l.map.id}">${esc(l.map.nameKr)} · ${esc(l.spot.nameKr)}</a>`).join(", ");
   }
 
+  function tipItems(text) {
+    return String(text || "")
+      .replace(/\s+—\s+/g, "\n")
+      .replace(/\s+(권장 준비물:)/g, "\n$1")
+      .replace(/\s+(도감 기준)/g, "\n$1")
+      .replace(/\s+(4000D 헤비 드래그 릴 해금 트레이드 요구 무게:)/g, "\n$1")
+      .split(/(?:\n+|(?<=[.!?。])\s+)/)
+      .map(s => s.trim().replace(/[.]$/, ""))
+      .filter(Boolean);
+  }
+
+  function tipList(text, cls) {
+    const items = tipItems(text);
+    if (!items.length) return "";
+    return `<ul class="tip-list ${cls || ""}">${items.map(item => `<li>${esc(item)}</li>`).join("")}</ul>`;
+  }
+
   function missionFishCard(x) {
     const f = fishById(x.fishId);
     if (!f) return "";
@@ -112,7 +129,7 @@
           <dt>낚시줄</dt><dd>${esc(x.line || "정보 없음")}</dd>
           <dt>미끼/루어</dt><dd>${esc(bait)}</dd>
           <dt>출현장소</dt><dd>${fishLocLinks(f)}</dd>
-          ${x.note ? `<dt>팁</dt><dd>${esc(x.note)}</dd>` : ""}
+          ${x.note ? `<dt>팁</dt><dd>${tipList(x.note, "tip-list-compact")}</dd>` : ""}
         </dl>
       </div>
     </div>`;
@@ -276,7 +293,7 @@
         : "출현 수역 미확정 (인게임 도감 확인 필요)"}</dd>
       <dt>낚시법</dt><dd>${f.method.map(esc).join(", ")}</dd>
       <dt>미끼/루어</dt><dd>${f.bait ? esc(f.bait) : "정보 없음"}</dd>
-      ${f.tips ? `<dt>팁</dt><dd>${esc(f.tips)}</dd>` : ""}
+      ${f.tips ? `<dt>팁</dt><dd>${tipList(f.tips)}</dd>` : ""}
       ${certs.length ? `<dt>승급 연관</dt><dd>${certs.map(c => `<a href="#/missions">레벨 ${c.level} ${esc(c.nameKr)}</a>`).join("<br>")}</dd>` : ""}
     </dl>
     </div>
@@ -401,7 +418,7 @@
     <div class="mission"><div class="mission-head"><h3>루어 낚시</h3></div><div class="guide">${esc(g.mechanics.lure)}</div></div>
     </div>
     ${g.tips && g.tips.length ? `<h2>실전 꿀팁</h2>
-    <div class="cards-2">${g.tips.map(t => `<div class="row">${esc(t)}</div>`).join("")}</div>` : ""}
+    <div class="tips-grid">${g.tips.map(t => `<div class="notice tip-panel">${tipList(t)}</div>`).join("")}</div>` : ""}
     <div class="notice">${esc(g._note)}</div>`;
   }
 
