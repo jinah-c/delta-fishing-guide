@@ -428,8 +428,13 @@ h3 { font-size: 17px; margin: 18px 0 8px; font-weight: 900; }
   margin-bottom: 14px;
   box-shadow: var(--shadow-deep);
 }
-.submit-figure { margin: 0; flex: none; }
-.submit-figure .thumb { width: 260px; }
+.submit-figure {
+  margin: 0;
+  flex: 0 0 min(42%, 440px);
+  max-width: 440px;
+}
+.submit-figure .thumb { width: 100%; }
+.submit-figure .thumb img { object-fit: cover; }
 .submit-figure figcaption { margin-top: 8px; font-size: 13px; color: var(--text-dim); text-align: center; }
 .submit-body { flex: 1; min-width: 0; }
 .submit-body h3 { margin: 0 0 10px; }
