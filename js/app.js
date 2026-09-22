@@ -151,13 +151,13 @@
   // 장비·미끼 카드 (링크 없음). kind: rod | reel | line | bait | lure
   function gradeBadge(obj) {
     if (!obj.tier) return "";
-    return ` <span class="grade-badge grade-t${obj.tier}">${esc(obj.gradeLabel || `${obj.tier}클`)}</span>`;
+    return `<span class="grade-badge grade-t${obj.tier}">${esc(obj.gradeLabel || `${obj.tier}클`)}</span>`;
   }
 
   function rodMethodBadge(obj) {
     if (!obj.method) return "";
     const cls = obj.method === "찌낚시" ? "gear-method-float" : "gear-method-lure";
-    return ` <span class="gear-method-badge ${cls}">${esc(obj.method)}</span>`;
+    return `<span class="gear-method-badge ${cls}">${esc(obj.method)}</span>`;
   }
 
   function gearTitle(obj) {

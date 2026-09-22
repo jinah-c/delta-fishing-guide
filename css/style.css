@@ -629,7 +629,7 @@ a.item-card:hover {
   display: inline-flex;
   align-items: center;
   min-height: 20px;
-  margin-left: 7px;
+  margin-left: 4px;
   padding: 2px 8px 3px;
   border-radius: 999px;
   color: var(--grade-color);
@@ -652,7 +652,7 @@ a.item-card:hover {
   display: inline-flex;
   align-items: center;
   min-height: 20px;
-  margin-left: 7px;
+  margin-left: 4px;
   padding: 2px 8px 3px;
   border-radius: 999px;
   color: var(--method-color);
