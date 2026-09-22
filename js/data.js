@@ -864,13 +864,6 @@ const DATA = {
     ],
     "floatBaits": [
       {
-        "id": "basic-grain-dough",
-        "image": null,
-        "nameEn": "Basic Grain Dough Bait",
-        "nameKr": "기본 곡물 반죽 미끼",
-        "note": "무료 기본 지급"
-      },
-      {
         "id": "enhanced-attractant-dough",
         "image": "img/gear/enhanced-attractant-dough.png?v=gear3",
         "nameEn": "Enhanced Attractant Dough Bait",
