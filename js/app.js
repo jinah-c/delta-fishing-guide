@@ -52,7 +52,8 @@
     reel: '<circle cx="32" cy="20" r="15" fill="currentColor"/><circle cx="32" cy="20" r="6" fill="#050506"/><path d="M47 20h11" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>',
     line: '<rect x="18" y="6" width="28" height="28" rx="6" fill="currentColor"/><path d="M18 14c10 3 18 3 28 0M18 22c10 3 18 3 28 0M18 30c10 3 18 3 28 0" stroke="#050506" stroke-width="2" fill="none"/>',
     bait: '<path d="M14 26c0-10 8-18 18-18s18 6 18 14-8 12-18 12-18-2-18-8z" fill="currentColor"/><circle cx="26" cy="18" r="2.5" fill="#050506"/><circle cx="36" cy="22" r="2" fill="#050506"/>',
-    lure: '<path d="M10 20c8-9 22-12 34-7 4 2 4 12 0 14-12 5-26 2-34-7z" fill="currentColor"/><path d="M46 20h6m0 0c3 0 4 6 0 7" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/>'
+    lure: '<path d="M10 20c8-9 22-12 34-7 4 2 4 12 0 14-12 5-26 2-34-7z" fill="currentColor"/><path d="M46 20h6m0 0c3 0 4 6 0 7" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/>',
+    trap: '<path d="M12 12h40l-4 24H16z" fill="currentColor"/><path d="M20 12l2 24M28 12v24M36 12v24M44 12l-2 24M13 20h38M14 28h36" stroke="#050506" stroke-width="1.6"/><path d="M10 12h44" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>'
   };
 
   const RARITY_TONE = { "일반": "tone-common", "희귀": "tone-rare", "소장(레드)": "tone-red" };
@@ -258,12 +259,30 @@
     `).join("") : ""}`;
   }
 
+  /* 승급어 제출 방법 (조 리드 옆 통발) — 승급 가이드·NPC 페이지 공용 */
+  function submitGuide() {
+    const sub = DATA.missions.submission;
+    return `<div class="submit-guide">
+      <figure class="submit-figure">
+        ${thumb(sub, "trap", "tone-lime")}
+        <figcaption>${esc(sub.imageCaption)}</figcaption>
+      </figure>
+      <div class="submit-body">
+        <h3>${esc(sub.title)}</h3>
+        <ol class="submit-steps">${sub.steps.map(st => `<li>${esc(st)}</li>`).join("")}</ol>
+        <ul class="submit-notes">${sub.notes.map(nt => `<li>${esc(nt)}</li>`).join("")}</ul>
+      </div>
+    </div>`;
+  }
+
   function pageMissions() {
     const ms = DATA.missions;
     return `<h1>승급 가이드</h1>
     <p class="page-desc">낚시 레벨 상한 50. 10/20/30/40레벨마다 조 리드에게 승급 평가를 통과해야 다음 구간 진행 가능.</p>
     <h2>낚시 해금조건</h2>
     <div class="notice"><ul>${ms.unlock.conditions.map(condition => `<li>${esc(condition)}</li>`).join("")}</ul></div>
+    <h2>승급어 제출 방법</h2>
+    ${submitGuide()}
     <h2>승급 평가</h2>
     <div class="cards-2">
     ${ms.certifications.map(c => `
@@ -297,6 +316,8 @@
     </dl>
     <h2>역할</h2>
     <div class="cards-2">${n.roles.map(r => `<div class="row">${esc(r)}</div>`).join("")}</div>
+    <h2>승급어 제출 방법</h2>
+    ${submitGuide()}
     <div class="notice">스폰 3곳의 정확한 위치는 확인 중 — 확보되는 대로 ${esc(m.nameKr)} 지도에 핀으로 표시할 예정이에요.</div>`;
   }
 

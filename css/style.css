@@ -64,13 +64,9 @@ a:hover { text-decoration: none; }
   letter-spacing: 0; white-space: nowrap;
 }
 .brand:hover { text-decoration: none; }
-.brand-mark {
-  display: inline-grid; place-items: center;
-  width: 30px; height: 30px; border-radius: 8px;
-  background: var(--accent);
-  color: #fff;
-  box-shadow: 0 0 0 3px rgba(255, 62, 181, .2), 0 10px 26px rgba(255, 62, 181, .32);
-  font-weight: 1000;
+.brand-logo {
+  display: block;
+  width: 46px; height: 46px;
 }
 
 .nav { display: flex; gap: 8px; flex-wrap: wrap; overflow-x: auto; scrollbar-width: none; }
@@ -380,6 +376,35 @@ h3 { font-size: 17px; margin: 18px 0 8px; font-weight: 900; }
   color: var(--text);
 }
 
+.submit-guide {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .02)), var(--bg-elev);
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: var(--radius);
+  padding: 18px;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow-deep);
+}
+.submit-figure { margin: 0; flex: none; }
+.submit-figure .thumb { width: 260px; }
+.submit-figure figcaption { margin-top: 8px; font-size: 13px; color: var(--text-dim); text-align: center; }
+.submit-body { flex: 1; min-width: 0; }
+.submit-body h3 { margin: 0 0 10px; }
+.submit-steps { margin: 0; padding-left: 22px; font-size: 16px; }
+.submit-steps li + li { margin-top: 7px; }
+.submit-steps li::marker { color: var(--accent); font-weight: 1000; }
+.submit-notes {
+  margin: 12px 0 0;
+  padding: 11px 14px 11px 32px;
+  border-radius: calc(var(--radius) - 6px);
+  background: rgba(255, 255, 255, .035);
+  color: var(--text-dim);
+  font-size: 15px;
+}
+.submit-notes li + li { margin-top: 5px; }
+
 .notice {
   background: rgba(255, 62, 181, .08);
   border: 1px solid rgba(255, 62, 181, .22);
@@ -472,6 +497,8 @@ h3 { font-size: 17px; margin: 18px 0 8px; font-weight: 900; }
   h1 { font-size: 30px; }
   h2 { font-size: 20px; }
   .grid { grid-template-columns: 1fr; }
+  .submit-guide { flex-direction: column; }
+  .submit-figure, .submit-figure .thumb { width: 100%; }
   .quick { grid-template-columns: 1fr; }
   .kv { grid-template-columns: 90px 1fr; font-size: 14px; padding: 13px; }
   .row .name { min-width: 0; width: 100%; }
