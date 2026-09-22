@@ -482,7 +482,7 @@ const DATA = {
     },
     {
       "id": "platinum-silver-arowana",
-      "image": null,
+      "image": "img/fish/platinum-silver-arowana.png?v=dex2",
       "nameEn": "Platinum Silver Arowana",
       "nameKr": "플래티넘 실버 아로와나",
       "nameKrConfirmed": false,
@@ -517,7 +517,7 @@ const DATA = {
     },
     {
       "id": "baby-shark",
-      "image": null,
+      "image": "img/fish/baby-shark.png?v=dex2",
       "nameEn": "Baby Shark",
       "nameKr": "새끼상어",
       "nameKrConfirmed": true,
