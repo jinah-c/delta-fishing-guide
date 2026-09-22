@@ -137,8 +137,18 @@
     return ` <span class="grade-badge grade-t${obj.tier}">${esc(obj.gradeLabel || `${obj.tier}클`)}</span>`;
   }
 
+  function rodMethodBadge(obj) {
+    if (!obj.method) return "";
+    const cls = obj.method === "찌낚시" ? "gear-method-float" : "gear-method-lure";
+    return ` <span class="gear-method-badge ${cls}">${esc(obj.method)}</span>`;
+  }
+
   function gearTitle(obj) {
     return `${esc(obj.nameKr || obj.nameEn)}${gradeBadge(obj)}`;
+  }
+
+  function rodTitle(obj) {
+    return `${esc(obj.nameKr || obj.nameEn)}${rodMethodBadge(obj)}${gradeBadge(obj)}`;
   }
 
   function tierTone(obj) {
@@ -372,8 +382,8 @@
     return `<h1>장비 · 미끼</h1>
     <p class="page-desc">낚싯대는 승급 보상으로 해금. 릴·낚시줄은 클래스(등급)가 높을수록 상위 어종 대응.</p>
     <h2>낚싯대</h2>
-    <div class="cards-2">${g.rods.map(r => itemCard(r, "rod", gearTitle(r),
-      `<span class="badge badge-method">${esc(r.method)}</span>`,
+    <div class="cards-2">${g.rods.map(r => itemCard(r, "rod", rodTitle(r),
+      null,
       [priceText(r.price, r.currencyLabel), `🔓 ${esc(r.unlock)}`, r.note ? esc(r.note) : null].filter(Boolean).join("<br>"), tierTone(r))).join("")}</div>
     <h2>스피닝 릴</h2>
     <div class="cards-2">${g.reels.map(tierCard("reel")).join("")}</div>
