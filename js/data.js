@@ -890,34 +890,29 @@ const DATA = {
     ],
     "lures": [
       {
-        "id": "standard-spoon",
-        "image": null,
-        "nameEn": "Standard Spoon"
-      },
-      {
         "id": "high-contrast-spoon",
-        "image": "img/gear/high-contrast-spoon.png?v=gear3",
+        "image": "img/gear/high-contrast-spoon.png?v=gear6",
         "nameEn": "High-Contrast Stimulus Spoon",
         "nameKr": "고대비 자극 스푼",
         "price": 13
       },
       {
         "id": "fluorescent-vibrating-spoon",
-        "image": "img/gear/fluorescent-vibrating-spoon.png?v=gear3",
+        "image": "img/gear/fluorescent-vibrating-spoon.png?v=gear6",
         "nameEn": "Fluorescent Vibrating Spoon",
         "nameKr": "형광 진동 스푼",
         "price": 13
       },
       {
         "id": "precision-hunting-lure",
-        "image": "img/gear/precision-hunting-lure.png?v=gear3",
+        "image": "img/gear/precision-hunting-lure.png?v=gear6",
         "nameEn": "Precision Hunting Lure",
         "nameKr": "정밀 포식 루어",
         "price": 16
       },
       {
         "id": "deepwater-detection-lure",
-        "image": "img/gear/deepwater-detection-lure.png?v=gear3",
+        "image": "img/gear/deepwater-detection-lure.png?v=gear6",
         "nameEn": "Deepwater Detection Lure",
         "nameKr": "심층 탐지 루어",
         "note": "북아프리카메기용 (3클)",
@@ -925,7 +920,7 @@ const DATA = {
       },
       {
         "id": "high-freq-tail-swing",
-        "image": "img/gear/high-freq-tail-swing.png?v=gear3",
+        "image": "img/gear/high-freq-tail-swing.png?v=gear6",
         "nameEn": "High-Frequency Tail-Swing Soft Bait",
         "nameKr": "고빈도 테일 웜",
         "note": "30레벨 승급 대상어용 (보라)",
@@ -933,14 +928,14 @@ const DATA = {
       },
       {
         "id": "territorial-stimulus-lure",
-        "image": "img/gear/territorial-stimulus-lure.png?v=gear3",
+        "image": "img/gear/territorial-stimulus-lure.png?v=gear6",
         "nameEn": "Territorial Stimulus Lure",
         "nameKr": "영역 자극 루어",
         "price": 19
       },
       {
         "id": "deep-diving-giant-vibration",
-        "image": "img/gear/deep-diving-giant-vibration.png?v=gear3",
+        "image": "img/gear/deep-diving-giant-vibration.png?v=gear6",
         "nameEn": "Deep-Diving Giant Vibration Lure",
         "nameKr": "심해 대형 어류 진동 루어",
         "note": "피콕하인드·새끼상어용 (5클)",
@@ -948,14 +943,14 @@ const DATA = {
       },
       {
         "id": "steel-ball-acoustic",
-        "image": "img/gear/steel-ball-acoustic.png?v=gear3",
+        "image": "img/gear/steel-ball-acoustic.png?v=gear6",
         "nameEn": "Steel-Ball Acoustic Lure",
         "nameKr": "스틸볼 사운드 루어",
         "price": 19
       },
       {
         "id": "gold-plated-competition",
-        "image": "img/gear/gold-plated-competition.png?v=gear3",
+        "image": "img/gear/gold-plated-competition.png?v=gear6",
         "nameEn": "Gold-Plated Competition Lure",
         "nameKr": "골드 컴피티션 루어",
         "price": 21

@@ -344,7 +344,10 @@
       t.tier >= 5 ? "tone-red" : t.tier >= 3 ? "tone-rare" : "tone-common");
     };
     const namedCard = kind => b => itemCard(b, kind,
-      esc(b.nameKr || b.nameEn), b.nameKr ? esc(b.nameEn) : null, b.note ? esc(b.note) : null, "tone-lime");
+      esc(b.nameKr || b.nameEn),
+      b.nameKr ? esc(b.nameEn) : null,
+      [priceText(b.price), b.note ? esc(b.note) : null].filter(Boolean).join("<br>") || null,
+      "tone-lime");
     return `<h1>장비 · 미끼</h1>
     <p class="page-desc">낚싯대는 승급 보상으로 해금. 릴·낚시줄은 클래스(등급)가 높을수록 상위 어종 대응.</p>
     <h2>낚싯대</h2>
