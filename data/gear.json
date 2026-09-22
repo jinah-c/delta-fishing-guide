@@ -44,21 +44,21 @@
     },
     {
       "tier": 2,
-      "image": "img/gear/reel-t2.png",
+      "image": "img/gear/reel-t2.png?v=gear3",
       "nameEn": "2000H High-Speed",
       "nameKr": "2000H 고속 스피닝릴",
       "price": 5000
     },
     {
       "tier": 3,
-      "image": "img/gear/reel-t3.png",
+      "image": "img/gear/reel-t3.png?v=gear3",
       "nameEn": "2500D Strong-Drag",
       "nameKr": "2500D 강력 브레이크 스피닝릴",
       "price": 10000
     },
     {
       "tier": 4,
-      "image": "img/gear/reel-t4.png",
+      "image": "img/gear/reel-t4.png?v=gear3",
       "nameEn": "3000XH Ultra-High-Speed",
       "nameKr": "3000XH 초고속 스피닝릴",
       "price": 20000,
@@ -66,7 +66,7 @@
     },
     {
       "tier": 5,
-      "image": "img/gear/reel-t5.png",
+      "image": "img/gear/reel-t5.png?v=gear3",
       "nameEn": "4000D Heavy-Drag",
       "nameKr": "4000D 헤비 드래그 스피닝릴",
       "unlock": "레드 3종 트레이드로 해금 — 대서양 연어 15kg·타이거피시 6kg·자이언트 브라운 송어 4.5kg 이상 각 1마리 교환",
@@ -81,25 +81,32 @@
     },
     {
       "tier": 2,
-      "image": null,
-      "nameEn": "Gray-Label"
+      "image": "img/gear/line-t2.png?v=gear3",
+      "nameEn": "Gray-Label",
+      "nameKr": "그레이 라벨 낚싯줄",
+      "price": 200
     },
     {
       "tier": 3,
-      "image": null,
-      "nameEn": "25 lb"
+      "image": "img/gear/line-t3.png?v=gear3",
+      "nameEn": "25 lb",
+      "nameKr": "25파운드 낚싯줄",
+      "price": 400
     },
     {
       "tier": 4,
-      "image": null,
-      "nameEn": "40 lb"
+      "image": "img/gear/line-t4.png?v=gear3",
+      "nameEn": "40 lb",
+      "nameKr": "40파운드 낚싯줄",
+      "price": 2300
     },
     {
       "tier": 5,
-      "image": null,
+      "image": "img/gear/line-t5.png?v=gear3",
       "nameEn": "60 lb",
       "price": 2700,
-      "note": "구매 제한 · 2,700 코인 — 레드 3종 사냥 기준 권장 라인"
+      "note": "구매 제한 · 2,700 코인 — 레드 3종 사냥 기준 권장 라인",
+      "nameKr": "60파운드 낚싯줄"
     },
     {
       "tier": 6,
@@ -117,7 +124,7 @@
     },
     {
       "id": "enhanced-attractant-dough",
-      "image": "img/gear/enhanced-attractant-dough.png",
+      "image": "img/gear/enhanced-attractant-dough.png?v=gear3",
       "nameEn": "Enhanced Attractant Dough Bait",
       "nameKr": "강화 유인 미끼",
       "note": null,
@@ -125,7 +132,7 @@
     },
     {
       "id": "refined-competition-dough",
-      "image": "img/gear/refined-competition-dough.png",
+      "image": "img/gear/refined-competition-dough.png?v=gear3",
       "nameEn": "Refined Competition Dough Bait",
       "nameKr": "고급 컴피티션 루어",
       "note": "반죽 미끼(인게임 표기가 '루어')",
@@ -133,7 +140,7 @@
     },
     {
       "id": "secret-bloodworm",
-      "image": "img/gear/secret-bloodworm.png",
+      "image": "img/gear/secret-bloodworm.png?v=gear3",
       "nameEn": "Secret Bloodworm Bait",
       "nameKr": "적색 벌레 특제 미끼",
       "note": null,
@@ -148,28 +155,28 @@
     },
     {
       "id": "high-contrast-spoon",
-      "image": "img/gear/high-contrast-spoon.png",
+      "image": "img/gear/high-contrast-spoon.png?v=gear3",
       "nameEn": "High-Contrast Stimulus Spoon",
       "nameKr": "고대비 자극 스푼",
       "price": 13
     },
     {
       "id": "fluorescent-vibrating-spoon",
-      "image": "img/gear/fluorescent-vibrating-spoon.png",
+      "image": "img/gear/fluorescent-vibrating-spoon.png?v=gear3",
       "nameEn": "Fluorescent Vibrating Spoon",
       "nameKr": "형광 진동 스푼",
       "price": 13
     },
     {
       "id": "precision-hunting-lure",
-      "image": "img/gear/precision-hunting-lure.png",
+      "image": "img/gear/precision-hunting-lure.png?v=gear3",
       "nameEn": "Precision Hunting Lure",
       "nameKr": "정밀 포식 루어",
       "price": 16
     },
     {
       "id": "deepwater-detection-lure",
-      "image": "img/gear/deepwater-detection-lure.png",
+      "image": "img/gear/deepwater-detection-lure.png?v=gear3",
       "nameEn": "Deepwater Detection Lure",
       "nameKr": "심층 탐지 루어",
       "note": "북아프리카메기용 (3클)",
@@ -177,7 +184,7 @@
     },
     {
       "id": "high-freq-tail-swing",
-      "image": "img/gear/high-freq-tail-swing.png",
+      "image": "img/gear/high-freq-tail-swing.png?v=gear3",
       "nameEn": "High-Frequency Tail-Swing Soft Bait",
       "nameKr": "고빈도 테일 웜",
       "note": "30레벨 승급 대상어용 (보라)",
@@ -185,14 +192,14 @@
     },
     {
       "id": "territorial-stimulus-lure",
-      "image": "img/gear/territorial-stimulus-lure.png",
+      "image": "img/gear/territorial-stimulus-lure.png?v=gear3",
       "nameEn": "Territorial Stimulus Lure",
       "nameKr": "영역 자극 루어",
       "price": 19
     },
     {
       "id": "deep-diving-giant-vibration",
-      "image": "img/gear/deep-diving-giant-vibration.png",
+      "image": "img/gear/deep-diving-giant-vibration.png?v=gear3",
       "nameEn": "Deep-Diving Giant Vibration Lure",
       "nameKr": "심해 대형 어류 진동 루어",
       "note": "피콕하인드·새끼상어용 (5클)",
@@ -200,14 +207,14 @@
     },
     {
       "id": "steel-ball-acoustic",
-      "image": "img/gear/steel-ball-acoustic.png",
+      "image": "img/gear/steel-ball-acoustic.png?v=gear3",
       "nameEn": "Steel-Ball Acoustic Lure",
       "nameKr": "스틸볼 사운드 루어",
       "price": 19
     },
     {
       "id": "gold-plated-competition",
-      "image": "img/gear/gold-plated-competition.png",
+      "image": "img/gear/gold-plated-competition.png?v=gear3",
       "nameEn": "Gold-Plated Competition Lure",
       "nameKr": "골드 컴피티션 루어",
       "price": 21
