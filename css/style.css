@@ -592,6 +592,11 @@ a.item-card:hover {
   font-size: 15px;
   font-weight: 950;
 }
+.price-label {
+  color: var(--text-dim);
+  font-size: 13px;
+  font-weight: 850;
+}
 .coin {
   width: 16px;
   height: 16px;
@@ -601,6 +606,13 @@ a.item-card:hover {
     radial-gradient(circle at 50% 60%, #8b571d 0 28%, transparent 29%),
     linear-gradient(135deg, #fff4a9, #c87a1f 58%, #7a4516);
   box-shadow: inset 0 0 0 1px rgba(95, 51, 12, .45), 0 2px 6px rgba(0, 0, 0, .32);
+}
+.coin-technique {
+  background:
+    radial-gradient(circle at 35% 30%, rgba(255, 255, 255, .95), transparent 20%),
+    radial-gradient(circle at 50% 60%, #647080 0 28%, transparent 29%),
+    linear-gradient(135deg, #f7fbff, #b8c3ce 56%, #6e7b88);
+  box-shadow: inset 0 0 0 1px rgba(80, 92, 108, .55), 0 2px 6px rgba(0, 0, 0, .32);
 }
 .item-go {
   position: absolute;

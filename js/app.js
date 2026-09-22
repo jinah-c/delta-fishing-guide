@@ -328,7 +328,7 @@
 
   function pageGear() {
     const g = DATA.gear;
-    const priceText = price => price == null ? "" : `<div class="item-price"><span class="coin" aria-hidden="true"></span>${Number(price).toLocaleString("ko-KR")}</div>`;
+    const priceText = (price, label) => price == null ? "" : `<div class="item-price"><span class="coin ${label ? "coin-technique" : ""}" aria-hidden="true"></span>${label ? `<span class="price-label">${esc(label)}</span>` : ""}<span>${Number(price).toLocaleString("ko-KR")}</span></div>`;
     const tierCard = kind => t => {
       if (kind === "line" || kind === "reel") {
         return itemCard(t, kind,
@@ -350,7 +350,7 @@
     <h2>낚싯대</h2>
     <div class="cards-2">${g.rods.map(r => itemCard(r, "rod", esc(r.nameKr),
       `<span class="badge badge-method">${esc(r.method)}</span>`,
-      [`🔓 ${esc(r.unlock)}`, r.note ? esc(r.note) : null].filter(Boolean).join("<br>"), "tone-red")).join("")}</div>
+      [priceText(r.price, r.currencyLabel), `🔓 ${esc(r.unlock)}`, r.note ? esc(r.note) : null].filter(Boolean).join("<br>"), "tone-red")).join("")}</div>
     <h2>스피닝 릴</h2>
     <div class="cards-2">${g.reels.map(tierCard("reel")).join("")}</div>
     <h2>낚시줄</h2>
