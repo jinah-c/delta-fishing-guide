@@ -601,7 +601,7 @@ const DATA = {
     },
     "submission": {
       "title": "인벤토리로 건네주기 X — 조 리드 옆 통발에 넣어서 제출",
-      "image": "img/missions/submission-trap.png?v=trap1",
+      "image": "img/missions/submission-trap.png?v=trap2",
       "imageCaption": "조 리드 주변에 놓인 통발",
       "steps": [
         "제출할 물고기를 가방에 넣은 채로 롱보우(이지)에 들어간다 — 같은 매치에서 잡은 물고기도, 창고에 보관해 둔 물고기도 제출 가능",
@@ -832,28 +832,28 @@ const DATA = {
       },
       {
         "tier": 2,
-        "image": "img/gear/line-t2.png?v=gear4",
+        "image": "img/gear/line-t2.png?v=line2",
         "nameEn": "Gray-Label Line",
         "nameKr": "그레이 라벨 낚싯줄",
         "price": 200
       },
       {
         "tier": 3,
-        "image": "img/gear/line-t3.png?v=gear4",
+        "image": "img/gear/line-t3.png?v=line2",
         "nameEn": "25 lb Line",
         "nameKr": "25파운드 낚싯줄",
         "price": 400
       },
       {
         "tier": 4,
-        "image": "img/gear/line-t4.png?v=gear4",
+        "image": "img/gear/line-t4.png?v=line2",
         "nameEn": "40 lb Line",
         "nameKr": "40파운드 낚싯줄",
         "price": 2300
       },
       {
         "tier": 5,
-        "image": "img/gear/line-t5.png?v=gear4",
+        "image": "img/gear/line-t5.png?v=line2",
         "nameEn": "60 lb Line",
         "price": 2700,
         "note": "구매 제한 · 레드 3종 사냥 기준 권장 라인",
@@ -984,6 +984,15 @@ const DATA = {
       "낚싯대는 2자루(하이카본 루어대 x2) 운용 추천 — 금속 루어대까지 쓰면 3자루도 가능. 릴·줄은 퍼플 이상으로.",
       "캐스팅할 때 시선을 아래로 내리면 최단거리로 던져짐 → 여유 줄이 10~15m 생겨서 대물 파이팅이 훨씬 수월. 실제로 레드 대부분이 짧은 캐스팅에서 잡혔다는 후기.",
       "레벨링은 찌낚시 연타가 최속. 루어 낚시는 30레벨 이후부터 권장."
+    ],
+    "misc": [
+      {
+        "id": "submission-trap",
+        "image": "img/missions/submission-trap.png?v=trap2",
+        "nameEn": "Submission Trap",
+        "nameKr": "승급 제출 통발",
+        "note": "조 리드 옆에 놓인 통발. 제출 물고기를 이 통발 안에 넣은 뒤 조 리드와 대화해 평가를 진행한다."
+      }
     ]
   }
 };

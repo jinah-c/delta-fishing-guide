@@ -393,6 +393,8 @@
     <div class="cards-2">${g.floatBaits.map(namedCard("bait")).join("")}</div>
     <h2>루어</h2>
     <div class="cards-2">${g.lures.map(namedCard("lure")).join("")}</div>
+    ${g.misc && g.misc.length ? `<h2>기타</h2>
+    <div class="cards-2">${g.misc.map(namedCard("trap")).join("")}</div>` : ""}
     <h2>낚시 메커니즘</h2>
     <div class="cards-2">
     <div class="mission"><div class="mission-head"><h3>찌낚시</h3></div><div class="guide">${esc(g.mechanics.float)}</div></div>
