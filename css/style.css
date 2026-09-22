@@ -105,6 +105,39 @@ h2 { font-size: 22px; margin: 30px 0 13px; font-weight: 950; }
 h3 { font-size: 17px; margin: 18px 0 8px; font-weight: 900; }
 .page-desc { color: var(--text-dim); margin-bottom: 20px; font-size: 16px; max-width: 760px; }
 
+.npc-hero {
+  position: relative;
+  margin: 0 0 20px;
+  max-width: 560px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--accent) 28%, rgba(255, 255, 255, .1));
+  border-radius: 24px;
+  background:
+    linear-gradient(165deg, rgba(255, 255, 255, .08) 0 1px, transparent 1px 38%),
+    radial-gradient(circle at 18% 14%, rgba(255, 109, 217, .22), transparent 30%),
+    linear-gradient(155deg, rgba(58, 43, 143, .4), rgba(5, 5, 6, .96));
+  box-shadow: var(--shadow-deep);
+}
+.npc-hero img {
+  display: block;
+  width: 100%;
+  max-height: 440px;
+  object-fit: cover;
+  object-position: center 38%;
+}
+.npc-hero figcaption {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: rgba(5, 5, 6, .72);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 950;
+  backdrop-filter: blur(10px);
+}
+
 .hero {
   position: relative;
   isolation: isolate;
@@ -304,7 +337,14 @@ h3 { font-size: 17px; margin: 18px 0 8px; font-weight: 900; }
   padding: 15px;
 }
 .kv dt { color: var(--accent-2); font-weight: 900; }
-.kv dd { margin: 0; color: var(--text); }
+.kv dd {
+  min-width: 0;
+  margin: 0;
+  color: var(--text);
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-break: anywhere;
+}
 .back { display: inline-block; margin-bottom: 16px; color: var(--text-dim); font-size: 15px; font-weight: 800; }
 .back:hover { color: var(--accent-2); }
 
@@ -501,7 +541,8 @@ h3 { font-size: 17px; margin: 18px 0 8px; font-weight: 900; }
   .submit-guide { flex-direction: column; }
   .submit-figure, .submit-figure .thumb { width: 100%; }
   .quick { grid-template-columns: 1fr; }
-  .kv { grid-template-columns: 90px 1fr; font-size: 14px; padding: 13px; }
+  .kv { grid-template-columns: 1fr; gap: 4px; font-size: 14px; padding: 13px; }
+  .kv dd + dt { margin-top: 8px; }
   .row .name { min-width: 0; width: 100%; }
   .tbl { display: block; overflow-x: auto; white-space: nowrap; }
 }
