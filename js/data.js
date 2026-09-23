@@ -850,28 +850,28 @@ const DATA = {
     "lines": [
       {
         "tier": 2,
-        "image": "img/gear/line-t2.png?v=line4",
+        "image": "img/gear/line-t2.png?v=line5",
         "nameEn": "Gray-Label Line",
         "nameKr": "그레이 라벨 낚싯줄",
         "price": 200
       },
       {
         "tier": 3,
-        "image": "img/gear/line-t3.png?v=line4",
+        "image": "img/gear/line-t3.png?v=line5",
         "nameEn": "25 lb Line",
         "nameKr": "25파운드 낚싯줄",
         "price": 400
       },
       {
         "tier": 4,
-        "image": "img/gear/line-t4.png?v=line4",
+        "image": "img/gear/line-t4.png?v=line5",
         "nameEn": "40 lb Line",
         "nameKr": "40파운드 낚싯줄",
         "price": 2300
       },
       {
         "tier": 5,
-        "image": "img/gear/line-t5.png?v=line4",
+        "image": "img/gear/line-t5.png?v=line5",
         "nameEn": "60 lb Line",
         "price": 2700,
         "note": "구매 제한 · 레드 3종 사냥 기준 권장 라인",
