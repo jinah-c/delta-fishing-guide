@@ -254,7 +254,7 @@ h3 { font-size: 17px; margin: 18px 0 8px; font-weight: 900; }
 }
 .badge-common { background: #292a31; color: #d8d1dc; }
 .badge-rare { background: rgba(185, 140, 255, .14); color: var(--purple); border-color: rgba(185, 140, 255, .35); }
-.badge-red { background: rgba(255, 62, 181, .15); color: var(--accent-2); border-color: rgba(255, 62, 181, .45); }
+.badge-red { background: var(--class-6-bg); color: var(--class-6); border-color: var(--class-6-line); }
 .badge-gold { background: rgba(255, 224, 107, .16); color: var(--gold); border-color: rgba(255, 224, 107, .5); }
 .badge-method { background: rgba(39, 105, 255, .16); color: #8cb1ff; border-color: rgba(39, 105, 255, .38); }
 .badge-easy { background: var(--lime); color: #070707; border-color: var(--lime); }
@@ -384,6 +384,27 @@ h3 { font-size: 17px; margin: 18px 0 8px; font-weight: 900; }
 }
 .fish-links a:hover { border-color: var(--line-hot); background: rgba(255, 62, 181, .09); }
 .fish-links .none { color: var(--text-dim); font-size: 14px; }
+
+/* 낚시터 카드 내 물고기 리스트 — 썸네일 + 이름 + 등급 행 */
+/* 폭이 넉넉하면 자동으로 한 줄 2마리, 좁으면 1마리 */
+.fish-rows { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 8px; }
+.fish-rows a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 12px 6px 6px;
+  border: 1px solid rgba(255, 255, 255, .09);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .045);
+  color: var(--text);
+  font-size: 15px;
+  min-width: 0;
+}
+.fish-rows a:hover { border-color: var(--line-hot); background: rgba(255, 62, 181, .09); }
+.fish-rows .thumb { width: 76px; border-radius: 9px; }
+.fish-rows .thumb::after { height: 8px; }
+.fish-rows .fish-row-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.fish-rows .fish-row-badges { flex: none; display: flex; gap: 5px; align-items: center; }
 
 .detail-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 6px; }
 .detail-head .en { color: var(--text-dim); font-size: 16px; }

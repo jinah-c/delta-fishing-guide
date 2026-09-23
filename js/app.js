@@ -251,15 +251,14 @@
     <div class="cards-2">
     ${m.spots.map(s => {
       const fishes = fishInSpot(s.id);
+      const fishHtml = !fishes.length
+        ? '<div class="fish-links"><span class="none">확인된 주요 어종 정보 없음 (일반 어종 출현)</span></div>'
+        : `<div class="fish-rows">${fishes.map(f => `<a href="#/fish/${f.id}">${fishThumb(f)}<span class="fish-row-name">${fishName(f)}</span><span class="fish-row-badges">${rarityBadge(f)}</span></a>`).join("")}</div>`;
       return `<div class="spot-card">
         <h3>${esc(s.nameKr)} ${s.nameConfirmed ? "" : '<span class="badge badge-unconfirmed">명칭 미확인</span>'}</h3>
         <div class="card-sub">${esc(s.nameEn)} · ${esc(s.nameCn)}</div>
         <div class="desc">${esc(s.description)}</div>
-        <div class="fish-links">
-          ${fishes.length
-            ? fishes.map(f => `<a href="#/fish/${f.id}">${fishName(f)} ${rarityBadge(f)}</a>`).join("")
-            : '<span class="none">확인된 주요 어종 정보 없음 (일반 어종 출현)</span>'}
-        </div>
+        ${fishHtml}
       </div>`;
     }).join("")}
     </div>`;
