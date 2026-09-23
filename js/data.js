@@ -125,6 +125,11 @@ const DATA = {
       "difficulty": "정규",
       "note": "낚시터 2곳. 40레벨 승급 대상어(피콕하인드) 출현 맵. (지도 이미지는 임시본 — 마커 아이콘 포함, 교체 필요)",
       "mapImage": "img/az3.webp",
+      "fishMapImage": "img/az3-fish-map.png",
+      "fishMapSource": {
+        "label": "X @50413836perfect",
+        "url": "https://x.com/50413836perfect/status/2102337591987077193"
+      },
       "spots": [
         {
           "id": "az3-offshore",
