@@ -321,7 +321,7 @@ h3 { font-size: 17px; margin: 18px 0 8px; font-weight: 900; }
 }
 .chip-common.active { --chip-color: #d8d1dc; }
 .chip-rare.active { --chip-color: var(--purple); }
-.chip-red.active { --chip-color: var(--red); --chip-ink: #fff; }
+.chip-red.active { --chip-color: var(--red); }
 .chip-float.active { --chip-color: #6cc6ff; }
 .chip-lure.active { --chip-color: var(--blue); --chip-ink: #fff; }
 
