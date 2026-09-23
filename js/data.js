@@ -910,7 +910,7 @@ const DATA = {
         "nameKr": "적색 벌레 특제 미끼",
         "note": null,
         "price": 50,
-        "tier": 5
+        "tier": 6
       }
     ],
     "lures": [
