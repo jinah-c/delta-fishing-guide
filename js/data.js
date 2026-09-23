@@ -887,7 +887,7 @@ const DATA = {
     "floatBaits": [
       {
         "id": "enhanced-attractant-dough",
-        "image": "img/gear/enhanced-attractant-dough.png?v=gear3",
+        "image": "img/gear/enhanced-attractant-dough.png?v=bait2",
         "nameEn": "Enhanced Attractant Dough Bait",
         "nameKr": "강화 유인 미끼",
         "note": null,
@@ -896,7 +896,7 @@ const DATA = {
       },
       {
         "id": "refined-competition-dough",
-        "image": "img/gear/refined-competition-dough.png?v=gear3",
+        "image": "img/gear/refined-competition-dough.png?v=bait2",
         "nameEn": "Refined Competition Dough Bait",
         "nameKr": "고급 컴피티션 루어",
         "note": "반죽 미끼(인게임 표기가 '루어')",
@@ -905,7 +905,7 @@ const DATA = {
       },
       {
         "id": "secret-bloodworm",
-        "image": "img/gear/secret-bloodworm.png?v=gear3",
+        "image": "img/gear/secret-bloodworm.png?v=bait2",
         "nameEn": "Secret Bloodworm Bait",
         "nameKr": "적색 벌레 특제 미끼",
         "note": null,
