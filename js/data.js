@@ -817,11 +817,6 @@ const DATA = {
     ],
     "reels": [
       {
-        "tier": 1,
-        "image": null,
-        "nameEn": "1000 All-Purpose"
-      },
-      {
         "tier": 2,
         "image": "img/gear/reel-t2.png?v=gear5",
         "nameEn": "2000H High-Speed",
