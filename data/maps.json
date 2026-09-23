@@ -19,7 +19,7 @@
           "nameKr": "고요한 만 (세레니티 베이 · 우물낚시터)",
           "nameEn": "Grove Bay (Still Water Bay)",
           "nameCn": "溪谷静水湾",
-          "nameConfirmed": false,
+          "nameConfirmed": true,
           "coord": null,
           "description": "맵 좌상단의 만(灣). 조 리드 스폰 지점 중 하나(집 주변). 타이거피시 유일 출현지이며, 집 주변 바닥·테이블에서 낚시줄·루어(골드 줄 포함) 필드 스폰 확인됨.",
           "fishIds": [
@@ -33,7 +33,7 @@
           "nameKr": "동굴 수역",
           "nameEn": "Grove Cavern",
           "nameCn": "溪谷岩洞",
-          "nameConfirmed": false,
+          "nameConfirmed": true,
           "coord": null,
           "description": "저장소 부두 바로 아래 동굴 수역(하모니카 소녀 위치). 플래티넘 실버 아로와나 포인트. 찌낚시 코인 파밍 효율 최상위 스팟.",
           "fishIds": [
@@ -46,7 +46,7 @@
           "nameKr": "수로",
           "nameEn": "Grove Waterway",
           "nameCn": "溪谷水道",
-          "nameConfirmed": false,
+          "nameConfirmed": true,
           "coord": null,
           "description": "운하(남쪽 큰 강)에서 갈라져 올라가는 좁은 지류 수로 전체. 북아프리카메기·자이언트 브라운 송어 포인트.",
           "fishIds": [
@@ -60,7 +60,7 @@
           "nameKr": "운하 (아랫수역)",
           "nameEn": "Grove Canal",
           "nameCn": "溪谷运河",
-          "nameConfirmed": false,
+          "nameConfirmed": true,
           "coord": null,
           "description": "맵 남쪽을 흐르는 넓은 강 본류. 북아프리카메기·대서양 연어·빅아이 타폰·새끼상어 포인트.",
           "fishIds": [
@@ -75,7 +75,7 @@
           "nameKr": "저장소 부두",
           "nameEn": "Storage Center Dock",
           "nameCn": "储藏站码头",
-          "nameConfirmed": false,
+          "nameConfirmed": true,
           "coord": null,
           "description": "아이언 돔(플래그십 임무) 구역 내부의 부두 수역. 사파이어 오스카(찌낚시 소장급) 포인트. 동굴과 함께 코인 파밍 추천 스팟.",
           "fishIds": [
