@@ -71,7 +71,7 @@
     const inner = obj.image
       ? `<img src="${esc(obj.image)}" alt="" loading="lazy">`
       : `<svg viewBox="0 0 64 40" aria-hidden="true">${PLACEHOLDER_SVG[kind] || PLACEHOLDER_SVG.fish}</svg><span class="thumb-ph">이미지 준비중</span>`;
-    return `<div class="thumb ${tone || "tone-common"} ${size === "lg" ? "thumb-lg" : ""} ${obj.image ? "" : "is-empty"}">${inner}</div>`;
+    return `<div class="thumb thumb-${esc(kind)} ${tone || "tone-common"} ${size === "lg" ? "thumb-lg" : ""} ${obj.image ? "" : "is-empty"}">${inner}</div>`;
   }
 
   const fishThumb = (f, size) => thumb(f, "fish", RARITY_TONE[f.rarity], size);

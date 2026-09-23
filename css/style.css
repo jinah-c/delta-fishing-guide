@@ -506,7 +506,7 @@ h3 { font-size: 17px; margin: 18px 0 8px; font-weight: 900; }
   max-width: 440px;
 }
 .submit-figure .thumb { width: 100%; }
-.submit-figure .thumb img { object-fit: cover; }
+.submit-figure .thumb img { object-fit: contain; object-position: center; }
 .submit-figure figcaption { margin-top: 8px; font-size: 13px; color: var(--text-dim); text-align: center; }
 .submit-body { flex: 1; min-width: 0; }
 .submit-body h3 { margin: 0 0 10px; }
@@ -857,7 +857,26 @@ a.item-card:hover {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  object-position: center;
   filter: drop-shadow(0 16px 12px rgba(7, 5, 20, .38));
+}
+.thumb-rod img,
+.thumb-reel img,
+.thumb-line img,
+.thumb-bait img,
+.thumb-lure img,
+.thumb-trap img {
+  width: 88%;
+  height: 88%;
+}
+.thumb-line img {
+  width: 82%;
+  height: 82%;
+}
+.thumb-trap img,
+.submit-figure .thumb-trap img {
+  width: 100%;
+  height: 100%;
 }
 .thumb svg { width: 62%; height: auto; opacity: .85; }
 .thumb-ph {
