@@ -8,6 +8,11 @@
       "difficulty": "정규",
       "note": "낚시터 5곳으로 가장 많음. 낚시꾼 NPC(조 리드) 스폰 유일 맵. 피콕하인드(방사능 그루퍼)를 제외한 전 어종을 이 맵에서 잡을 수 있음. 낚시는 현재 정규 난이도(롱보우·AZ3·제로댐)에서만 가능.",
       "mapImage": "img/longbow.jpg",
+      "fishMapImage": "img/longbow-fish-map.jpg",
+      "fishMapSource": {
+        "label": "X @50413836perfect",
+        "url": "https://x.com/50413836perfect/status/2102337591987077193"
+      },
       "spots": [
         {
           "id": "longbow-serenity-bay",
@@ -88,6 +93,11 @@
       "difficulty": "정규",
       "note": "낚시터 1곳.",
       "mapImage": "img/zero-dam.jpg",
+      "fishMapImage": "img/zero-dam-fish-map.jpg",
+      "fishMapSource": {
+        "label": "X @50413836perfect",
+        "url": "https://x.com/50413836perfect/status/2102337591987077193"
+      },
       "spots": [
         {
           "id": "zerodam-riverbank",

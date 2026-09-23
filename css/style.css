@@ -338,6 +338,12 @@ h3 { font-size: 17px; margin: 18px 0 8px; font-weight: 900; }
   display: block;
   filter: saturate(1.05) contrast(1.06) brightness(.82);
 }
+.map-wrap.fish-map img { filter: none; }
+.img-source {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 8px 2px 20px;
+}
 .pin {
   position: absolute;
   transform: translate(-50%, -100%);

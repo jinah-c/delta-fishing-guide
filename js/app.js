@@ -241,6 +241,12 @@
         <span class="pin-label" style="left:${s.coord.x}%;top:${s.coord.y}%">${esc(s.nameKr)}</span>`).join("")}
     </div>
     ${pins.length === 0 ? `<div class="notice">지도 위 핀 좌표는 아직 준비 중이에요. 아래 낚시터 설명의 위치 안내를 참고해 주세요.</div>` : ""}
+    ${m.fishMapImage ? `
+    <h2>물고기 분포도</h2>
+    <div class="map-wrap fish-map">
+      <img src="${esc(m.fishMapImage)}" alt="${esc(m.nameKr)} 물고기 분포도" loading="lazy">
+    </div>
+    <p class="img-source">출처: <a href="${esc(m.fishMapSource.url)}" target="_blank" rel="noopener noreferrer">${esc(m.fishMapSource.label)}</a></p>` : ""}
     <h2>낚시터 ${m.spots.length}곳</h2>
     <div class="cards-2">
     ${m.spots.map(s => {
