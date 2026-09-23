@@ -14,6 +14,7 @@
 
   const fishById = id => DATA.fish.find(f => f.id === id);
   const mapById = id => DATA.maps.find(m => m.id === id);
+  const MAP_NAV_ORDER = ["longbow", "az3", "zero-dam"];
 
   function spotById(spotId) {
     for (const m of DATA.maps) {
@@ -147,7 +148,6 @@
       ${fishThumb(f)}
       <div class="item-body">
         <div class="item-title">${fishName(f, true)}</div>
-        <div class="item-sub">${esc(f.nameEn)}</div>
         <div class="item-badges">${rarityBadge(f)} ${methodBadges(f)} <span class="badge badge-size">${esc(f.size)}</span></div>
         <div class="item-meta">📍 ${fishLocText(f)}</div>
       </div>
@@ -221,7 +221,6 @@
         <img class="card-img" src="${esc(m.mapImage)}" alt="${esc(m.nameKr)} 지도" loading="lazy">
         <div class="card-body">
           <div class="card-title">${esc(m.nameKr)} <span class="badge badge-easy">${esc(m.difficulty)}</span></div>
-          <div class="card-sub">${esc(m.nameEn)} · ${esc(m.nameCn)}</div>
           <div class="card-note">${esc(m.note)}</div>
         </div>
       </a>`).join("")}
@@ -232,16 +231,19 @@
     const m = mapById(id);
     if (!m) return pageNotFound();
     const pins = m.spots.filter(s => s.coord);
+    const mapNav = MAP_NAV_ORDER
+      .map(mapById)
+      .filter(x => x && x.id !== m.id);
     return `<a class="back" href="#/maps">← 맵 목록</a>
-    <div class="detail-head"><h1>${esc(m.nameKr)}</h1><span class="en">${esc(m.nameEn)} · ${esc(m.nameCn)}</span><span class="badge badge-easy">${esc(m.difficulty)}</span></div>
+    <div class="detail-head"><h1>${esc(m.nameKr)}</h1><span class="badge badge-easy">${esc(m.difficulty)}</span></div>
     <p class="page-desc">${esc(m.note)}</p>
-    <div class="map-wrap">
+    <div class="map-wrap base-map is-screen-hidden" aria-hidden="true">
       <img src="${esc(m.mapImage)}" alt="${esc(m.nameKr)} 지도">
       ${pins.map(s => `
         <span class="pin" style="left:${s.coord.x}%;top:${s.coord.y}%" title="${esc(s.nameKr)}">📍</span>
         <span class="pin-label" style="left:${s.coord.x}%;top:${s.coord.y}%">${esc(s.nameKr)}</span>`).join("")}
     </div>
-    ${pins.length === 0 ? `<div class="notice">지도 위 핀 좌표는 아직 준비 중이에요. 아래 낚시터 설명의 위치 안내를 참고해 주세요.</div>` : ""}
+    ${pins.length === 0 ? `<div class="notice base-map-note is-screen-hidden" aria-hidden="true">지도 위 핀 좌표는 아직 준비 중이에요. 아래 낚시터 설명의 위치 안내를 참고해 주세요.</div>` : ""}
     ${m.fishMapImage ? `
     <h2>물고기 분포도</h2>
     <div class="map-wrap fish-map">
@@ -257,12 +259,14 @@
         : `<div class="fish-rows">${fishes.map(f => `<a href="#/fish/${f.id}">${fishThumb(f)}<span class="fish-row-name">${fishName(f)}</span><span class="fish-row-badges">${rarityBadge(f)}</span></a>`).join("")}</div>`;
       return `<div class="spot-card">
         <h3>${esc(s.nameKr)} ${s.nameConfirmed ? "" : '<span class="badge badge-unconfirmed">명칭 미확인</span>'}</h3>
-        <div class="card-sub">${esc(s.nameEn)} · ${esc(s.nameCn)}</div>
         <div class="desc">${esc(s.description)}</div>
         ${fishHtml}
       </div>`;
     }).join("")}
-    </div>`;
+    </div>
+    <nav class="map-switcher" aria-label="다른 맵으로 이동">
+      ${mapNav.map((x, i) => `<a href="#/map/${x.id}">${i === 0 ? "< " : ""}${esc(x.nameKr)}${i === mapNav.length - 1 ? " >" : ""}</a>`).join("")}
+    </nav>`;
   }
 
   function pageFish(params) {
@@ -301,7 +305,7 @@
     <div class="fish-hero">
     ${fishThumb(f, "lg")}
     <div class="fish-hero-body">
-    <div class="detail-head"><h1>${fishName(f, true)}</h1><span class="en">${esc(f.nameEn)}</span></div>
+    <div class="detail-head"><h1>${fishName(f, true)}</h1></div>
     <p>${rarityBadge(f)} ${methodBadges(f)} <span class="badge badge-size">${esc(f.size)}</span></p>
     <dl class="kv">
       <dt>잡는 곳</dt>
