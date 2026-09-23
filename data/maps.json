@@ -43,7 +43,7 @@
           "nameCn": "溪谷水道",
           "nameConfirmed": false,
           "coord": null,
-          "description": "운하(남쪽 큰 강)에서 갈라져 올라가는 좁은 지류 수로 전체. 아프리카클라라·자이언트 브라운 트라우트 포인트.",
+          "description": "운하(남쪽 큰 강)에서 갈라져 올라가는 좁은 지류 수로 전체. 북아프리카메기·자이언트 브라운 송어 포인트.",
           "fishIds": [
             "north-african-catfish",
             "giant-brown-trout",
@@ -57,7 +57,7 @@
           "nameCn": "溪谷运河",
           "nameConfirmed": false,
           "coord": null,
-          "description": "맵 남쪽을 흐르는 넓은 강 본류. 아프리카클라라·대서양 연어·빅아이 타폰·베이비샤크 포인트.",
+          "description": "맵 남쪽을 흐르는 넓은 강 본류. 북아프리카메기·대서양 연어·빅아이 타폰·새끼상어 포인트.",
           "fishIds": [
             "north-african-catfish",
             "baby-shark",
@@ -72,7 +72,7 @@
           "nameCn": "储藏站码头",
           "nameConfirmed": false,
           "coord": null,
-          "description": "아이언 돔(플래그십 임무) 구역 내부의 부두 수역. 사파이어 아로와나(찌낚시 소장급) 포인트. 동굴과 함께 코인 파밍 추천 스팟.",
+          "description": "아이언 돔(플래그십 임무) 구역 내부의 부두 수역. 사파이어 오스카(찌낚시 소장급) 포인트. 동굴과 함께 코인 파밍 추천 스팟.",
           "fishIds": [
             "sapphire-snakehead",
             "saddled-bichir"
@@ -96,7 +96,7 @@
           "nameCn": "大坝河滩",
           "nameConfirmed": false,
           "coord": null,
-          "description": "댐 하류 강변 수역. 제로댐의 유일한 낚시터. 백조어·자이언트 브라운 트라우트 포인트.",
+          "description": "댐 하류 강변 수역. 제로댐의 유일한 낚시터. 백조어(톱마우스 컬터)·자이언트 브라운 송어 포인트.",
           "fishIds": [
             "topmouth-culter",
             "saddled-bichir",
@@ -122,7 +122,7 @@
           "nameCn": "核电站外海",
           "nameConfirmed": false,
           "coord": null,
-          "description": "원전 앞바다(방사능 오염수). 피콕하인드(방사능 그루퍼) 유일 출현지 + 대서양 연어·빅아이 타폰·베이비샤크 포인트.",
+          "description": "원전 앞바다(방사능 오염수). 피콕하인드(방사능 그루퍼) 유일 출현지 + 대서양 연어·빅아이 타폰·새끼상어 포인트.",
           "fishIds": [
             "radioactive-grouper",
             "baby-shark",
