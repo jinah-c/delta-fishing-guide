@@ -44,7 +44,7 @@ const DATA = {
           "nameCn": "溪谷水道",
           "nameConfirmed": false,
           "coord": null,
-          "description": "운하(남쪽 큰 강)에서 갈라져 올라가는 좁은 지류 수로 전체. 북아프리카메기·자이언트 브라운 송어 포인트.",
+          "description": "운하(남쪽 큰 강)에서 갈라져 올라가는 좁은 지류 수로 전체. 아프리카클라라·자이언트 브라운 트라우트 포인트.",
           "fishIds": [
             "north-african-catfish",
             "giant-brown-trout",
@@ -58,7 +58,7 @@ const DATA = {
           "nameCn": "溪谷运河",
           "nameConfirmed": false,
           "coord": null,
-          "description": "맵 남쪽을 흐르는 넓은 강 본류. 북아프리카메기·대서양 연어·빅아이 타폰·새끼상어 포인트.",
+          "description": "맵 남쪽을 흐르는 넓은 강 본류. 아프리카클라라·대서양 연어·빅아이 타폰·베이비샤크 포인트.",
           "fishIds": [
             "north-african-catfish",
             "baby-shark",
@@ -73,7 +73,7 @@ const DATA = {
           "nameCn": "储藏站码头",
           "nameConfirmed": false,
           "coord": null,
-          "description": "아이언 돔(플래그십 임무) 구역 내부의 부두 수역. 사파이어 오스카(찌낚시 소장급) 포인트. 동굴과 함께 코인 파밍 추천 스팟.",
+          "description": "아이언 돔(플래그십 임무) 구역 내부의 부두 수역. 사파이어 아로와나(찌낚시 소장급) 포인트. 동굴과 함께 코인 파밍 추천 스팟.",
           "fishIds": [
             "sapphire-snakehead",
             "saddled-bichir"
@@ -97,7 +97,7 @@ const DATA = {
           "nameCn": "大坝河滩",
           "nameConfirmed": false,
           "coord": null,
-          "description": "댐 하류 강변 수역. 제로댐의 유일한 낚시터. 백조어(톱마우스 컬터)·자이언트 브라운 송어 포인트.",
+          "description": "댐 하류 강변 수역. 제로댐의 유일한 낚시터. 백조어·자이언트 브라운 트라우트 포인트.",
           "fishIds": [
             "topmouth-culter",
             "saddled-bichir",
@@ -123,7 +123,7 @@ const DATA = {
           "nameCn": "核电站外海",
           "nameConfirmed": false,
           "coord": null,
-          "description": "원전 앞바다(방사능 오염수). 피콕하인드(방사능 그루퍼) 유일 출현지 + 대서양 연어·빅아이 타폰·새끼상어 포인트.",
+          "description": "원전 앞바다(방사능 오염수). 피콕하인드(방사능 그루퍼) 유일 출현지 + 대서양 연어·빅아이 타폰·베이비샤크 포인트.",
           "fishIds": [
             "radioactive-grouper",
             "baby-shark",
@@ -198,7 +198,7 @@ const DATA = {
       "id": "redtail",
       "image": "img/fish/redtail.png?v=fish-cutout",
       "nameEn": "Redtail",
-      "nameKr": "레드테일캣피시",
+      "nameKr": "레드테일",
       "nameKrConfirmed": true,
       "rarity": "일반",
       "size": "중형",
@@ -244,7 +244,7 @@ const DATA = {
       "id": "striped-bass",
       "image": "img/fish/striped-bass.png?v=fish-cutout",
       "nameEn": "Striped Bass",
-      "nameKr": "줄무늬농어",
+      "nameKr": "스트라이크배스",
       "nameKrConfirmed": true,
       "rarity": "일반",
       "size": "대형",
@@ -275,7 +275,7 @@ const DATA = {
       "id": "zander",
       "image": "img/fish/zander.png?v=fish-cutout",
       "nameEn": "Zander",
-      "nameKr": "파이크퍼치(잰더)",
+      "nameKr": "파이크퍼치",
       "nameKrConfirmed": true,
       "rarity": "일반",
       "size": "중형",
@@ -305,7 +305,7 @@ const DATA = {
       "id": "shortnose-bichir",
       "image": "img/fish/shortnose-bichir.png?v=fish-cutout",
       "nameEn": "Shortnose Bichir",
-      "nameKr": "숏노즈 폴립테루스",
+      "nameKr": "폴립테루스",
       "nameKrConfirmed": true,
       "rarity": "희귀",
       "size": "소형",
@@ -336,7 +336,7 @@ const DATA = {
       "id": "topmouth-culter",
       "image": "img/fish/topmouth-culter.png?v=fish-cutout",
       "nameEn": "Topmouth Culter",
-      "nameKr": "백조어(톱마우스 컬터)",
+      "nameKr": "백조어",
       "nameKrConfirmed": true,
       "rarity": "희귀",
       "size": "대형",
@@ -369,7 +369,7 @@ const DATA = {
       "id": "saddled-bichir",
       "image": "img/fish/saddled-bichir.png?v=fish-cutout",
       "nameEn": "Ansorge's Bichir (Saddled Bichir)",
-      "nameKr": "엔드리케리 폴립테루스",
+      "nameKr": "엔드리케리",
       "nameKrConfirmed": true,
       "rarity": "희귀",
       "size": "중형",
@@ -384,14 +384,14 @@ const DATA = {
         "zerodam-riverbank"
       ],
       "bait": "찌낚시·루어 모두 가능 — 편한 방식으로",
-      "tips": "30레벨 승급 제출 대상(컬터 제출 후 순차 요구). 베이·동굴·부두·댐 등 널리 출현. 일부 가이드의 '엔들리허 비커' 표기는 오역으로 알려짐."
+      "tips": "30레벨 승급 제출 대상(백조어 제출 후 순차 요구). 베이·동굴·부두·댐 등 널리 출현. 일부 가이드의 '엔들리허 비커' 표기는 오역으로 알려짐."
     },
     {
       "id": "mirror-carp",
       "image": null,
       "nameEn": "Mirror Carp",
-      "nameKr": "미러 카프(거울잉어)",
-      "nameKrConfirmed": false,
+      "nameKr": "미러카프",
+      "nameKrConfirmed": true,
       "rarity": "희귀",
       "size": "중형",
       "method": [
@@ -405,7 +405,7 @@ const DATA = {
       "id": "pike",
       "image": "img/fish/pike.png?v=fish-cutout",
       "nameEn": "Pike",
-      "nameKr": "강꼬치고기(파이크)",
+      "nameKr": "파이크",
       "nameKrConfirmed": true,
       "rarity": "희귀",
       "size": "대형",
@@ -420,7 +420,7 @@ const DATA = {
       "id": "african-butterflyfish",
       "image": "img/fish/african-butterflyfish.png?v=fish-cutout",
       "nameEn": "African Butterflyfish",
-      "nameKr": "아프리카나비고기",
+      "nameKr": "버터플라이피시",
       "nameKrConfirmed": true,
       "rarity": "희귀",
       "size": "초소형",
@@ -435,7 +435,7 @@ const DATA = {
       "id": "north-african-catfish",
       "image": "img/fish/north-african-catfish.png?v=fish-cutout",
       "nameEn": "North African Catfish",
-      "nameKr": "북아프리카메기",
+      "nameKr": "아프리카클라라",
       "nameKrConfirmed": true,
       "rarity": "희귀",
       "size": "대형",
@@ -469,8 +469,8 @@ const DATA = {
     {
       "id": "sapphire-snakehead",
       "image": "img/fish/sapphire-snakehead.png?v=fish-cutout",
-      "nameEn": "Sapphire Snakehead",
-      "nameKr": "사파이어 오스카",
+      "nameEn": "Sapphire Arowana",
+      "nameKr": "사파이어 아로와나",
       "nameKrConfirmed": true,
       "rarity": "레드",
       "size": "소형",
@@ -488,7 +488,7 @@ const DATA = {
       "image": "img/fish/platinum-silver-arowana.png?v=dex2",
       "nameEn": "Platinum Silver Arowana",
       "nameKr": "플래티넘 실버 아로와나",
-      "nameKrConfirmed": false,
+      "nameKrConfirmed": true,
       "rarity": "레드",
       "size": "대형",
       "method": [
@@ -504,8 +504,8 @@ const DATA = {
       "id": "giant-brown-trout",
       "image": "img/fish/giant-brown-trout.png?v=red3",
       "nameEn": "Giant Brown Trout",
-      "nameKr": "자이언트 브라운 송어",
-      "nameKrConfirmed": false,
+      "nameKr": "자이언트 브라운 트라우트",
+      "nameKrConfirmed": true,
       "rarity": "레드",
       "size": "대형",
       "method": [
@@ -522,7 +522,7 @@ const DATA = {
       "id": "baby-shark",
       "image": "img/fish/baby-shark.png?v=dex2",
       "nameEn": "Baby Shark",
-      "nameKr": "새끼상어",
+      "nameKr": "베이비샤크",
       "nameKrConfirmed": true,
       "rarity": "레드",
       "rarityAlt": "골드",
@@ -544,7 +544,7 @@ const DATA = {
       "image": "img/fish/atlantic-salmon.png?v=red3",
       "nameEn": "Atlantic Salmon",
       "nameKr": "대서양 연어",
-      "nameKrConfirmed": false,
+      "nameKrConfirmed": true,
       "rarity": "레드",
       "size": "대형",
       "method": [
@@ -555,14 +555,14 @@ const DATA = {
         "az3-offshore"
       ],
       "bait": "골드 컴피티션 루어 / 고빈도 테일 웜",
-      "tips": "최고 난도로 꼽히는 레드. 노리다 보면 새끼상어·타폰이 대신 걸리는 일이 잦음. 깊고 먼 포인트 위주. 4000D 헤비 드래그 릴 해금 트레이드 요구 무게: 15kg."
+      "tips": "최고 난도로 꼽히는 레드. 노리다 보면 베이비샤크·타폰이 대신 걸리는 일이 잦음. 깊고 먼 포인트 위주. 4000D 헤비 드래그 릴 해금 트레이드 요구 무게: 15kg."
     },
     {
       "id": "tigerfish",
       "image": "img/fish/tigerfish.png?v=red3",
       "nameEn": "Tigerfish",
       "nameKr": "타이거피시",
-      "nameKrConfirmed": false,
+      "nameKrConfirmed": true,
       "rarity": "레드",
       "size": "대형",
       "method": [
@@ -656,11 +656,11 @@ const DATA = {
           }
         ],
         "requirement": [
-          "기준 무게를 넘는 숭어·파이크퍼치(잰더) 각 1마리 제출",
+          "기준 무게를 넘는 숭어·파이크퍼치 각 1마리 제출",
           "조 리드 옆 통발에 물고기를 넣은 뒤 대화 → '물고기 제출'"
         ],
         "reward": "금속 루어 낚싯대",
-        "guide": "숭어는 여러 수역에서 찌낚시(일반 미끼)로도 잡히고, 파이크퍼치(잰더)는 루어 전용(그린 스피너 2종·정밀 포식 루어). 무게 미달이면 다시 잡아야 하므로 큰 개체 위주로."
+        "guide": "숭어는 여러 수역에서 찌낚시(일반 미끼)로도 잡히고, 파이크퍼치는 루어 전용(그린 스피너 2종·정밀 포식 루어). 무게 미달이면 다시 잡아야 하므로 큰 개체 위주로."
       },
       {
         "level": 30,
@@ -683,12 +683,12 @@ const DATA = {
             "note": "백조어 제출 후 순차 요구. 미리 잡아둔 개체도 제출 가능"
           }
         ],
-        "requirement": "백조어(톱마우스 컬터) 제출 → 이어서 엔드리케리 폴립테루스 제출 (순차 요구)",
+        "requirement": "백조어 제출 → 이어서 엔드리케리 제출 (순차 요구)",
         "reward": "하이카본 루어 낚싯대",
         "guide": [
-          "백조어(컬터)는 그로브 베이·댐 강변 2곳에서만 출현",
+          "백조어는 그로브 베이·댐 강변 2곳에서만 출현",
           "고대비 자극 스푼·정밀 포식 루어·고빈도 테일 웜 미끼 추천",
-          "엔드리케리 폴립테루스는 베이·동굴·부두·댐 등 널리 출현",
+          "엔드리케리는 베이·동굴·부두·댐 등 널리 출현",
           "찌·루어 무관. 미리 잡아둔 개체 제출도 인정."
         ]
       },
@@ -721,14 +721,14 @@ const DATA = {
             "note": "강한 파이팅. 줄을 40m 이상 끌고 나갈 수 있어 릴·줄 세팅 중요"
           }
         ],
-        "requirement": "북아프리카메기 → 피콕하인드(방사능 그루퍼) → 새끼상어 순차 제출 (전부 루어 전용)",
+        "requirement": "아프리카클라라 → 피콕하인드(방사능 그루퍼) → 베이비샤크 순차 제출 (전부 루어 전용)",
         "reward": "레벨 50 구간 해금 + 전 요원 '낚시꾼의 노래' 음성 대사",
         "guide": [
-          "북아프리카메기는 그로브 수로·운하에서 출현",
+          "아프리카클라라는 그로브 수로·운하에서 출현",
           "심층 탐지 루어(딥워터 프로브)·딥워터 다이버 미끼 추천",
           "피콕하인드(방사능 그루퍼)는 AZ3 외해 전용",
           "심해 대형 어류 진동 루어·형광 진동 스푼 미끼 추천",
-          "새끼상어는 그로브·제로댐·AZ3 등 광범위 출현",
+          "베이비샤크는 그로브·제로댐·AZ3 등 광범위 출현",
           "심해 대형 어류 진동 루어·스틸볼 사운드 루어 미끼 추천",
           "좋은 장비일수록 조우율이 올라가므로 세팅을 갖추고 도전."
         ]
@@ -843,7 +843,7 @@ const DATA = {
         "image": "img/gear/reel-t5.png?v=gear5",
         "nameEn": "4000D Heavy-Drag",
         "nameKr": "4000D 헤비 드래그 스피닝릴",
-        "unlock": "레드 3종 트레이드로 해금 — 대서양 연어 15kg·타이거피시 6kg·자이언트 브라운 송어 4.5kg 이상 각 1마리 교환",
+        "unlock": "레드 3종 트레이드로 해금 — 대서양 연어 15kg·타이거피시 6kg·자이언트 브라운 트라우트 4.5kg 이상 각 1마리 교환",
         "note": "구매 제한 1 · 릴링 속도 +2.5 / 릴링 시 스태미나 감소 +45 / 억제력 +35"
       }
     ],
@@ -943,7 +943,7 @@ const DATA = {
         "image": "img/gear/deepwater-detection-lure.png?v=gear6",
         "nameEn": "Deepwater Detection Lure",
         "nameKr": "심층 탐지 루어",
-        "note": "북아프리카메기용 (3클)",
+        "note": "아프리카클라라용 (3클)",
         "price": 17,
         "tier": 3
       },
@@ -969,7 +969,7 @@ const DATA = {
         "image": "img/gear/deep-diving-giant-vibration.png?v=lure7",
         "nameEn": "Deep-Diving Giant Vibration Lure",
         "nameKr": "심해 대형 어류 진동 루어",
-        "note": "피콕하인드·새끼상어용 (5클)",
+        "note": "피콕하인드·베이비샤크용 (5클)",
         "price": 20,
         "tier": 5
       },
@@ -995,7 +995,7 @@ const DATA = {
       "lure": "희귀·소장급 대부분은 루어 낚시로만. 장력 게이지 관리 — 물고기가 움직이는 반대 방향으로 당기고, 당기는 중 짧은 클릭으로 거리를 좁히며 장력을 낮춘다. 줄이 빨간색이 되면 즉시 손을 뗄 것(끊어짐)."
     },
     "tips": [
-      "5클 4000D 헤비 드래그 릴은 상점 구매가 아니라 레드 3종 트레이드로 해금: 대서양 연어 15kg, 타이거피시 6kg, 자이언트 브라운 송어 4.5kg 이상 각 1마리. 권장 준비물: 하이카본 루어대(30레벨) + 3000XH 릴(20,000코인) + 60lb 라인(2,700코인) + 골드/레드 미끼(30/40레벨).",
+      "5클 4000D 헤비 드래그 릴은 상점 구매가 아니라 레드 3종 트레이드로 해금: 대서양 연어 15kg, 타이거피시 6kg, 자이언트 브라운 트라우트 4.5kg 이상 각 1마리. 권장 준비물: 하이카본 루어대(30레벨) + 3000XH 릴(20,000코인) + 60lb 라인(2,700코인) + 골드/레드 미끼(30/40레벨).",
       "장비 4종(낚싯대·릴·낚시줄·루어)의 등급이 전부 어획 등급과 레어 조우율에 영향 — 풀세팅이면 블루 미만이 거의 안 잡히고, 레드 조우율도 크게 오름. 레드가 안 보이면 장비부터 점검.",
       "골드 낚시줄은 상점 구매가 주당 3개 제한. 대신 그로브 베이 집 주변 바닥·테이블에서 필드 스폰을 주울 수 있음. 단, 낚시줄은 안전상자에 못 넣으니 탈출까지 지켜야 함.",
       "퍼플·골드 낚시줄 내구도는 20 — 물고기 20마리 잡으면 끝. 레이드 중 줄 교체 불가라서 끊기면 탈출 후 재정비가 답. 레드 사냥 세션이면 루어 40개쯤 챙겨가는 걸 추천.",
