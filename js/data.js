@@ -897,7 +897,7 @@ const DATA = {
         "nameKr": "강화 유인 미끼",
         "note": null,
         "price": 10,
-        "tier": 2
+        "tier": 3
       },
       {
         "id": "refined-competition-dough",
