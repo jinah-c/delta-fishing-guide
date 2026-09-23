@@ -271,13 +271,17 @@
     if (rarity !== "전체") list = list.filter(f => f.rarity === rarity);
     if (method !== "전체") list = list.filter(f => f.method.includes(method));
     const link = (r, m) => `#/fish?rarity=${encodeURIComponent(r)}&method=${encodeURIComponent(m)}`;
+    const rarityChipClass = { "전체": "chip-all", "일반": "chip-common", "희귀": "chip-rare", "레드": "chip-red" };
+    const methodChipClass = { "전체": "chip-all", "찌낚시": "chip-float", "루어": "chip-lure" };
     return `<h1>물고기 도감</h1>
     <p class="page-desc">전체 ${DATA.fish.length}종. 물고기를 누르면 잡는 곳·낚시법·미끼를 볼 수 있어요.</p>
-    <div class="filters">
-      ${rarities.map(r => `<a class="chip ${r === rarity ? "active" : ""}" ${r === rarity ? 'aria-current="true"' : ""} href="${link(r, method)}">${esc(r)}</a>`).join("")}
+    <div class="filters filter-group">
+      <span class="filter-label">등급</span>
+      ${rarities.map(r => `<a class="chip ${rarityChipClass[r]} ${r === rarity ? "active" : ""}" ${r === rarity ? 'aria-current="true"' : ""} href="${link(r, method)}">${esc(r)}</a>`).join("")}
     </div>
-    <div class="filters">
-      ${methods.map(m => `<a class="chip ${m === method ? "active" : ""}" ${m === method ? 'aria-current="true"' : ""} href="${link(rarity, m)}">${esc(m)}</a>`).join("")}
+    <div class="filters filter-group">
+      <span class="filter-label">낚시법</span>
+      ${methods.map(m => `<a class="chip ${methodChipClass[m]} ${m === method ? "active" : ""}" ${m === method ? 'aria-current="true"' : ""} href="${link(rarity, m)}">${esc(m)}</a>`).join("")}
     </div>
     ${list.length ? `<div class="cards-2">${list.map(fishCard).join("")}</div>` : "<p>조건에 맞는 물고기가 없어요.</p>"}`;
   }
