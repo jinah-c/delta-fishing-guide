@@ -878,6 +878,19 @@ a.item-card:hover {
   width: 100%;
   height: 100%;
 }
+/* 미끼·루어 썸네일: 등급(클래스) 고유 컬러 배경 */
+.thumb-bait,
+.thumb-lure {
+  background:
+    linear-gradient(165deg, rgba(255, 255, 255, .14) 0 1px, transparent 1px 38%),
+    radial-gradient(circle at 50% 74%, color-mix(in srgb, var(--class-color) 30%, transparent), transparent 72%),
+    linear-gradient(155deg, color-mix(in srgb, var(--class-color) 34%, #0b0b0f) 0%, color-mix(in srgb, var(--class-color) 14%, #08080b) 55%, #0a0a0e 100%);
+  border-color: var(--class-line);
+}
+.thumb-bait::before,
+.thumb-lure::before {
+  background: color-mix(in srgb, var(--class-color) 20%, transparent);
+}
 .thumb svg { width: 62%; height: auto; opacity: .85; }
 .thumb-ph {
   position: absolute; left: 0; right: 0; bottom: 6px;
