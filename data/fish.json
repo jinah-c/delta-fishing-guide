@@ -1,5 +1,5 @@
 {
-  "_note": "nameKr가 null이면 인게임 한국어 명칭 미확인(임시 번역). spotIds 비어있으면 출현 수역 미확정 — 인게임 도감으로 보강 필요.",
+  "_note": "nameKr가 null이면 인게임 한국어 명칭 미확인(임시 번역). spotIds 비어있으면 출현 수역 미확정 — 인게임 도감으로 보강 필요. 특정 수역이 아니라 전 맵에 나오는 어종은 spotIds 대신 spotNote에 문구로 적는다.",
   "fish": [
     {
       "id": "tilapia",
@@ -14,6 +14,7 @@
         "루어"
       ],
       "spotIds": [],
+      "spotNote": "거의 모든 수역 (전 맵 공통 출현)",
       "bait": null,
       "tips": null
     },
@@ -29,6 +30,7 @@
         "찌낚시"
       ],
       "spotIds": [],
+      "spotNote": "거의 모든 수역 (전 맵 공통 출현)",
       "bait": null,
       "tips": null
     },
@@ -44,6 +46,7 @@
         "찌낚시"
       ],
       "spotIds": [],
+      "spotNote": "거의 모든 수역 (전 맵 공통 출현)",
       "bait": null,
       "tips": null
     },
@@ -378,7 +381,7 @@
       "nameKr": "새끼상어",
       "nameKrConfirmed": true,
       "rarity": "레드",
-      "rarityAlt": "노랑(골드) 인정",
+      "rarityAlt": "골드",
       "size": "거대",
       "method": [
         "루어"

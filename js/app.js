@@ -83,15 +83,16 @@
     return [...ids].map(spotById).filter(Boolean);
   }
 
+  // 특정 수역을 찍을 수 없는 광역 출현 어종은 fish.spotNote 문구로 대체
   function fishLocText(f) {
     const locs = fishSpots(f);
-    if (!locs.length) return "출현 수역 미확정";
+    if (!locs.length) return f.spotNote || "출현 수역 미확정";
     return locs.map(l => esc(l.map.nameKr + " · " + l.spot.nameKr)).join(", ");
   }
 
   function fishLocLinks(f) {
     const locs = fishSpots(f);
-    if (!locs.length) return "출현 수역 미확정 (인게임 도감 확인 필요)";
+    if (!locs.length) return f.spotNote ? esc(f.spotNote) : "출현 수역 미확정 (인게임 도감 확인 필요)";
     return locs.map(l => `<a href="#/map/${l.map.id}">${esc(l.map.nameKr)} · ${esc(l.spot.nameKr)}</a>`).join(", ");
   }
 
@@ -110,6 +111,12 @@
     const items = tipItems(text);
     if (!items.length) return "";
     return `<ul class="tip-list ${cls || ""}">${items.map(item => `<li>${esc(item)}</li>`).join("")}</ul>`;
+  }
+
+  // requirement·guide가 배열이면 줄 단위로 끊어 목록으로 (문자열이면 한 줄 그대로)
+  function lineList(value, cls) {
+    if (!Array.isArray(value)) return esc(value);
+    return `<ul class="tip-list ${cls || ""}">${value.map(line => `<li>${esc(line)}</li>`).join("")}</ul>`;
   }
 
   function missionFishCard(x) {
@@ -290,7 +297,7 @@
       <dt>잡는 곳</dt>
       <dd>${locs.length
         ? locs.map(l => `<a href="#/map/${l.map.id}">${esc(l.map.nameKr)} — ${esc(l.spot.nameKr)}</a>`).join("<br>")
-        : "출현 수역 미확정 (인게임 도감 확인 필요)"}</dd>
+        : (f.spotNote ? esc(f.spotNote) : "출현 수역 미확정 (인게임 도감 확인 필요)")}</dd>
       <dt>낚시법</dt><dd>${f.method.map(esc).join(", ")}</dd>
       <dt>미끼/루어</dt><dd>${f.bait ? esc(f.bait) : "정보 없음"}</dd>
       ${f.tips ? `<dt>팁</dt><dd>${tipList(f.tips)}</dd>` : ""}
@@ -333,17 +340,17 @@
     <h2>승급어 제출 방법</h2>
     ${submitGuide()}
     <h2>승급 평가</h2>
-    <div class="cards-2">
+    <div class="mission-col">
     ${ms.certifications.map(c => `
     <div class="mission">
       <div class="mission-head"><span class="lv">Lv ${c.level}</span><h3>${esc(c.nameKr)}</h3></div>
-      <div class="req">${esc(c.requirement)}</div>
+      <div class="req">${lineList(c.requirement, "req-list")}</div>
       ${c.fish.length ? `<div class="mission-fish-list">${c.fish.map(missionFishCard).join("")}</div>` : ""}
       <div class="reward">보상: ${esc(c.reward)}</div>
-      <div class="guide">${esc(c.guide)}</div>
+      <div class="guide">${lineList(c.guide, "guide-list")}</div>
     </div>`).join("")}
     </div>
-    <div class="notice">${esc(ms._note)}</div>`;
+    <div class="notice">${lineList(ms._note, "notice-list")}</div>`;
   }
 
   function pageRed() {

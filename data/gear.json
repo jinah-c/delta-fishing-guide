@@ -83,12 +83,6 @@
   ],
   "lines": [
     {
-      "tier": 1,
-      "image": null,
-      "nameEn": "Basic Line",
-      "nameKr": "기본 낚싯줄"
-    },
-    {
       "tier": 2,
       "image": "img/gear/line-t2.png?v=line2",
       "nameEn": "Gray-Label Line",

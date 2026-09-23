@@ -19,7 +19,7 @@ data.maps.forEach(m => m.spots.forEach(s => s.fishIds.forEach(id => { if (!fishI
 data.missions.certifications.forEach(c => c.fish.forEach(x => {
   if (!fishIds.has(x.fishId)) { warn(`Lv${c.level} 승급 → 없는 fish "${x.fishId}"`); return; }
   const f = data.fish.find(fx => fx.id === x.fishId);
-  const linked = f.spotIds.length > 0 ||
+  const linked = f.spotIds.length > 0 || !!f.spotNote ||
     data.maps.some(m => m.spots.some(s => s.fishIds.includes(x.fishId)));
   if (!linked) warn(`Lv${c.level} 승급어 "${x.fishId}" 출현 수역 미입력`);
 }));

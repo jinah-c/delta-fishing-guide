@@ -24,6 +24,32 @@
   --purple: #b98cff;
   --red: #ff496d;
   --gold: #ffe06b;
+
+  /* ── 클래스(등급) 고유 컬러 ─────────────────────────────
+     1클 그레이 / 2클 초록 / 3클 파랑 / 4클 보라 / 5클 노랑 / 6클 빨강
+     아이템 뱃지·썸네일·테두리 등 클래스를 드러내는 모든 곳에서 이 값만 쓴다. */
+  --class-1: #cfd2da;
+  --class-2: #2df18c;
+  --class-3: #6cc6ff;
+  --class-4: #b663ff;
+  --class-5: #ffb922;
+  --class-6: #ff3a58;
+
+  /* 고유 컬러에서 파생한 박스·카드 배경용 흐린 컬러 (어두운 배경 위에 겹쳐 쓰는 반투명 톤) */
+  --class-1-bg: color-mix(in srgb, var(--class-1) 12%, transparent);
+  --class-2-bg: color-mix(in srgb, var(--class-2) 12%, transparent);
+  --class-3-bg: color-mix(in srgb, var(--class-3) 12%, transparent);
+  --class-4-bg: color-mix(in srgb, var(--class-4) 12%, transparent);
+  --class-5-bg: color-mix(in srgb, var(--class-5) 12%, transparent);
+  --class-6-bg: color-mix(in srgb, var(--class-6) 12%, transparent);
+
+  /* 배경과 짝지어 쓰는 테두리 톤 */
+  --class-1-line: color-mix(in srgb, var(--class-1) 40%, transparent);
+  --class-2-line: color-mix(in srgb, var(--class-2) 40%, transparent);
+  --class-3-line: color-mix(in srgb, var(--class-3) 40%, transparent);
+  --class-4-line: color-mix(in srgb, var(--class-4) 40%, transparent);
+  --class-5-line: color-mix(in srgb, var(--class-5) 40%, transparent);
+  --class-6-line: color-mix(in srgb, var(--class-6) 40%, transparent);
   --shadow-hot: 0 18px 54px rgba(255, 62, 181, .18);
   --shadow-deep: 0 18px 44px rgba(0, 0, 0, .42);
   --radius: 18px;
@@ -362,6 +388,14 @@ h3 { font-size: 17px; margin: 18px 0 8px; font-weight: 900; }
   margin-bottom: 14px;
   box-shadow: var(--shadow-deep);
 }
+/* 승급 평가는 1열 전체 너비 — 카드마다 내용 길이가 달라 2열로 두면 한쪽이 크게 빈다 */
+.mission-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.mission-col > .mission { margin-bottom: 0; }
+
 .mission-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .lv {
   background: var(--accent);
@@ -373,23 +407,29 @@ h3 { font-size: 17px; margin: 18px 0 8px; font-weight: 900; }
 }
 .mission h3 { margin: 0; }
 .mission .req { margin: 11px 0 5px; font-size: 16px; color: var(--text); }
+.mission .req-list { font-size: 16px; }
 .mission .reward { color: var(--lime-soft); font-size: 15px; margin-top: 8px; font-weight: 850; }
 .mission .guide { color: var(--text-dim); font-size: 15px; margin-top: 9px; padding-top: 9px; border-top: 1px dashed rgba(255, 255, 255, .14); }
+.mission .guide-list { color: inherit; font-size: 15px; }
+.mission .guide-list li + li { margin-top: 5px; }
+/* 승급 카드 안의 어종 목록은 또 카드로 감싸지 않고 구분선으로만 나눈다.
+   넓은 화면에서는 어종을 가로로 나열하고 세로선으로 구분 */
 .mission-fish-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin: 12px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px 18px;
+  margin: 14px 0 2px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, .12);
 }
 .mission-fish-card {
   display: flex;
   gap: 13px;
   align-items: flex-start;
-  padding: 12px;
-  border-radius: calc(var(--radius) - 6px);
-  background: rgba(255, 255, 255, .035);
-  border: 1px solid rgba(255, 255, 255, .08);
+  padding-left: 18px;
+  border-left: 1px solid rgba(255, 255, 255, .1);
 }
+.mission-fish-card:first-child { padding-left: 0; border-left: 0; }
 .mission-fish-card .thumb {
   width: 150px;
   border-radius: 12px;
@@ -406,16 +446,18 @@ h3 { font-size: 17px; margin: 18px 0 8px; font-weight: 900; }
   margin-bottom: 9px;
   font-weight: 950;
 }
+.mission-fish-title a { font-size: 18px; line-height: 1.25; }
 .prep-list {
   display: grid;
   grid-template-columns: 82px minmax(0, 1fr);
   gap: 6px 10px;
-  margin: 0;
+  margin: 12px 0 0;
   font-size: 14px;
   line-height: 1.42;
 }
 .prep-list dt {
-  color: var(--accent-2);
+  /* 항목 분류 라벨 — 강조 대상이 아니므로 흰색 60%로 본문과 구분만 */
+  color: rgba(255, 255, 255, .6);
   font-weight: 950;
 }
 .prep-list dd {
@@ -469,6 +511,7 @@ h3 { font-size: 17px; margin: 18px 0 8px; font-weight: 900; }
 }
 .notice ul { padding-left: 22px; }
 .notice li + li { margin-top: 6px; }
+.notice .notice-list { color: inherit; font-size: 15px; }
 
 .tips-grid {
   display: grid;
@@ -625,6 +668,23 @@ a.item-card:hover {
   line-height: 1.3;
   overflow-wrap: anywhere;
 }
+/* 클래스 컬러 팔레트 적용 유틸 — 이 클래스를 붙이면 그 안에서
+   --class-color(고유 컬러) / --class-bg(흐린 배경) / --class-line(테두리)을 쓸 수 있다. */
+.class-1, .grade-t1, .tone-common { --class-color: var(--class-1); --class-bg: var(--class-1-bg); --class-line: var(--class-1-line); }
+.class-2, .grade-t2, .tone-green  { --class-color: var(--class-2); --class-bg: var(--class-2-bg); --class-line: var(--class-2-line); }
+.class-3, .grade-t3, .tone-blue   { --class-color: var(--class-3); --class-bg: var(--class-3-bg); --class-line: var(--class-3-line); }
+.class-4, .grade-t4, .tone-rare   { --class-color: var(--class-4); --class-bg: var(--class-4-bg); --class-line: var(--class-4-line); }
+.class-5, .grade-t5, .tone-gold   { --class-color: var(--class-5); --class-bg: var(--class-5-bg); --class-line: var(--class-5-line); }
+.class-6, .grade-t6, .tone-red    { --class-color: var(--class-6); --class-bg: var(--class-6-bg); --class-line: var(--class-6-line); }
+
+/* 클래스 배경을 쓰는 박스·카드 (--class-bg는 색이라 레이어로 쓰려면 gradient로 감싼다) */
+.class-box {
+  background-color: var(--bg-elev);
+  background-image: linear-gradient(var(--class-bg, transparent), var(--class-bg, transparent));
+  border: 1px solid var(--class-line, rgba(255, 255, 255, .09));
+  border-radius: var(--radius);
+}
+
 .grade-badge {
   display: inline-flex;
   align-items: center;
@@ -632,22 +692,20 @@ a.item-card:hover {
   margin-left: 4px;
   padding: 2px 8px 3px;
   border-radius: 999px;
-  color: var(--grade-color);
+  color: var(--class-color, var(--class-1));
   font-size: 12px;
   font-weight: 1000;
   line-height: 1;
   vertical-align: 2px;
   white-space: nowrap;
-  background: linear-gradient(180deg, rgba(8, 9, 13, .88), rgba(8, 9, 13, .62));
-  border: 1px solid color-mix(in srgb, var(--grade-color) 66%, rgba(255, 255, 255, .18));
+  background-color: rgba(8, 9, 13, .78);
+  background-image:
+    linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, 0)),
+    linear-gradient(var(--class-bg, transparent), var(--class-bg, transparent));
+  border: 1px solid color-mix(in srgb, var(--class-color, var(--class-1)) 66%, rgba(255, 255, 255, .18));
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .06), 0 4px 10px rgba(0, 0, 0, .2);
 }
-.grade-t1 { --grade-color: #d6dae3; }
-.grade-t2 { --grade-color: #62e6a2; }
-.grade-t3 { --grade-color: #7bbcff; }
-.grade-t4 { --grade-color: #c79aff; }
-.grade-t5 { --grade-color: #f1b36e; }
-.grade-t6 { --grade-color: #ff8fdc; }
+.grade-badge, .grade-badge * { color: var(--class-color, var(--class-1)); }
 .gear-method-badge {
   display: inline-flex;
   align-items: center;
@@ -731,7 +789,7 @@ a.item-card:hover {
 
 /* 썸네일: 투명 누끼 이미지를 은은한 수중 유리톤 배경 위에 올리는 프레임 */
 .thumb {
-  --tone: #d8d1dc;
+  --tone: var(--class-1);
   position: relative;
   flex: none;
   width: 220px;
@@ -785,12 +843,9 @@ a.item-card:hover {
 }
 .thumb-lg { width: 480px; border-radius: 24px; }
 .thumb-lg .thumb-ph { font-size: 13px; bottom: 14px; }
-.tone-common { --tone: #d8d1dc; }
-.tone-green { --tone: #38d98e; }
-.tone-blue { --tone: #5db1ff; }
-.tone-rare { --tone: var(--purple); }
-.tone-gold { --tone: #df9b53; }
-.tone-red { --tone: var(--accent); }
+/* 썸네일 톤도 클래스 고유 컬러를 그대로 쓴다 (tone-* → class-* 매핑은 위 팔레트 블록) */
+.tone-common, .tone-green, .tone-blue,
+.tone-rare, .tone-gold, .tone-red { --tone: var(--class-color, var(--class-1)); }
 .tone-lime { --tone: var(--lime); }
 
 /* 물고기 상세: 큰 이미지 왼쪽 + 정보 오른쪽 */
@@ -805,7 +860,10 @@ a.item-card:hover {
   .thumb { width: 140px; border-radius: 12px; }
   .thumb-ph { display: none; }
   .item-title { font-size: 16px; }
-  .mission-fish-card { flex-direction: column; gap: 10px; padding: 11px; }
+  .mission-fish-list { grid-template-columns: 1fr; gap: 0; }
+  .mission-fish-card { flex-direction: column; gap: 10px; padding: 13px 0 0; border-left: 0; }
+  .mission-fish-card:first-child { padding-top: 0; }
+  .mission-fish-card + .mission-fish-card { border-top: 1px solid rgba(255, 255, 255, .1); }
   .mission-fish-card .thumb { width: 100%; max-width: 220px; align-self: center; }
   .prep-list { grid-template-columns: 82px minmax(0, 1fr); font-size: 14px; }
   .fish-hero { flex-direction: column; gap: 16px; }
