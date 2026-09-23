@@ -859,7 +859,24 @@ const DATA = {
         "nameEn": "4000D Heavy-Drag",
         "nameKr": "4000D 헤비 드래그 스피닝릴",
         "unlock": "레드 3종 트레이드로 해금 — 대서양 연어 15kg·타이거피시 6kg·자이언트 브라운 송어 4.5kg 이상 각 1마리 교환",
-        "note": "구매 제한 1 · 릴링 속도 +2.5 / 릴링 시 스태미나 감소 +45 / 억제력 +35"
+        "note": "구매 제한 1 · 릴링 속도 +2.5 / 릴링 시 스태미나 감소 +45 / 억제력 +35",
+        "tradeFish": [
+          {
+            "fishId": "atlantic-salmon",
+            "weight": "15kg 이상",
+            "line": "60파운드 낚싯줄 권장"
+          },
+          {
+            "fishId": "tigerfish",
+            "weight": "6kg 이상",
+            "line": "60파운드 낚싯줄 권장"
+          },
+          {
+            "fishId": "giant-brown-trout",
+            "weight": "4.5kg 이상",
+            "line": "60파운드 낚싯줄 권장"
+          }
+        ]
       }
     ],
     "lines": [

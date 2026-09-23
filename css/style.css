@@ -406,6 +406,33 @@ h3 { font-size: 17px; margin: 18px 0 8px; font-weight: 900; }
 .fish-rows .fish-row-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .fish-rows .fish-row-badges { flex: none; display: flex; gap: 5px; align-items: center; }
 
+/* ── 교환 해금 릴(4000D) — 카드 클릭 시 교환 물고기 상세 펼침 ── */
+.trade-unlock summary { list-style: none; cursor: pointer; }
+.trade-unlock summary::-webkit-details-marker { display: none; }
+.trade-unlock summary:hover .item-card { border-color: var(--line-hot); box-shadow: var(--shadow-hot); }
+.trade-unlock[open] summary .item-card {
+  border-color: var(--line-hot);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.trade-hint {
+  margin-top: 9px;
+  font-size: 13px;
+  font-weight: 950;
+  color: var(--class-5);
+}
+.trade-caret { display: inline-block; transition: transform .16s; }
+.trade-unlock[open] .trade-caret { transform: rotate(180deg); }
+.trade-unlock .trade-fish-list {
+  margin: 0;
+  padding: 16px;
+  border: 1px solid var(--line-hot);
+  border-top: 0;
+  border-radius: 0 0 var(--radius) var(--radius);
+  background: linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .015)), var(--bg-elev);
+}
+.cards-2 > .trade-unlock[open] { grid-column: 1 / -1; }
+
 .detail-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 6px; }
 .detail-head .en { color: var(--text-dim); font-size: 16px; }
 .kv {

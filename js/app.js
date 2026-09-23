@@ -179,13 +179,14 @@
     return TIER_TONE[obj.tier] || "tone-common";
   }
 
-  function itemCard(obj, kind, title, sub, note, tone) {
+  function itemCard(obj, kind, title, sub, note, tone, extra) {
     return `<div class="item-card">
       ${thumb(obj, kind, tone)}
       <div class="item-body">
         <div class="item-title">${title}</div>
         ${sub ? `<div class="item-sub">${sub}</div>` : ""}
         ${note ? `<div class="item-meta">${note}</div>` : ""}
+        ${extra || ""}
       </div>
     </div>`;
   }
@@ -397,29 +398,62 @@
       if (kind === "line" || kind === "reel") {
         return itemCard(t, kind,
           gearTitle(t),
-          t.nameKr ? esc(t.nameEn) : null,
+          null,
           [priceText(t.price), t.unlock ? `🔓 ${esc(t.unlock)}` : null, t.note ? esc(t.note) : null].filter(Boolean).join("<br>"),
           tierTone(t));
       }
       return itemCard(t, kind,
       gearTitle(t),
-      t.nameKr ? esc(t.nameKr) : null,
+      null,
       [t.unlock ? `🔓 ${esc(t.unlock)}` : null, t.note ? esc(t.note) : null].filter(Boolean).join("<br>") || null,
       tierTone(t));
     };
+    // 교환 해금 릴(4000D): 카드 클릭 시 교환 재료 물고기 상세 펼침
+    const tradeFishDetail = x => {
+      const f = fishById(x.fishId);
+      if (!f) return "";
+      return `<div class="mission-fish-card">
+        ${fishThumb(f)}
+        <div class="mission-fish-body">
+          <div class="mission-fish-title">
+            <a href="#/fish/${f.id}">${fishName(f, true)}</a>
+            <span class="badge badge-size">${esc(x.weight)}</span>
+            ${rarityBadge(f)}
+          </div>
+          <dl class="prep-list">
+            <dt>출현 장소</dt><dd>${fishLocLinks(f)}</dd>
+            <dt>낚싯줄</dt><dd>${esc(x.line || "정보 없음")}</dd>
+            <dt>미끼/루어</dt><dd>${esc(f.bait || "정보 없음")}</dd>
+          </dl>
+        </div>
+      </div>`;
+    };
+    const reelCard = t => {
+      if (!t.tradeFish || !t.tradeFish.length) return tierCard("reel")(t);
+      const card = itemCard(t, "reel",
+        gearTitle(t),
+        null,
+        [priceText(t.price), t.unlock ? `🔓 ${esc(t.unlock)}` : null, t.note ? esc(t.note) : null].filter(Boolean).join("<br>"),
+        tierTone(t),
+        `<div class="trade-hint">🐟 교환 물고기 ${t.tradeFish.length}종 자세히 보기 <span class="trade-caret" aria-hidden="true">▾</span></div>`);
+      return `<details class="trade-unlock">
+        <summary>${card}</summary>
+        <div class="mission-fish-list trade-fish-list">${t.tradeFish.map(tradeFishDetail).join("")}</div>
+      </details>`;
+    };
     const namedCard = kind => b => itemCard(b, kind,
       gearTitle(b),
-      b.nameKr ? esc(b.nameEn) : null,
+      null,
       [priceText(b.price), b.note ? esc(b.note) : null].filter(Boolean).join("<br>") || null,
       tierTone(b));
     return `<h1>장비 · 미끼</h1>
     <p class="page-desc">낚싯대는 승급 보상으로 해금. 릴·낚시줄은 클래스(등급)가 높을수록 상위 어종 대응.</p>
     <h2>낚싯대</h2>
     <div class="cards-2">${g.rods.map(r => itemCard(r, "rod", rodTitle(r),
-      r.nameEn ? esc(r.nameEn) : null,
+      null,
       [priceText(r.price, r.currencyLabel), `🔓 ${esc(r.unlock)}`, r.note ? esc(r.note) : null].filter(Boolean).join("<br>"), tierTone(r))).join("")}</div>
     <h2>스피닝 릴</h2>
-    <div class="cards-2">${g.reels.map(tierCard("reel")).join("")}</div>
+    <div class="cards-2">${g.reels.map(reelCard).join("")}</div>
     <h2>낚시줄</h2>
     <div class="cards-2">${g.lines.map(tierCard("line")).join("")}</div>
     <h2>찌낚시 미끼</h2>
