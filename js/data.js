@@ -966,7 +966,7 @@ const DATA = {
       },
       {
         "id": "deep-diving-giant-vibration",
-        "image": "img/gear/deep-diving-giant-vibration.png?v=gear6",
+        "image": "img/gear/deep-diving-giant-vibration.png?v=lure7",
         "nameEn": "Deep-Diving Giant Vibration Lure",
         "nameKr": "심해 대형 어류 진동 루어",
         "note": "피콕하인드·새끼상어용 (5클)",
@@ -975,15 +975,15 @@ const DATA = {
       },
       {
         "id": "steel-ball-acoustic",
-        "image": "img/gear/steel-ball-acoustic.png?v=gear6",
+        "image": "img/gear/steel-ball-acoustic.png?v=lure7",
         "nameEn": "Steel-Ball Acoustic Lure",
         "nameKr": "스틸볼 사운드 루어",
         "price": 19,
-        "tier": 5
+        "tier": 6
       },
       {
         "id": "gold-plated-competition",
-        "image": "img/gear/gold-plated-competition.png?v=gear6",
+        "image": "img/gear/gold-plated-competition.png?v=lure7",
         "nameEn": "Gold-Plated Competition Lure",
         "nameKr": "골드 컴피티션 루어",
         "price": 21,
