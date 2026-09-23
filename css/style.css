@@ -878,7 +878,10 @@ a.item-card:hover {
   width: 100%;
   height: 100%;
 }
-/* 미끼·루어 썸네일: 등급(클래스) 고유 컬러 배경 */
+/* 장비·미끼 썸네일: 등급(클래스) 고유 컬러 배경 */
+.thumb-rod,
+.thumb-reel,
+.thumb-line,
 .thumb-bait,
 .thumb-lure {
   background:
@@ -887,6 +890,9 @@ a.item-card:hover {
     linear-gradient(155deg, color-mix(in srgb, var(--class-color) 34%, #0b0b0f) 0%, color-mix(in srgb, var(--class-color) 14%, #08080b) 55%, #0a0a0e 100%);
   border-color: var(--class-line);
 }
+.thumb-rod::before,
+.thumb-reel::before,
+.thumb-line::before,
 .thumb-bait::before,
 .thumb-lure::before {
   background: color-mix(in srgb, var(--class-color) 20%, transparent);
