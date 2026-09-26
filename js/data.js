@@ -26,7 +26,14 @@ const DATA = {
           "fishIds": [
             "topmouth-culter",
             "saddled-bichir",
-            "tigerfish"
+            "tigerfish",
+            "redtail",
+            "black-carp",
+            "bighead-carp",
+            "striped-bass",
+            "zander",
+            "shortnose-bichir",
+            "pike"
           ]
         },
         {
@@ -221,7 +228,9 @@ const DATA = {
         "찌낚시",
         "루어"
       ],
-      "spotIds": [],
+      "spotIds": [
+        "longbow-serenity-bay"
+      ],
       "bait": null,
       "tips": null
     },
@@ -236,7 +245,9 @@ const DATA = {
       "method": [
         "찌낚시"
       ],
-      "spotIds": [],
+      "spotIds": [
+        "longbow-serenity-bay"
+      ],
       "bait": null,
       "tips": null
     },
@@ -251,7 +262,9 @@ const DATA = {
       "method": [
         "루어"
       ],
-      "spotIds": [],
+      "spotIds": [
+        "longbow-serenity-bay"
+      ],
       "bait": null,
       "tips": null
     },
@@ -266,7 +279,9 @@ const DATA = {
       "method": [
         "루어"
       ],
-      "spotIds": [],
+      "spotIds": [
+        "longbow-serenity-bay"
+      ],
       "bait": null,
       "tips": null
     },
@@ -297,7 +312,9 @@ const DATA = {
       "method": [
         "루어"
       ],
-      "spotIds": [],
+      "spotIds": [
+        "longbow-serenity-bay"
+      ],
       "bait": "그린 스피너 2종 또는 정밀 포식 루어",
       "tips": "20레벨 승급 제출 대상 (2.5kg 초과 개체). 루어 전용이며 숭어보다 출현 수역이 적음."
     },
@@ -328,7 +345,9 @@ const DATA = {
         "찌낚시",
         "루어"
       ],
-      "spotIds": [],
+      "spotIds": [
+        "longbow-serenity-bay"
+      ],
       "bait": null,
       "tips": null
     },
@@ -403,16 +422,18 @@ const DATA = {
     },
     {
       "id": "mirror-carp",
-      "image": null,
+      "image": "img/fish/mirror-carp.png?v=fish-cutout",
       "nameEn": "Mirror Carp",
-      "nameKr": "미러 카프(거울잉어)",
-      "nameKrConfirmed": false,
+      "nameKr": "거울잉어",
+      "nameKrConfirmed": true,
       "rarity": "희귀",
       "size": "중형",
       "method": [
         "루어"
       ],
-      "spotIds": [],
+      "spotIds": [
+        "longbow-cavern"
+      ],
       "bait": null,
       "tips": null
     },
@@ -427,7 +448,9 @@ const DATA = {
       "method": [
         "루어"
       ],
-      "spotIds": [],
+      "spotIds": [
+        "longbow-serenity-bay"
+      ],
       "bait": null,
       "tips": null
     },
