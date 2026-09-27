@@ -1057,41 +1057,36 @@ a.item-card:hover {
   align-items: center;
   overflow-wrap: anywhere;
 }
-.gear-chip-list {
+/* ── 장비·미끼 타일: 모서리가 약간 둥근 사각형 컴포넌트 ── */
+.gear-tile-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
 }
-.gear-chip {
+.gear-tile {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  max-width: min(100%, 260px);
-  min-height: 30px;
-  padding: 4px 8px 4px 5px;
+  gap: 8px;
+  max-width: min(100%, 280px);
+  padding: 6px 12px 6px 8px;
   border: 1px solid rgba(255, 255, 255, .12);
-  border-radius: 999px;
+  border-radius: 10px;
   background: rgba(255, 255, 255, .055);
   color: var(--text);
   font-size: 14px;
   font-weight: 850;
 }
-.gear-chip span {
+.gear-tile span {
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.gear-chip img {
-  width: 28px;
-  height: 22px;
-  object-fit: contain;
-  flex: none;
-}
-.gear-chip-bait img,
-.gear-chip-lure img {
+.gear-tile img {
   width: 60px;
   height: 56px;
+  object-fit: contain;
+  flex: none;
 }
 .gear-note {
   color: var(--text-dim);
@@ -1117,8 +1112,6 @@ a.item-card:hover {
   .thumb-lg .thumb-ph { display: block; }
   .fish-info-panel { padding: 14px; gap: 12px; }
   .fish-setup-list li { grid-template-columns: 74px minmax(0, 1fr); gap: 8px; }
-  .gear-chip { font-size: 13px; min-height: 29px; max-width: min(100%, 210px); }
-  .gear-chip img { width: 26px; height: 20px; }
-  .gear-chip-bait img,
-  .gear-chip-lure img { width: 60px; height: 56px; }
+  .gear-tile { font-size: 13px; max-width: min(100%, 230px); }
+  .gear-tile img { width: 60px; height: 56px; }
 }

@@ -124,7 +124,7 @@
 
   function gearChip(item, kind, label) {
     if (!item) return `<span>${esc(label || "정보 없음")}</span>`;
-    return `<span class="gear-chip gear-chip-${esc(kind)}">
+    return `<span class="gear-tile gear-tile-${esc(kind)}">
       ${item.image ? `<img src="${esc(item.image)}" alt="" loading="lazy">` : ""}
       <span>${esc(label || item.nameKr || item.nameEn)}</span>
     </span>`;
@@ -164,7 +164,7 @@
       const kind = gearGroup("floatBaits").some(x => x.id === item.id) ? "bait" : "lure";
       return gearChip(item, kind);
     }).join("");
-    return `<div class="gear-chip-list">${chips}</div><div class="gear-note">${esc(baitText)}</div>`;
+    return `<div class="gear-tile-list">${chips}</div><div class="gear-note">${esc(baitText)}</div>`;
   }
 
   function fishSetup(f, certs) {
@@ -191,7 +191,7 @@
         rodText.includes("금속") ? gearChip(gearById("rods", "metal-lure-rod"), "rod") : "",
         rodText.includes("하이카본") ? gearChip(gearById("rods", "high-carbon-lure-rod"), "rod") : ""
       ].filter(Boolean).join("");
-      rodHtml = rodChips ? `<div class="gear-chip-list">${rodChips}</div><div class="gear-note">${esc(rodText)}</div>` : esc(rodText);
+      rodHtml = rodChips ? `<div class="gear-tile-list">${rodChips}</div><div class="gear-note">${esc(rodText)}</div>` : esc(rodText);
     } else if (hasFloat && !hasLure) {
       rodHtml = gearChip(gearById("rods", "starter-float-rod"), "rod");
     } else if (isRed || (f.rarity === "희귀" && isBig)) {
