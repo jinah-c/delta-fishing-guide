@@ -1083,14 +1083,13 @@ a.item-card:hover {
   white-space: nowrap;
 }
 .gear-tile img {
-  width: 60px;
-  height: 56px;
+  width: 76px;
+  height: 70px;
   object-fit: contain;
   flex: none;
 }
 .gear-tile-rod,
-.gear-tile-reel,
-.gear-tile-line {
+.gear-tile-reel {
   padding: 8px 12px;
 }
 .gear-note {
@@ -1117,6 +1116,6 @@ a.item-card:hover {
   .thumb-lg .thumb-ph { display: block; }
   .fish-info-panel { padding: 14px; gap: 12px; }
   .fish-setup-list li { grid-template-columns: 74px minmax(0, 1fr); gap: 8px; }
-  .gear-tile { font-size: 13px; max-width: min(100%, 230px); }
-  .gear-tile img { width: 60px; height: 56px; }
+  .gear-tile { font-size: 13px; max-width: min(100%, 260px); }
+  .gear-tile img { width: 76px; height: 70px; }
 }
