@@ -909,6 +909,8 @@ const DATA = {
     "image2": "img/npc/joe-reed-2.jpg?v=npc3",
     "image2Caption": "부두에서 낚시 중인 조 리드 — F 키로 대화",
     "imageSource": "인게임 캡처",
+    "spawnMapImage": "img/npc/joe-reed-spawn-map.jpg?v=spawnmap",
+    "spawnMapCaption": "롱보우(정규) 낚시꾼 NPC 스폰 위치 3곳 — 빨간 점 표시",
     "spawnRule": "한 매치에 롱보우(정규) 낚시터 3곳 중 1곳에 랜덤 스폰. 그로브 베이(우물낚시터 · 고요한 만) 집 주변이 스폰 지점 중 하나로 확인됨. 누군가 NPC를 죽이면 그 매치에서는 더 이상 등장하지 않음.",
     "spawnSpots": [
       {

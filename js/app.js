@@ -545,11 +545,15 @@
       <dt>등장 맵</dt><dd><a href="#/map/${m.id}">${esc(m.nameKr)}</a> (유일)</dd>
       <dt>스폰 규칙</dt><dd>${esc(n.spawnRule)}</dd>
     </dl>
+    ${n.spawnMapImage ? `<h2>스폰 위치</h2>
+    <figure class="npc-spawn-map">
+      <img src="${esc(n.spawnMapImage)}" alt="${esc(n.nameKr)} 스폰 위치 지도" loading="lazy">
+      <figcaption>${esc(n.spawnMapCaption || "스폰 위치 지도")}</figcaption>
+    </figure>` : ""}
     <h2>역할</h2>
     <div class="cards-2">${n.roles.map(r => `<div class="row">${esc(r)}</div>`).join("")}</div>
     <h2>승급어 제출 방법</h2>
-    ${submitGuide()}
-    <div class="notice">스폰 3곳의 정확한 위치는 확인 중 — 확보되는 대로 ${esc(m.nameKr)} 지도에 핀으로 표시할 예정이에요.</div>`;
+    ${submitGuide()}`;
   }
 
   function pageGear() {
