@@ -1088,6 +1088,11 @@ a.item-card:hover {
   object-fit: contain;
   flex: none;
 }
+.gear-chip-bait img,
+.gear-chip-lure img {
+  width: 60px;
+  height: 56px;
+}
 .gear-note {
   color: var(--text-dim);
   font-size: 14px;
@@ -1114,4 +1119,6 @@ a.item-card:hover {
   .fish-setup-list li { grid-template-columns: 74px minmax(0, 1fr); gap: 8px; }
   .gear-chip { font-size: 13px; min-height: 29px; max-width: min(100%, 210px); }
   .gear-chip img { width: 26px; height: 20px; }
+  .gear-chip-bait img,
+  .gear-chip-lure img { width: 60px; height: 56px; }
 }
