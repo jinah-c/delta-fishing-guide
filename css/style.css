@@ -704,7 +704,7 @@ h3 { font-size: 17px; margin: 18px 0 8px; font-weight: 900; }
   transform: translateY(-2px);
   box-shadow: var(--shadow-hot), var(--shadow-deep);
 }
-.quick .q-title { font-weight: 950; font-size: 16px; padding-right: 32px; }
+.quick .q-title { font-weight: 950; font-size: 20px; padding-right: 32px; }
 .quick .q-sub { color: var(--text-dim); font-size: 14px; margin-top: 6px; padding-right: 22px; }
 
 @media (max-width: 680px) {
