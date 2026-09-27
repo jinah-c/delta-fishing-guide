@@ -1088,6 +1088,11 @@ a.item-card:hover {
   object-fit: contain;
   flex: none;
 }
+.gear-tile-rod,
+.gear-tile-reel,
+.gear-tile-line {
+  padding: 8px 12px;
+}
 .gear-note {
   color: var(--text-dim);
   font-size: 14px;

@@ -124,8 +124,9 @@
 
   function gearChip(item, kind, label) {
     if (!item) return `<span>${esc(label || "정보 없음")}</span>`;
+    const showImage = kind === "bait" || kind === "lure";
     return `<span class="gear-tile gear-tile-${esc(kind)}">
-      ${item.image ? `<img src="${esc(item.image)}" alt="" loading="lazy">` : ""}
+      ${showImage && item.image ? `<img src="${esc(item.image)}" alt="" loading="lazy">` : ""}
       <span>${esc(label || item.nameKr || item.nameEn)}</span>
     </span>`;
   }
