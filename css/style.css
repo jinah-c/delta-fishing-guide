@@ -138,6 +138,11 @@ h3 { font-size: 17px; margin: 18px 0 8px; font-weight: 900; }
   margin: 0 0 20px;
 }
 .npc-heroes .npc-hero { flex: 1 1 320px; margin: 0; }
+.npc-heroes .npc-hero img {
+  aspect-ratio: 4 / 3;
+  height: auto;
+  max-height: none;
+}
 
 .npc-hero {
   position: relative;
