@@ -477,10 +477,16 @@
   function submitGuide() {
     const sub = DATA.missions.submission;
     return `<div class="submit-guide">
-      <figure class="submit-figure">
-        ${thumb(sub, "trap", "tone-lime")}
-        <figcaption>${esc(sub.imageCaption)}</figcaption>
-      </figure>
+      <div class="submit-figures">
+        <figure class="submit-figure">
+          ${thumb(sub, "trap", "tone-lime")}
+          <figcaption>${esc(sub.imageCaption)}</figcaption>
+        </figure>
+        ${sub.image2 ? `<figure class="submit-figure">
+          ${thumb({ image: sub.image2 }, "trap", "tone-lime")}
+          <figcaption>${esc(sub.image2Caption || "")}</figcaption>
+        </figure>` : ""}
+      </div>
       <div class="submit-body">
         <h3>${esc(sub.title)}</h3>
         <ol class="submit-steps">${sub.steps.map(st => `<li>${esc(st)}</li>`).join("")}</ol>

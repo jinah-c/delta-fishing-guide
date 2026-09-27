@@ -771,8 +771,10 @@ const DATA = {
     },
     "submission": {
       "title": "인벤토리로 건네주기 X — 조 리드 옆 통발에 넣어서 제출",
-      "image": "img/missions/submission-trap.png?v=trap2",
+      "image": "img/missions/submission-trap.jpg?v=trap3",
       "imageCaption": "조 리드 주변에 놓인 통발",
+      "image2": "img/missions/submission-trap-inventory.png?v=trap3",
+      "image2Caption": "통발을 열면 나오는 통발 인벤토리 — 제출용 물고기를 여기로 옮긴다",
       "steps": [
         "제출할 물고기를 가방에 넣은 채로 롱보우(정규)에 들어간다 — 같은 매치에서 잡은 물고기도, 창고에 보관해 둔 물고기도 제출 가능",
         "조 리드를 찾아간다 (한 매치에 롱보우 낚시터 3곳 중 1곳에 랜덤 스폰)",
@@ -1184,7 +1186,7 @@ const DATA = {
     "misc": [
       {
         "id": "submission-trap",
-        "image": "img/missions/submission-trap.png?v=trap2",
+        "image": "img/missions/submission-trap.jpg?v=trap3",
         "nameEn": "Submission Trap",
         "nameKr": "승급 제출 통발",
         "note": "조 리드 옆에 놓인 통발. 제출 물고기를 이 통발 안에 넣은 뒤 조 리드와 대화해 평가를 진행한다."
