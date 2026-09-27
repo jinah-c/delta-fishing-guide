@@ -131,6 +131,14 @@ h2 { font-size: 22px; margin: 30px 0 13px; font-weight: 950; }
 h3 { font-size: 17px; margin: 18px 0 8px; font-weight: 900; }
 .page-desc { color: var(--text-dim); margin-bottom: 20px; font-size: 16px; max-width: 760px; }
 
+.npc-heroes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 0 0 20px;
+}
+.npc-heroes .npc-hero { flex: 1 1 320px; margin: 0; }
+
 .npc-hero {
   position: relative;
   margin: 0 0 20px;

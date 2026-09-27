@@ -530,10 +530,16 @@
     const m = mapById(n.map);
     return `<h1>낚시꾼 NPC — ${esc(n.nameKr)}</h1>
     <p class="page-desc">${esc(n.nameEn)} · 커뮤니티 별명 "${esc(n.communityAlias)}"</p>
-    ${n.image ? `<figure class="npc-hero">
-      <img src="${esc(n.image)}" alt="${esc(n.nameKr)} NPC 이미지" loading="eager">
-      <figcaption>${esc(n.imageCaption || `${n.nameKr} 이미지`)}</figcaption>
-    </figure>` : ""}
+    ${n.image ? `<div class="npc-heroes">
+      <figure class="npc-hero">
+        <img src="${esc(n.image)}" alt="${esc(n.nameKr)} NPC 이미지" loading="eager">
+        <figcaption>${esc(n.imageCaption || `${n.nameKr} 이미지`)}</figcaption>
+      </figure>
+      ${n.image2 ? `<figure class="npc-hero">
+        <img src="${esc(n.image2)}" alt="${esc(n.nameKr)} NPC 이미지 2" loading="eager">
+        <figcaption>${esc(n.image2Caption || `${n.nameKr} 이미지`)}</figcaption>
+      </figure>` : ""}
+    </div>` : ""}
     <dl class="kv">
       <dt>등장 맵</dt><dd><a href="#/map/${m.id}">${esc(m.nameKr)}</a> (유일)</dd>
       <dt>스폰 규칙</dt><dd>${esc(n.spawnRule)}</dd>
