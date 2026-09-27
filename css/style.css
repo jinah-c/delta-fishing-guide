@@ -508,7 +508,7 @@ h3 { font-size: 17px; margin: 18px 0 8px; font-weight: 900; }
   padding: 3px 10px;
   font-size: 15px;
 }
-.mission h3 { margin: 0; }
+.mission h3 { margin: 0; font-size: 20px; }
 .mission .req { margin: 11px 0 5px; font-size: 16px; color: var(--text); }
 .mission .req-list { font-size: 16px; }
 .mission .reward { color: var(--lime-soft); font-size: 15px; margin-top: 8px; font-weight: 850; }
@@ -549,7 +549,7 @@ h3 { font-size: 17px; margin: 18px 0 8px; font-weight: 900; }
   margin-bottom: 9px;
   font-weight: 950;
 }
-.mission-fish-title a { font-size: 18px; line-height: 1.25; }
+.mission-fish-title a { font-size: 20px; line-height: 1.25; }
 .prep-list {
   display: grid;
   grid-template-columns: 82px minmax(0, 1fr);
@@ -993,6 +993,90 @@ a.item-card:hover {
 .fish-hero { display: flex; gap: 26px; align-items: flex-start; margin-bottom: 8px; }
 .fish-hero-body { flex: 1; min-width: 0; }
 .fish-hero .kv { margin-bottom: 0; }
+.fish-info-panel {
+  display: grid;
+  gap: 13px;
+  margin: 18px 0 0;
+  padding: 16px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, .08);
+  background: rgba(255, 255, 255, .035);
+}
+.fish-info-section {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+.fish-info-section + .fish-info-section {
+  padding-top: 13px;
+  border-top: 1px solid rgba(255, 255, 255, .08);
+}
+.fish-info-section h2 {
+  margin: 0;
+  color: var(--accent-2);
+  font-size: 16px;
+}
+.fish-setup-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.fish-setup-list li {
+  display: grid;
+  grid-template-columns: 82px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+}
+.setup-label {
+  color: rgba(255, 255, 255, .62);
+  font-weight: 950;
+}
+.setup-value {
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  overflow-wrap: anywhere;
+}
+.gear-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.gear-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: min(100%, 260px);
+  min-height: 30px;
+  padding: 4px 8px 4px 5px;
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .055);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 850;
+}
+.gear-chip span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.gear-chip img {
+  width: 28px;
+  height: 22px;
+  object-fit: contain;
+  flex: none;
+}
+.gear-note {
+  color: var(--text-dim);
+  font-size: 14px;
+  line-height: 1.35;
+}
 
 @media (max-width: 760px) {
   .cards-2 { grid-template-columns: 1fr; gap: 10px; }
@@ -1008,6 +1092,10 @@ a.item-card:hover {
   .mission-fish-card .thumb { width: 100%; max-width: 220px; align-self: center; }
   .prep-list { grid-template-columns: 82px minmax(0, 1fr); font-size: 14px; }
   .fish-hero { flex-direction: column; gap: 16px; }
-  .thumb-lg { width: 100%; max-width: 400px; aspect-ratio: 16 / 9; align-self: center; }
+  .thumb-lg { width: 100%; max-width: 100%; aspect-ratio: 16 / 9; align-self: center; }
   .thumb-lg .thumb-ph { display: block; }
+  .fish-info-panel { padding: 14px; gap: 12px; }
+  .fish-setup-list li { grid-template-columns: 74px minmax(0, 1fr); gap: 8px; }
+  .gear-chip { font-size: 13px; min-height: 29px; max-width: min(100%, 210px); }
+  .gear-chip img { width: 26px; height: 20px; }
 }

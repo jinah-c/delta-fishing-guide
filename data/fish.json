@@ -13,7 +13,16 @@
         "찌낚시",
         "루어"
       ],
-      "spotIds": [],
+      "spotIds": [
+        "longbow-serenity-bay",
+        "longbow-cavern",
+        "longbow-waterway",
+        "longbow-canal",
+        "longbow-storage-dock",
+        "zerodam-riverbank",
+        "az3-offshore",
+        "az3-waterway"
+      ],
       "spotNote": "거의 모든 수역 (전 맵 공통 출현)",
       "bait": null,
       "tips": null
@@ -63,7 +72,13 @@
         "루어"
       ],
       "spotIds": [
-        "longbow-serenity-bay"
+        "longbow-serenity-bay",
+        "longbow-cavern",
+        "longbow-waterway",
+        "longbow-canal",
+        "longbow-storage-dock",
+        "zerodam-riverbank",
+        "az3-waterway"
       ],
       "bait": null,
       "tips": null
@@ -97,7 +112,9 @@
         "루어"
       ],
       "spotIds": [
-        "longbow-serenity-bay"
+        "longbow-serenity-bay",
+        "zerodam-riverbank",
+        "az3-waterway"
       ],
       "bait": null,
       "tips": null
@@ -114,7 +131,14 @@
         "루어"
       ],
       "spotIds": [
-        "longbow-serenity-bay"
+        "longbow-serenity-bay",
+        "longbow-cavern",
+        "longbow-waterway",
+        "longbow-canal",
+        "longbow-storage-dock",
+        "zerodam-riverbank",
+        "az3-offshore",
+        "az3-waterway"
       ],
       "bait": null,
       "tips": null
@@ -131,7 +155,16 @@
         "찌낚시",
         "루어"
       ],
-      "spotIds": [],
+      "spotIds": [
+        "longbow-serenity-bay",
+        "longbow-cavern",
+        "longbow-waterway",
+        "longbow-canal",
+        "longbow-storage-dock",
+        "zerodam-riverbank",
+        "az3-offshore",
+        "az3-waterway"
+      ],
       "bait": "일반 미끼 찌낚시 권장 (루어로도 가능)",
       "tips": "20레벨 승급 제출 대상 (1.5kg 초과 개체). 여러 수역에 폭넓게 출현 — 찌낚시로 큰 개체를 노리는 게 편함."
     },
@@ -147,7 +180,12 @@
         "루어"
       ],
       "spotIds": [
-        "longbow-serenity-bay"
+        "longbow-serenity-bay",
+        "longbow-cavern",
+        "longbow-waterway",
+        "longbow-canal",
+        "zerodam-riverbank",
+        "az3-waterway"
       ],
       "bait": "그린 스피너 2종 또는 정밀 포식 루어",
       "tips": "20레벨 승급 제출 대상 (2.5kg 초과 개체). 루어 전용이며 숭어보다 출현 수역이 적음."
@@ -163,7 +201,9 @@
       "method": [
         "찌낚시"
       ],
-      "spotIds": [],
+      "spotIds": [
+        "longbow-storage-dock"
+      ],
       "bait": null,
       "tips": null
     },
@@ -180,7 +220,13 @@
         "루어"
       ],
       "spotIds": [
-        "longbow-serenity-bay"
+        "longbow-serenity-bay",
+        "longbow-cavern",
+        "longbow-waterway",
+        "longbow-canal",
+        "longbow-storage-dock",
+        "zerodam-riverbank",
+        "az3-waterway"
       ],
       "bait": null,
       "tips": null
@@ -196,7 +242,9 @@
       "method": [
         "찌낚시"
       ],
-      "spotIds": [],
+      "spotIds": [
+        "longbow-storage-dock"
+      ],
       "bait": null,
       "tips": null
     },
@@ -229,7 +277,13 @@
       "method": [
         "루어"
       ],
-      "spotIds": [],
+      "spotIds": [
+        "longbow-cavern",
+        "longbow-waterway",
+        "longbow-canal",
+        "zerodam-riverbank",
+        "az3-waterway"
+      ],
       "bait": null,
       "tips": null
     },
@@ -249,7 +303,8 @@
         "longbow-serenity-bay",
         "longbow-cavern",
         "longbow-storage-dock",
-        "zerodam-riverbank"
+        "zerodam-riverbank",
+        "az3-waterway"
       ],
       "bait": "찌낚시·루어 모두 가능 — 편한 방식으로",
       "tips": "30레벨 승급 제출 대상(컬터 제출 후 순차 요구). 베이·동굴·부두·댐 등 널리 출현. 일부 가이드의 '엔들리허 비커' 표기는 오역으로 알려짐."
@@ -258,7 +313,7 @@
       "id": "mirror-carp",
       "image": "img/fish/mirror-carp.png?v=fish-cutout",
       "nameEn": "Mirror Carp",
-      "nameKr": "거울잉어",
+      "nameKr": "거울잉어(미러카프)",
       "nameKrConfirmed": true,
       "rarity": "희귀",
       "size": "중형",
@@ -266,10 +321,12 @@
         "루어"
       ],
       "spotIds": [
-        "longbow-cavern"
+        "longbow-cavern",
+        "az3-waterway"
       ],
       "bait": null,
-      "tips": null
+      "tips": null,
+      "rarityAlt": "골드"
     },
     {
       "id": "pike",
@@ -283,7 +340,9 @@
         "루어"
       ],
       "spotIds": [
-        "longbow-serenity-bay"
+        "longbow-serenity-bay",
+        "zerodam-riverbank",
+        "az3-waterway"
       ],
       "bait": null,
       "tips": null
@@ -299,7 +358,9 @@
       "method": [
         "찌낚시"
       ],
-      "spotIds": [],
+      "spotIds": [
+        "longbow-storage-dock"
+      ],
       "bait": null,
       "tips": null
     },
@@ -315,8 +376,8 @@
         "루어"
       ],
       "spotIds": [
-        "longbow-canal",
-        "longbow-waterway"
+        "longbow-waterway",
+        "longbow-canal"
       ],
       "bait": "심층 탐지 루어(딥워터 프로브) 권장, 딥워터 다이버도 가능 — 깊이 들어가는 루어가 유리",
       "tips": "40레벨 승급 제출 대상(1번째). 그로브 수로·운하에서만 출현. 퍼플·골드 등급 모두 제출 인정."
@@ -385,7 +446,9 @@
       ],
       "spotIds": [
         "longbow-waterway",
-        "zerodam-riverbank"
+        "zerodam-riverbank",
+        "az3-offshore",
+        "az3-waterway"
       ],
       "bait": "심해 대형 어류 진동 루어 / 정밀 포식 루어",
       "tips": "그로브 수로·댐 강변 양쪽에서 포획 사례 확인. 근거리 수로 파이팅이 어려운 편. 4000D 헤비 드래그 릴 해금 트레이드 요구 무게: 4.5kg."
@@ -403,10 +466,11 @@
         "루어"
       ],
       "spotIds": [
-        "longbow-canal",
         "longbow-waterway",
+        "longbow-canal",
         "zerodam-riverbank",
-        "az3-offshore"
+        "az3-offshore",
+        "az3-waterway"
       ],
       "bait": "심해 대형 어류 진동 루어 / 스틸볼 사운드 루어",
       "tips": "40레벨 승급 제출 대상(3번째) — 레드가 아닌 노랑(골드) 등급 제출도 인정. 도감 기준 그로브 수로·운하·댐 강변·AZ3 외해 + 미확인 수역 1곳 출현. 30kg급까지 확인되는 강한 파이팅."

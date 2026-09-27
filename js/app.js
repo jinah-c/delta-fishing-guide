@@ -114,6 +114,142 @@
     return `<ul class="tip-list ${cls || ""}">${items.map(item => `<li>${esc(item)}</li>`).join("")}</ul>`;
   }
 
+  function gearGroup(name) {
+    return DATA.gear && DATA.gear[name] ? DATA.gear[name] : [];
+  }
+
+  function gearById(group, id) {
+    return gearGroup(group).find(x => x.id === id);
+  }
+
+  function gearChip(item, kind, label) {
+    if (!item) return `<span>${esc(label || "정보 없음")}</span>`;
+    return `<span class="gear-chip gear-chip-${esc(kind)}">
+      ${item.image ? `<img src="${esc(item.image)}" alt="" loading="lazy">` : ""}
+      <span>${esc(label || item.nameKr || item.nameEn)}</span>
+    </span>`;
+  }
+
+  function baitGearItems(text) {
+    const value = String(text || "");
+    const lures = gearGroup("lures");
+    const floatBaits = gearGroup("floatBaits");
+    const all = [...lures, ...floatBaits];
+    const aliases = [
+      ["high-contrast-spoon", ["고대비 자극 스푼"]],
+      ["fluorescent-vibrating-spoon", ["형광 진동 스푼"]],
+      ["precision-hunting-lure", ["정밀 포식 루어", "그린 스피너"]],
+      ["deepwater-detection-lure", ["심층 탐지 루어", "딥워터 프로브", "딥워터 다이버"]],
+      ["high-freq-tail-swing", ["고빈도 테일 웜"]],
+      ["territorial-stimulus-lure", ["영역 자극 루어"]],
+      ["deep-diving-giant-vibration", ["심해 대형 어류 진동 루어"]],
+      ["steel-ball-acoustic", ["스틸볼 사운드 루어"]],
+      ["gold-plated-competition", ["골드 컴피티션 루어", "골드 루어"]],
+      ["enhanced-attractant-dough", ["일반 미끼", "강화 유인 미끼"]],
+      ["refined-competition-dough", ["고급 컴피티션 루어"]],
+      ["secret-bloodworm", ["레드 미끼", "적색 벌레 특제 미끼"]]
+    ];
+    const ids = [];
+    aliases.forEach(([id, keys]) => {
+      if (keys.some(key => value.includes(key))) ids.push(id);
+    });
+    return [...new Set(ids)].map(id => all.find(x => x.id === id)).filter(Boolean);
+  }
+
+  function baitGearHtml(f) {
+    const baitText = f.bait || "정보 없음";
+    const items = baitGearItems(baitText);
+    if (!items.length) return esc(baitText);
+    const chips = items.map(item => {
+      const kind = gearGroup("floatBaits").some(x => x.id === item.id) ? "bait" : "lure";
+      return gearChip(item, kind);
+    }).join("");
+    return `<div class="gear-chip-list">${chips}</div><div class="gear-note">${esc(baitText)}</div>`;
+  }
+
+  function fishSetup(f, certs) {
+    const certFish = certs.map(c => ({
+      cert: c,
+      info: c.fish.find(x => x.fishId === f.id)
+    })).find(x => x.info);
+    const methods = new Set(f.method);
+    const hasLure = methods.has("루어");
+    const hasFloat = methods.has("찌낚시");
+    const isRed = f.rarity === "레드";
+    const isBig = ["대형", "거대"].includes(f.size);
+    const isTradeFish = gearGroup("reels").some(r => (r.tradeFish || []).some(x => x.fishId === f.id));
+
+    let rodHtml;
+    let reelHtml;
+    let lineHtml;
+
+    if (certFish && certFish.info.rod) {
+      const rodText = certFish.info.rod;
+      const rodChips = [
+        rodText.includes("입문용") || rodText.includes("찌낚싯대") ? gearChip(gearById("rods", "starter-float-rod"), "rod") : "",
+        rodText.includes("GFRP") || rodText.includes("파이버") ? gearChip(gearById("rods", "fiberglass-lure-rod"), "rod", "GFRP 루어 낚싯대") : "",
+        rodText.includes("금속") ? gearChip(gearById("rods", "metal-lure-rod"), "rod") : "",
+        rodText.includes("하이카본") ? gearChip(gearById("rods", "high-carbon-lure-rod"), "rod") : ""
+      ].filter(Boolean).join("");
+      rodHtml = rodChips ? `<div class="gear-chip-list">${rodChips}</div><div class="gear-note">${esc(rodText)}</div>` : esc(rodText);
+    } else if (hasFloat && !hasLure) {
+      rodHtml = gearChip(gearById("rods", "starter-float-rod"), "rod");
+    } else if (isRed || (f.rarity === "희귀" && isBig)) {
+      rodHtml = `${gearChip(gearById("rods", "high-carbon-lure-rod"), "rod")} <span class="gear-note">권장</span>`;
+    } else if (f.rarity === "희귀") {
+      rodHtml = `${gearChip(gearById("rods", "metal-lure-rod"), "rod")} <span class="gear-note">이상 권장</span>`;
+    } else {
+      rodHtml = hasLure
+        ? `${gearChip(gearById("rods", "fiberglass-lure-rod"), "rod", "GFRP 루어 낚싯대")} <span class="gear-note">이상</span>`
+        : gearChip(gearById("rods", "starter-float-rod"), "rod");
+    }
+
+    if (hasLure) {
+      if (isRed || isTradeFish) {
+        reelHtml = `${gearChip(gearGroup("reels").find(x => x.tier === 4), "reel", "3000XH 초고속 스피닝릴")} <span class="gear-note">이상 · 4000D 해금 후 권장</span>`;
+      } else if (certFish && certFish.cert.level >= 40) {
+        reelHtml = `${gearChip(gearGroup("reels").find(x => x.tier === 4), "reel")} <span class="gear-note">이상 권장</span>`;
+      } else if ((certFish && certFish.cert.level >= 30) || f.rarity === "희귀" || isBig) {
+        reelHtml = `${gearChip(gearGroup("reels").find(x => x.tier === 3), "reel")} <span class="gear-note">이상 권장</span>`;
+      } else {
+        reelHtml = `${gearChip(gearGroup("reels").find(x => x.tier === 2), "reel")} <span class="gear-note">이상</span>`;
+      }
+    } else {
+      reelHtml = "찌낚시는 릴 정보 없음";
+    }
+
+    if (certFish && certFish.info.line) {
+      const lineText = certFish.info.line;
+      const lineItem = lineText.includes("60") || lineText.includes("골드")
+        ? gearGroup("lines").find(x => x.tier === 5)
+        : lineText.includes("40") || lineText.includes("퍼플")
+          ? gearGroup("lines").find(x => x.tier === 4)
+          : lineText.includes("25")
+            ? gearGroup("lines").find(x => x.tier === 3)
+            : gearGroup("lines").find(x => x.tier === 2);
+      lineHtml = `${gearChip(lineItem, "line")} <span class="gear-note">${esc(lineText)}</span>`;
+    } else if (isRed || isTradeFish || f.size === "거대") {
+      lineHtml = `${gearChip(gearGroup("lines").find(x => x.tier === 5), "line")} <span class="gear-note">권장</span>`;
+    } else if (f.rarity === "희귀" || isBig) {
+      lineHtml = `${gearChip(gearGroup("lines").find(x => x.tier === 4), "line")} <span class="gear-note">권장</span>`;
+    } else {
+      lineHtml = `${gearChip(gearGroup("lines").find(x => x.tier === 3), "line")} <span class="gear-note">이상</span>`;
+    }
+
+    return [
+      { label: "낚싯대", html: rodHtml },
+      { label: "릴", html: reelHtml },
+      { label: "낚시줄", html: lineHtml },
+      { label: "미끼/루어", html: baitGearHtml(f) }
+    ];
+  }
+
+  function fishSetupList(f, certs) {
+    return `<ul class="fish-setup-list">
+      ${fishSetup(f, certs).map(row => `<li><span class="setup-label">${esc(row.label)}</span><div class="setup-value">${row.html}</div></li>`).join("")}
+    </ul>`;
+  }
+
   // requirement·guide가 배열이면 줄 단위로 끊어 목록으로 (문자열이면 한 줄 그대로)
   function lineList(value, cls) {
     if (!Array.isArray(value)) return esc(value);
@@ -307,16 +443,24 @@
     <div class="fish-hero-body">
     <div class="detail-head"><h1>${fishName(f, true)}</h1></div>
     <p>${rarityBadge(f)} ${methodBadges(f)} <span class="badge badge-size">${esc(f.size)}</span></p>
-    <dl class="kv">
-      <dt>잡는 곳</dt>
-      <dd>${locs.length
-        ? locs.map(l => `<a href="#/map/${l.map.id}">${esc(l.map.nameKr)} — ${esc(l.spot.nameKr)}</a>`).join("<br>")
-        : (f.spotNote ? esc(f.spotNote) : "출현 수역 미확정 (인게임 도감 확인 필요)")}</dd>
-      <dt>낚시법</dt><dd>${f.method.map(esc).join(", ")}</dd>
-      <dt>미끼/루어</dt><dd>${f.bait ? esc(f.bait) : "정보 없음"}</dd>
-      ${f.tips ? `<dt>팁</dt><dd>${tipList(f.tips)}</dd>` : ""}
-      ${certs.length ? `<dt>승급 연관</dt><dd>${certs.map(c => `<a href="#/missions">레벨 ${c.level} ${esc(c.nameKr)}</a>`).join("<br>")}</dd>` : ""}
-    </dl>
+    <div class="fish-info-panel">
+      <section class="fish-info-section">
+        <h2>잡는 곳</h2>
+        <div>${locs.length
+          ? locs.map(l => `<a href="#/map/${l.map.id}">${esc(l.map.nameKr)} — ${esc(l.spot.nameKr)}</a>`).join("<br>")
+          : (f.spotNote ? esc(f.spotNote) : "출현 수역 미확정 (인게임 도감 확인 필요)")}</div>
+      </section>
+      <section class="fish-info-section">
+        <h2>낚시법</h2>
+        <div>${f.method.map(esc).join(", ")}</div>
+      </section>
+      <section class="fish-info-section">
+        <h2>추천 장비</h2>
+        ${fishSetupList(f, certs)}
+      </section>
+      ${f.tips ? `<section class="fish-info-section"><h2>팁</h2>${tipList(f.tips)}</section>` : ""}
+      ${certs.length ? `<section class="fish-info-section"><h2>승급 연관</h2><div>${certs.map(c => `<a href="#/missions">레벨 ${c.level} ${esc(c.nameKr)}</a>`).join("<br>")}</div></section>` : ""}
+    </div>
     </div>
     </div>
     ${locs.length ? locs.map(l => `

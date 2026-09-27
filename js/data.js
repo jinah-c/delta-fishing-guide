@@ -24,16 +24,18 @@ const DATA = {
           "coord": null,
           "description": "맵 좌상단의 만(灣). 조 리드 스폰 지점 중 하나(집 주변). 타이거피시 유일 출현지이며, 집 주변 바닥·테이블에서 낚시줄·루어(골드 줄 포함) 필드 스폰 확인됨.",
           "fishIds": [
-            "topmouth-culter",
-            "saddled-bichir",
-            "tigerfish",
+            "tilapia",
+            "mullet",
+            "zander",
+            "striped-bass",
             "redtail",
             "black-carp",
+            "topmouth-culter",
+            "pike",
+            "saddled-bichir",
+            "tigerfish",
             "bighead-carp",
-            "striped-bass",
-            "zander",
-            "shortnose-bichir",
-            "pike"
+            "shortnose-bichir"
           ]
         },
         {
@@ -45,8 +47,16 @@ const DATA = {
           "coord": null,
           "description": "저장소 부두 바로 아래 동굴 수역(하모니카 소녀 위치). 플래티넘 실버 아로와나 포인트. 찌낚시 코인 파밍 효율 최상위 스팟.",
           "fishIds": [
+            "tilapia",
+            "mullet",
+            "zander",
+            "striped-bass",
+            "redtail",
+            "shortnose-bichir",
+            "giraffe-catfish",
+            "saddled-bichir",
             "platinum-silver-arowana",
-            "saddled-bichir"
+            "mirror-carp"
           ]
         },
         {
@@ -58,9 +68,16 @@ const DATA = {
           "coord": null,
           "description": "운하(남쪽 큰 강)에서 갈라져 올라가는 좁은 지류 수로 전체. 북아프리카메기·자이언트 브라운 송어 포인트.",
           "fishIds": [
+            "tilapia",
+            "mullet",
+            "zander",
+            "striped-bass",
+            "redtail",
+            "shortnose-bichir",
+            "giraffe-catfish",
             "north-african-catfish",
-            "giant-brown-trout",
-            "baby-shark"
+            "baby-shark",
+            "giant-brown-trout"
           ]
         },
         {
@@ -72,6 +89,13 @@ const DATA = {
           "coord": null,
           "description": "맵 남쪽을 흐르는 넓은 강 본류. 북아프리카메기·대서양 연어·빅아이 타폰·새끼상어 포인트.",
           "fishIds": [
+            "tilapia",
+            "mullet",
+            "zander",
+            "striped-bass",
+            "redtail",
+            "shortnose-bichir",
+            "giraffe-catfish",
             "north-african-catfish",
             "baby-shark",
             "atlantic-salmon",
@@ -87,8 +111,16 @@ const DATA = {
           "coord": null,
           "description": "아이언 돔(플래그십 임무) 구역 내부의 부두 수역. 사파이어 오스카(찌낚시 소장급) 포인트. 동굴과 함께 코인 파밍 추천 스팟.",
           "fishIds": [
-            "sapphire-snakehead",
-            "saddled-bichir"
+            "tilapia",
+            "redtail",
+            "ruby-cichlid",
+            "longnose-elephantfish",
+            "striped-bass",
+            "shortnose-bichir",
+            "mullet",
+            "saddled-bichir",
+            "african-butterflyfish",
+            "sapphire-snakehead"
           ]
         }
       ]
@@ -116,10 +148,19 @@ const DATA = {
           "coord": null,
           "description": "댐 하류 강변 수역. 제로댐의 유일한 낚시터. 백조어(톱마우스 컬터)·자이언트 브라운 송어 포인트.",
           "fishIds": [
+            "tilapia",
+            "mullet",
+            "zander",
+            "striped-bass",
+            "redtail",
+            "black-carp",
             "topmouth-culter",
+            "shortnose-bichir",
+            "giraffe-catfish",
+            "pike",
             "saddled-bichir",
-            "giant-brown-trout",
-            "baby-shark"
+            "baby-shark",
+            "giant-brown-trout"
           ]
         }
       ]
@@ -147,10 +188,14 @@ const DATA = {
           "coord": null,
           "description": "원전 앞바다(방사능 오염수). 피콕하인드(방사능 그루퍼) 유일 출현지 + 대서양 연어·빅아이 타폰·새끼상어 포인트.",
           "fishIds": [
+            "tilapia",
+            "mullet",
+            "striped-bass",
             "radioactive-grouper",
             "baby-shark",
-            "atlantic-salmon",
-            "bigeye-tarpon"
+            "giant-brown-trout",
+            "bigeye-tarpon",
+            "atlantic-salmon"
           ]
         },
         {
@@ -161,7 +206,21 @@ const DATA = {
           "nameConfirmed": false,
           "coord": null,
           "description": "원전 구역의 오염되지 않은 담수 수로.",
-          "fishIds": []
+          "fishIds": [
+            "tilapia",
+            "mullet",
+            "zander",
+            "striped-bass",
+            "redtail",
+            "black-carp",
+            "shortnose-bichir",
+            "giraffe-catfish",
+            "pike",
+            "saddled-bichir",
+            "mirror-carp",
+            "baby-shark",
+            "giant-brown-trout"
+          ]
         }
       ]
     }
@@ -179,7 +238,16 @@ const DATA = {
         "찌낚시",
         "루어"
       ],
-      "spotIds": [],
+      "spotIds": [
+        "longbow-serenity-bay",
+        "longbow-cavern",
+        "longbow-waterway",
+        "longbow-canal",
+        "longbow-storage-dock",
+        "zerodam-riverbank",
+        "az3-offshore",
+        "az3-waterway"
+      ],
       "spotNote": "거의 모든 수역 (전 맵 공통 출현)",
       "bait": null,
       "tips": null
@@ -229,7 +297,13 @@ const DATA = {
         "루어"
       ],
       "spotIds": [
-        "longbow-serenity-bay"
+        "longbow-serenity-bay",
+        "longbow-cavern",
+        "longbow-waterway",
+        "longbow-canal",
+        "longbow-storage-dock",
+        "zerodam-riverbank",
+        "az3-waterway"
       ],
       "bait": null,
       "tips": null
@@ -263,7 +337,9 @@ const DATA = {
         "루어"
       ],
       "spotIds": [
-        "longbow-serenity-bay"
+        "longbow-serenity-bay",
+        "zerodam-riverbank",
+        "az3-waterway"
       ],
       "bait": null,
       "tips": null
@@ -280,7 +356,14 @@ const DATA = {
         "루어"
       ],
       "spotIds": [
-        "longbow-serenity-bay"
+        "longbow-serenity-bay",
+        "longbow-cavern",
+        "longbow-waterway",
+        "longbow-canal",
+        "longbow-storage-dock",
+        "zerodam-riverbank",
+        "az3-offshore",
+        "az3-waterway"
       ],
       "bait": null,
       "tips": null
@@ -297,7 +380,16 @@ const DATA = {
         "찌낚시",
         "루어"
       ],
-      "spotIds": [],
+      "spotIds": [
+        "longbow-serenity-bay",
+        "longbow-cavern",
+        "longbow-waterway",
+        "longbow-canal",
+        "longbow-storage-dock",
+        "zerodam-riverbank",
+        "az3-offshore",
+        "az3-waterway"
+      ],
       "bait": "일반 미끼 찌낚시 권장 (루어로도 가능)",
       "tips": "20레벨 승급 제출 대상 (1.5kg 초과 개체). 여러 수역에 폭넓게 출현 — 찌낚시로 큰 개체를 노리는 게 편함."
     },
@@ -313,7 +405,12 @@ const DATA = {
         "루어"
       ],
       "spotIds": [
-        "longbow-serenity-bay"
+        "longbow-serenity-bay",
+        "longbow-cavern",
+        "longbow-waterway",
+        "longbow-canal",
+        "zerodam-riverbank",
+        "az3-waterway"
       ],
       "bait": "그린 스피너 2종 또는 정밀 포식 루어",
       "tips": "20레벨 승급 제출 대상 (2.5kg 초과 개체). 루어 전용이며 숭어보다 출현 수역이 적음."
@@ -329,7 +426,9 @@ const DATA = {
       "method": [
         "찌낚시"
       ],
-      "spotIds": [],
+      "spotIds": [
+        "longbow-storage-dock"
+      ],
       "bait": null,
       "tips": null
     },
@@ -346,7 +445,13 @@ const DATA = {
         "루어"
       ],
       "spotIds": [
-        "longbow-serenity-bay"
+        "longbow-serenity-bay",
+        "longbow-cavern",
+        "longbow-waterway",
+        "longbow-canal",
+        "longbow-storage-dock",
+        "zerodam-riverbank",
+        "az3-waterway"
       ],
       "bait": null,
       "tips": null
@@ -362,7 +467,9 @@ const DATA = {
       "method": [
         "찌낚시"
       ],
-      "spotIds": [],
+      "spotIds": [
+        "longbow-storage-dock"
+      ],
       "bait": null,
       "tips": null
     },
@@ -395,7 +502,13 @@ const DATA = {
       "method": [
         "루어"
       ],
-      "spotIds": [],
+      "spotIds": [
+        "longbow-cavern",
+        "longbow-waterway",
+        "longbow-canal",
+        "zerodam-riverbank",
+        "az3-waterway"
+      ],
       "bait": null,
       "tips": null
     },
@@ -415,7 +528,8 @@ const DATA = {
         "longbow-serenity-bay",
         "longbow-cavern",
         "longbow-storage-dock",
-        "zerodam-riverbank"
+        "zerodam-riverbank",
+        "az3-waterway"
       ],
       "bait": "찌낚시·루어 모두 가능 — 편한 방식으로",
       "tips": "30레벨 승급 제출 대상(컬터 제출 후 순차 요구). 베이·동굴·부두·댐 등 널리 출현. 일부 가이드의 '엔들리허 비커' 표기는 오역으로 알려짐."
@@ -424,7 +538,7 @@ const DATA = {
       "id": "mirror-carp",
       "image": "img/fish/mirror-carp.png?v=fish-cutout",
       "nameEn": "Mirror Carp",
-      "nameKr": "거울잉어",
+      "nameKr": "거울잉어(미러카프)",
       "nameKrConfirmed": true,
       "rarity": "희귀",
       "size": "중형",
@@ -432,10 +546,12 @@ const DATA = {
         "루어"
       ],
       "spotIds": [
-        "longbow-cavern"
+        "longbow-cavern",
+        "az3-waterway"
       ],
       "bait": null,
-      "tips": null
+      "tips": null,
+      "rarityAlt": "골드"
     },
     {
       "id": "pike",
@@ -449,7 +565,9 @@ const DATA = {
         "루어"
       ],
       "spotIds": [
-        "longbow-serenity-bay"
+        "longbow-serenity-bay",
+        "zerodam-riverbank",
+        "az3-waterway"
       ],
       "bait": null,
       "tips": null
@@ -465,7 +583,9 @@ const DATA = {
       "method": [
         "찌낚시"
       ],
-      "spotIds": [],
+      "spotIds": [
+        "longbow-storage-dock"
+      ],
       "bait": null,
       "tips": null
     },
@@ -481,8 +601,8 @@ const DATA = {
         "루어"
       ],
       "spotIds": [
-        "longbow-canal",
-        "longbow-waterway"
+        "longbow-waterway",
+        "longbow-canal"
       ],
       "bait": "심층 탐지 루어(딥워터 프로브) 권장, 딥워터 다이버도 가능 — 깊이 들어가는 루어가 유리",
       "tips": "40레벨 승급 제출 대상(1번째). 그로브 수로·운하에서만 출현. 퍼플·골드 등급 모두 제출 인정."
@@ -551,7 +671,9 @@ const DATA = {
       ],
       "spotIds": [
         "longbow-waterway",
-        "zerodam-riverbank"
+        "zerodam-riverbank",
+        "az3-offshore",
+        "az3-waterway"
       ],
       "bait": "심해 대형 어류 진동 루어 / 정밀 포식 루어",
       "tips": "그로브 수로·댐 강변 양쪽에서 포획 사례 확인. 근거리 수로 파이팅이 어려운 편. 4000D 헤비 드래그 릴 해금 트레이드 요구 무게: 4.5kg."
@@ -569,10 +691,11 @@ const DATA = {
         "루어"
       ],
       "spotIds": [
-        "longbow-canal",
         "longbow-waterway",
+        "longbow-canal",
         "zerodam-riverbank",
-        "az3-offshore"
+        "az3-offshore",
+        "az3-waterway"
       ],
       "bait": "심해 대형 어류 진동 루어 / 스틸볼 사운드 루어",
       "tips": "40레벨 승급 제출 대상(3번째) — 레드가 아닌 노랑(골드) 등급 제출도 인정. 도감 기준 그로브 수로·운하·댐 강변·AZ3 외해 + 미확인 수역 1곳 출현. 30kg급까지 확인되는 강한 파이팅."

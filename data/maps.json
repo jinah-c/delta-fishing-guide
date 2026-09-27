@@ -23,9 +23,18 @@
           "coord": null,
           "description": "맵 좌상단의 만(灣). 조 리드 스폰 지점 중 하나(집 주변). 타이거피시 유일 출현지이며, 집 주변 바닥·테이블에서 낚시줄·루어(골드 줄 포함) 필드 스폰 확인됨.",
           "fishIds": [
+            "tilapia",
+            "mullet",
+            "zander",
+            "striped-bass",
+            "redtail",
+            "black-carp",
             "topmouth-culter",
+            "pike",
             "saddled-bichir",
-            "tigerfish"
+            "tigerfish",
+            "bighead-carp",
+            "shortnose-bichir"
           ]
         },
         {
@@ -37,8 +46,16 @@
           "coord": null,
           "description": "저장소 부두 바로 아래 동굴 수역(하모니카 소녀 위치). 플래티넘 실버 아로와나 포인트. 찌낚시 코인 파밍 효율 최상위 스팟.",
           "fishIds": [
+            "tilapia",
+            "mullet",
+            "zander",
+            "striped-bass",
+            "redtail",
+            "shortnose-bichir",
+            "giraffe-catfish",
+            "saddled-bichir",
             "platinum-silver-arowana",
-            "saddled-bichir"
+            "mirror-carp"
           ]
         },
         {
@@ -50,9 +67,16 @@
           "coord": null,
           "description": "운하(남쪽 큰 강)에서 갈라져 올라가는 좁은 지류 수로 전체. 북아프리카메기·자이언트 브라운 송어 포인트.",
           "fishIds": [
+            "tilapia",
+            "mullet",
+            "zander",
+            "striped-bass",
+            "redtail",
+            "shortnose-bichir",
+            "giraffe-catfish",
             "north-african-catfish",
-            "giant-brown-trout",
-            "baby-shark"
+            "baby-shark",
+            "giant-brown-trout"
           ]
         },
         {
@@ -64,6 +88,13 @@
           "coord": null,
           "description": "맵 남쪽을 흐르는 넓은 강 본류. 북아프리카메기·대서양 연어·빅아이 타폰·새끼상어 포인트.",
           "fishIds": [
+            "tilapia",
+            "mullet",
+            "zander",
+            "striped-bass",
+            "redtail",
+            "shortnose-bichir",
+            "giraffe-catfish",
             "north-african-catfish",
             "baby-shark",
             "atlantic-salmon",
@@ -79,8 +110,16 @@
           "coord": null,
           "description": "아이언 돔(플래그십 임무) 구역 내부의 부두 수역. 사파이어 오스카(찌낚시 소장급) 포인트. 동굴과 함께 코인 파밍 추천 스팟.",
           "fishIds": [
-            "sapphire-snakehead",
-            "saddled-bichir"
+            "tilapia",
+            "redtail",
+            "ruby-cichlid",
+            "longnose-elephantfish",
+            "striped-bass",
+            "shortnose-bichir",
+            "mullet",
+            "saddled-bichir",
+            "african-butterflyfish",
+            "sapphire-snakehead"
           ]
         }
       ]
@@ -108,10 +147,19 @@
           "coord": null,
           "description": "댐 하류 강변 수역. 제로댐의 유일한 낚시터. 백조어(톱마우스 컬터)·자이언트 브라운 송어 포인트.",
           "fishIds": [
+            "tilapia",
+            "mullet",
+            "zander",
+            "striped-bass",
+            "redtail",
+            "black-carp",
             "topmouth-culter",
+            "shortnose-bichir",
+            "giraffe-catfish",
+            "pike",
             "saddled-bichir",
-            "giant-brown-trout",
-            "baby-shark"
+            "baby-shark",
+            "giant-brown-trout"
           ]
         }
       ]
@@ -139,10 +187,14 @@
           "coord": null,
           "description": "원전 앞바다(방사능 오염수). 피콕하인드(방사능 그루퍼) 유일 출현지 + 대서양 연어·빅아이 타폰·새끼상어 포인트.",
           "fishIds": [
+            "tilapia",
+            "mullet",
+            "striped-bass",
             "radioactive-grouper",
             "baby-shark",
-            "atlantic-salmon",
-            "bigeye-tarpon"
+            "giant-brown-trout",
+            "bigeye-tarpon",
+            "atlantic-salmon"
           ]
         },
         {
@@ -153,7 +205,21 @@
           "nameConfirmed": false,
           "coord": null,
           "description": "원전 구역의 오염되지 않은 담수 수로.",
-          "fishIds": []
+          "fishIds": [
+            "tilapia",
+            "mullet",
+            "zander",
+            "striped-bass",
+            "redtail",
+            "black-carp",
+            "shortnose-bichir",
+            "giraffe-catfish",
+            "pike",
+            "saddled-bichir",
+            "mirror-carp",
+            "baby-shark",
+            "giant-brown-trout"
+          ]
         }
       ]
     }
