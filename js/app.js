@@ -653,7 +653,6 @@
         <div class="mission-fish-body">
           <div class="mission-fish-title">
             <a href="#/fish/${f.id}">${fishName(f, true)}</a>
-            <span class="badge badge-size">${esc(x.weight)}</span>
             ${rarityBadge(f)}
           </div>
           <dl class="prep-list">
