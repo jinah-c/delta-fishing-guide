@@ -1047,6 +1047,10 @@ a.item-card:hover {
   width: 70%;
   height: 70%;
 }
+.thumb-line img {
+  width: 70%;
+  height: 70%;
+}
 /* 미끼·루어는 한 단계 더 줄여서 통일 */
 .thumb-bait img,
 .thumb-lure img {
