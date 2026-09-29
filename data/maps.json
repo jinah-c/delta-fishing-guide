@@ -21,7 +21,7 @@
           "nameCn": "溪谷静水湾",
           "nameConfirmed": true,
           "coord": null,
-          "description": "맵 좌상단의 만(灣). 조 리드 스폰 지점 중 하나(집 주변). 타이거피시 유일 출현지이며, 집 주변 바닥·테이블에서 낚시줄·루어(골드 줄 포함) 필드 스폰 확인됨.",
+          "description": "맵 좌상단의 만(灣). 조 리드 스폰 지점 중 하나(집 주변). 타이거피시 유일 출현지이며, 집 주변 바닥·테이블에서 낚싯줄·루어(골드 줄 포함) 필드 스폰 확인됨.",
           "fishIds": [
             "tilapia",
             "mullet",
@@ -170,9 +170,9 @@
       "nameEn": "AZ3",
       "nameCn": "AZ3(核电站)",
       "difficulty": "정규",
-      "note": "낚시터 2곳. 40레벨 승급 대상어(피콕하인드) 출현 맵. (지도 이미지는 임시본 — 마커 아이콘 포함, 교체 필요)",
+      "note": "낚시터 2곳. 40레벨 승급용 피콕하인드 출현 (지도 이미지는 임시본, 교체 예정)",
       "mapImage": "img/az3.webp",
-      "fishMapImage": "img/az3-fish-map.png",
+      "fishMapImage": "img/az3-fish-map.png?v=2",
       "fishMapSource": {
         "label": "X @50413836perfect",
         "url": "https://x.com/50413836perfect/status/2102337591987077193"
@@ -192,8 +192,7 @@
             "striped-bass",
             "radioactive-grouper",
             "baby-shark",
-            "giant-brown-trout",
-            "bigeye-tarpon",
+                "bigeye-tarpon",
             "atlantic-salmon"
           ]
         },

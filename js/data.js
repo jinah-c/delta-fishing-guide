@@ -22,7 +22,7 @@ const DATA = {
           "nameCn": "溪谷静水湾",
           "nameConfirmed": true,
           "coord": null,
-          "description": "맵 좌상단의 만(灣). 조 리드 스폰 지점 중 하나(집 주변). 타이거피시 유일 출현지이며, 집 주변 바닥·테이블에서 낚시줄·루어(골드 줄 포함) 필드 스폰 확인됨.",
+          "description": "맵 좌상단의 만(灣). 조 리드 스폰 지점 중 하나(집 주변). 타이거피시 유일 출현지이며, 집 주변 바닥·테이블에서 낚싯줄·루어(골드 줄 포함) 필드 스폰 확인됨.",
           "fishIds": [
             "tilapia",
             "mullet",
@@ -171,9 +171,9 @@ const DATA = {
       "nameEn": "AZ3",
       "nameCn": "AZ3(核电站)",
       "difficulty": "정규",
-      "note": "낚시터 2곳. 40레벨 승급 대상어(피콕하인드) 출현 맵. (지도 이미지는 임시본 — 마커 아이콘 포함, 교체 필요)",
+      "note": "낚시터 2곳. 40레벨 승급용 피콕하인드 출현 (지도 이미지는 임시본, 교체 예정)",
       "mapImage": "img/az3.webp",
-      "fishMapImage": "img/az3-fish-map.png",
+      "fishMapImage": "img/az3-fish-map.png?v=2",
       "fishMapSource": {
         "label": "X @50413836perfect",
         "url": "https://x.com/50413836perfect/status/2102337591987077193"
@@ -193,7 +193,6 @@ const DATA = {
             "striped-bass",
             "radioactive-grouper",
             "baby-shark",
-            "giant-brown-trout",
             "bigeye-tarpon",
             "atlantic-salmon"
           ]
@@ -646,7 +645,7 @@ const DATA = {
       "image": "img/fish/platinum-silver-arowana.png?v=dex2",
       "nameEn": "Platinum Silver Arowana",
       "nameKr": "플래티넘 실버 아로와나",
-      "nameKrConfirmed": false,
+      "nameKrConfirmed": true,
       "rarity": "레드",
       "size": "대형",
       "method": [
@@ -663,8 +662,9 @@ const DATA = {
       "image": "img/fish/giant-brown-trout.png?v=red3",
       "nameEn": "Giant Brown Trout",
       "nameKr": "자이언트 브라운 송어",
-      "nameKrConfirmed": false,
+      "nameKrConfirmed": true,
       "rarity": "레드",
+      "rarityAlt": "골드",
       "size": "대형",
       "method": [
         "루어"
@@ -672,11 +672,14 @@ const DATA = {
       "spotIds": [
         "longbow-waterway",
         "zerodam-riverbank",
-        "az3-offshore",
         "az3-waterway"
       ],
+      "lineTiers": [
+        4,
+        5
+      ],
       "bait": "심해 대형 어류 진동 루어 / 정밀 포식 루어",
-      "tips": "그로브 수로·댐 강변 양쪽에서 포획 사례 확인. 근거리 수로 파이팅이 어려운 편. 4000D 헤비 드래그 릴 해금 트레이드 요구 무게: 4.5kg."
+      "tips": "그로브 수로·댐 강변 양쪽에서 포획 사례 확인. 근거리 수로 파이팅이 어려운 편."
     },
     {
       "id": "baby-shark",
@@ -705,8 +708,9 @@ const DATA = {
       "image": "img/fish/atlantic-salmon.png?v=red3",
       "nameEn": "Atlantic Salmon",
       "nameKr": "대서양 연어",
-      "nameKrConfirmed": false,
+      "nameKrConfirmed": true,
       "rarity": "레드",
+      "rarityAlt": "골드",
       "size": "대형",
       "method": [
         "루어"
@@ -715,7 +719,7 @@ const DATA = {
         "longbow-canal",
         "az3-offshore"
       ],
-      "bait": "골드 컴피티션 루어 / 고빈도 테일 웜",
+      "bait": "골드 컴피티션 루어 / 고빈도 테일 웜 / 스틸볼 사운드 루어",
       "tips": "최고 난도로 꼽히는 레드. 노리다 보면 새끼상어·타폰이 대신 걸리는 일이 잦음. 깊고 먼 포인트 위주. 4000D 헤비 드래그 릴 해금 트레이드 요구 무게: 15kg."
     },
     {
@@ -723,8 +727,9 @@ const DATA = {
       "image": "img/fish/tigerfish.png?v=red3",
       "nameEn": "Tigerfish",
       "nameKr": "타이거피시",
-      "nameKrConfirmed": false,
+      "nameKrConfirmed": true,
       "rarity": "레드",
+      "rarityAlt": "골드",
       "size": "대형",
       "method": [
         "루어"
@@ -732,15 +737,19 @@ const DATA = {
       "spotIds": [
         "longbow-serenity-bay"
       ],
-      "bait": "스틸볼 사운드 루어(실전 추천) / 영역 자극 루어(인게임 추천) / 골드 루어",
-      "tips": "그로브 베이(우물낚시터 · 고요한 만) 유일 출현(조 리드 집 근처, 맵 좌상단). 줄을 멀리 끌지 않는 대신 순간 장력이 급상승하는 타입 — 장력 레드존 주의. 4000D 헤비 드래그 릴 해금 트레이드 요구 무게: 6kg."
+      "lineTiers": [
+        4,
+        5
+      ],
+      "bait": "스틸볼 사운드 루어 / 영역 자극 루어 / 골드 루어",
+      "tips": "그로브 베이(우물낚시터 · 고요한 만) 유일 출현(조 리드 집 근처, 맵 좌상단). 줄을 멀리 끌지 않는 대신 순간 장력이 급상승하는 타입 — 장력 레드존 주의."
     },
     {
       "id": "bigeye-tarpon",
       "image": "img/fish/bigeye-tarpon.png?v=crate1",
       "nameEn": "Bigeye Tarpon (Indo-Pacific Tarpon)",
       "nameKr": "빅아이 타폰",
-      "nameKrConfirmed": false,
+      "nameKrConfirmed": true,
       "rarity": "레드",
       "size": "거대",
       "method": [
@@ -749,6 +758,10 @@ const DATA = {
       "spotIds": [
         "longbow-canal",
         "az3-offshore"
+      ],
+      "lineTiers": [
+        4,
+        5
       ],
       "bait": "골드 컴피티션 루어 / 심층 탐지 루어 (공식 추천 미끼 없음)",
       "tips": "2x4 초대형 소장급. 포획 시 전용 배지 획득. 운하·AZ3 외해에서 출현. 첨부 상자 미리보기에서 임시 이미지를 추출했으며, 고화질 도감 컷 확보 시 교체 예정."
@@ -871,7 +884,7 @@ const DATA = {
             "fishId": "north-african-catfish",
             "condition": "퍼플·골드 인정",
             "rod": "하이카본 루어 낚싯대 권장",
-            "line": "퍼플 이상 낚시줄 권장",
+            "line": "퍼플 이상 낚싯줄 권장",
             "bait": "심층 탐지 루어(딥워터 프로브) / 딥워터 다이버",
             "note": "40레벨 최종 평가 1번째 제출어"
           },
@@ -879,7 +892,7 @@ const DATA = {
             "fishId": "radioactive-grouper",
             "condition": "퍼플·골드 인정",
             "rod": "하이카본 루어 낚싯대 권장",
-            "line": "퍼플~골드 낚시줄 권장",
+            "line": "퍼플~골드 낚싯줄 권장",
             "bait": "심해 대형 어류 진동 루어 / 형광 진동 스푼",
             "note": "AZ3 외해 전용. 롱보우에서는 잡히지 않음"
           },
@@ -887,7 +900,7 @@ const DATA = {
             "fishId": "baby-shark",
             "condition": null,
             "rod": "하이카본 루어 낚싯대 권장",
-            "line": "골드 낚시줄 권장",
+            "line": "골드 낚싯줄 권장",
             "bait": "심해 대형 어류 진동 루어 / 스틸볼 사운드 루어",
             "note": "강한 파이팅. 줄을 40m 이상 끌고 나갈 수 있어 릴·줄 세팅 중요"
           }
@@ -993,21 +1006,21 @@ const DATA = {
     "reels": [
       {
         "tier": 2,
-        "image": "img/gear/reel-t2.png?v=gear5",
+        "image": "img/gear/reel-t2.png?v=reel6",
         "nameEn": "2000H High-Speed",
         "nameKr": "2000H 고속 스피닝릴",
         "price": 5000
       },
       {
         "tier": 3,
-        "image": "img/gear/reel-t3.png?v=gear5",
+        "image": "img/gear/reel-t3.png?v=reel6",
         "nameEn": "2500D Strong-Drag",
         "nameKr": "2500D 강력 브레이크 스피닝릴",
         "price": 10000
       },
       {
         "tier": 4,
-        "image": "img/gear/reel-t4.png?v=gear5",
+        "image": "img/gear/reel-t4.png?v=reel6",
         "nameEn": "3000XH Ultra-High-Speed",
         "nameKr": "3000XH 초고속 스피닝릴",
         "price": 20000,
@@ -1015,7 +1028,7 @@ const DATA = {
       },
       {
         "tier": 5,
-        "image": "img/gear/reel-t5.png?v=gear5",
+        "image": "img/gear/reel-t5.png?v=reel6",
         "nameEn": "4000D Heavy-Drag",
         "nameKr": "4000D 헤비 드래그 스피닝릴",
         "unlock": "레드 3종 트레이드로 해금 — 대서양 연어 15kg·타이거피시 6kg·자이언트 브라운 송어 4.5kg 이상 각 1마리 교환",
@@ -1042,28 +1055,28 @@ const DATA = {
     "lines": [
       {
         "tier": 2,
-        "image": "img/gear/line-t2.png?v=line5",
+        "image": "img/gear/line-t2.png?v=line6",
         "nameEn": "Gray-Label Line",
         "nameKr": "그레이 라벨 낚싯줄",
         "price": 200
       },
       {
         "tier": 3,
-        "image": "img/gear/line-t3.png?v=line5",
+        "image": "img/gear/line-t3.png?v=line6",
         "nameEn": "25 lb Line",
         "nameKr": "25파운드 낚싯줄",
         "price": 400
       },
       {
         "tier": 4,
-        "image": "img/gear/line-t4.png?v=line5",
+        "image": "img/gear/line-t4.png?v=line6",
         "nameEn": "40 lb Line",
         "nameKr": "40파운드 낚싯줄",
         "price": 2300
       },
       {
         "tier": 5,
-        "image": "img/gear/line-t5.png?v=line5",
+        "image": "img/gear/line-t5.png?v=line6",
         "nameEn": "60 lb Line",
         "price": 2700,
         "note": "구매 제한 · 레드 3종 사냥 기준 권장 라인",
@@ -1071,7 +1084,7 @@ const DATA = {
       },
       {
         "tier": 6,
-        "image": null,
+        "image": "img/gear/line-t6.png?v=line6",
         "nameEn": "Amber Line",
         "nameKr": "앰버 낚싯줄"
       }
@@ -1079,7 +1092,7 @@ const DATA = {
     "floatBaits": [
       {
         "id": "enhanced-attractant-dough",
-        "image": "img/gear/enhanced-attractant-dough.png?v=bait2",
+        "image": "img/gear/enhanced-attractant-dough.png?v=bait3",
         "nameEn": "Enhanced Attractant Dough Bait",
         "nameKr": "강화 유인 미끼",
         "note": null,
@@ -1088,7 +1101,7 @@ const DATA = {
       },
       {
         "id": "refined-competition-dough",
-        "image": "img/gear/refined-competition-dough.png?v=bait2",
+        "image": "img/gear/refined-competition-dough.png?v=bait3",
         "nameEn": "Refined Competition Dough Bait",
         "nameKr": "고급 컴피티션 루어",
         "note": "반죽 미끼(인게임 표기가 '루어')",
@@ -1097,7 +1110,7 @@ const DATA = {
       },
       {
         "id": "secret-bloodworm",
-        "image": "img/gear/secret-bloodworm.png?v=bait2",
+        "image": "img/gear/secret-bloodworm.png?v=bait3",
         "nameEn": "Secret Bloodworm Bait",
         "nameKr": "적색 벌레 특제 미끼",
         "note": null,
@@ -1108,7 +1121,7 @@ const DATA = {
     "lures": [
       {
         "id": "high-contrast-spoon",
-        "image": "img/gear/high-contrast-spoon.png?v=gear6",
+        "image": "img/gear/high-contrast-spoon.png?v=lure8",
         "nameEn": "High-Contrast Stimulus Spoon",
         "nameKr": "고대비 자극 스푼",
         "price": 13,
@@ -1116,7 +1129,7 @@ const DATA = {
       },
       {
         "id": "fluorescent-vibrating-spoon",
-        "image": "img/gear/fluorescent-vibrating-spoon.png?v=gear6",
+        "image": "img/gear/fluorescent-vibrating-spoon.png?v=lure8",
         "nameEn": "Fluorescent Vibrating Spoon",
         "nameKr": "형광 진동 스푼",
         "price": 13,
@@ -1124,7 +1137,7 @@ const DATA = {
       },
       {
         "id": "precision-hunting-lure",
-        "image": "img/gear/precision-hunting-lure.png?v=gear6",
+        "image": "img/gear/precision-hunting-lure.png?v=lure8",
         "nameEn": "Precision Hunting Lure",
         "nameKr": "정밀 포식 루어",
         "price": 16,
@@ -1132,7 +1145,7 @@ const DATA = {
       },
       {
         "id": "deepwater-detection-lure",
-        "image": "img/gear/deepwater-detection-lure.png?v=gear6",
+        "image": "img/gear/deepwater-detection-lure.png?v=lure8",
         "nameEn": "Deepwater Detection Lure",
         "nameKr": "심층 탐지 루어",
         "note": "북아프리카메기용 (3클)",
@@ -1141,7 +1154,7 @@ const DATA = {
       },
       {
         "id": "high-freq-tail-swing",
-        "image": "img/gear/high-freq-tail-swing.png?v=gear6",
+        "image": "img/gear/high-freq-tail-swing.png?v=lure8",
         "nameEn": "High-Frequency Tail-Swing Soft Bait",
         "nameKr": "고빈도 테일 웜",
         "note": "30레벨 승급 대상어용 (보라)",
@@ -1150,7 +1163,7 @@ const DATA = {
       },
       {
         "id": "territorial-stimulus-lure",
-        "image": "img/gear/territorial-stimulus-lure.png?v=gear6",
+        "image": "img/gear/territorial-stimulus-lure.png?v=lure8",
         "nameEn": "Territorial Stimulus Lure",
         "nameKr": "영역 자극 루어",
         "price": 19,
@@ -1158,7 +1171,7 @@ const DATA = {
       },
       {
         "id": "deep-diving-giant-vibration",
-        "image": "img/gear/deep-diving-giant-vibration.png?v=lure7",
+        "image": "img/gear/deep-diving-giant-vibration.png?v=lure8",
         "nameEn": "Deep-Diving Giant Vibration Lure",
         "nameKr": "심해 대형 어류 진동 루어",
         "note": "피콕하인드·새끼상어용 (5클)",
@@ -1167,7 +1180,7 @@ const DATA = {
       },
       {
         "id": "steel-ball-acoustic",
-        "image": "img/gear/steel-ball-acoustic.png?v=lure7",
+        "image": "img/gear/steel-ball-acoustic.png?v=lure8",
         "nameEn": "Steel-Ball Acoustic Lure",
         "nameKr": "스틸볼 사운드 루어",
         "price": 19,
@@ -1175,7 +1188,7 @@ const DATA = {
       },
       {
         "id": "gold-plated-competition",
-        "image": "img/gear/gold-plated-competition.png?v=lure7",
+        "image": "img/gear/gold-plated-competition.png?v=lure8",
         "nameEn": "Gold-Plated Competition Lure",
         "nameKr": "골드 컴피티션 루어",
         "price": 21,
@@ -1188,9 +1201,9 @@ const DATA = {
     },
     "tips": [
       "5클 4000D 헤비 드래그 릴은 상점 구매가 아니라 레드 3종 트레이드로 해금: 대서양 연어 15kg, 타이거피시 6kg, 자이언트 브라운 송어 4.5kg 이상 각 1마리. 권장 준비물: 하이카본 루어대(30레벨) + 3000XH 릴(20,000코인) + 60lb 라인(2,700코인) + 골드/레드 미끼(30/40레벨).",
-      "장비 4종(낚싯대·릴·낚시줄·루어)의 등급이 전부 어획 등급과 레어 조우율에 영향 — 풀세팅이면 블루 미만이 거의 안 잡히고, 레드 조우율도 크게 오름. 레드가 안 보이면 장비부터 점검.",
-      "골드 낚시줄은 상점 구매가 주당 3개 제한. 대신 그로브 베이(우물낚시터 · 고요한 만) 집 주변 바닥·테이블에서 필드 스폰을 주울 수 있음. 단, 낚시줄은 안전상자에 못 넣으니 탈출까지 지켜야 함.",
-      "퍼플·골드 낚시줄 내구도는 20 — 물고기 20마리 잡으면 끝. 레이드 중 줄 교체 불가라서 끊기면 탈출 후 재정비가 답. 레드 사냥 세션이면 루어 40개쯤 챙겨가는 걸 추천.",
+      "장비 4종(낚싯대·릴·낚싯줄·루어)의 등급이 전부 어획 등급과 레어 조우율에 영향 — 풀세팅이면 블루 미만이 거의 안 잡히고, 레드 조우율도 크게 오름. 레드가 안 보이면 장비부터 점검.",
+      "골드 낚싯줄은 상점 구매가 주당 3개 제한. 대신 그로브 베이(우물낚시터 · 고요한 만) 집 주변 바닥·테이블에서 필드 스폰을 주울 수 있음. 단, 낚싯줄은 안전상자에 못 넣으니 탈출까지 지켜야 함.",
+      "퍼플·골드 낚싯줄 내구도는 20 — 물고기 20마리 잡으면 끝. 레이드 중 줄 교체 불가라서 끊기면 탈출 후 재정비가 답. 레드 사냥 세션이면 루어 40개쯤 챙겨가는 걸 추천.",
       "낚싯대는 2자루(하이카본 루어대 x2) 운용 추천 — 금속 루어대까지 쓰면 3자루도 가능. 릴·줄은 퍼플 이상으로.",
       "캐스팅할 때 시선을 아래로 내리면 최단거리로 던져짐 → 여유 줄이 10~15m 생겨서 대물 파이팅이 훨씬 수월. 실제로 레드 대부분이 짧은 캐스팅에서 잡혔다는 후기.",
       "레벨링은 찌낚시 연타가 최속. 루어 낚시는 30레벨 이후부터 권장."

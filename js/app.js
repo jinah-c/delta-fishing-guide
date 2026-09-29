@@ -122,11 +122,11 @@
     return gearGroup(group).find(x => x.id === id);
   }
 
-  function baitGearItems(text) {
+  /* 미끼/루어 설명에서 실제 아이템을 본문 등장 순서대로 뽑는다.
+     이름 바로 뒤(공백 없이)에 붙은 괄호는 그 아이템의 설명으로 함께 가져온다. */
+  function baitGearMatches(text) {
     const value = String(text || "");
-    const lures = gearGroup("lures");
-    const floatBaits = gearGroup("floatBaits");
-    const all = [...lures, ...floatBaits];
+    const all = [...gearGroup("lures"), ...gearGroup("floatBaits")];
     const aliases = [
       ["high-contrast-spoon", ["고대비 자극 스푼"]],
       ["fluorescent-vibrating-spoon", ["형광 진동 스푼"]],
@@ -141,11 +141,26 @@
       ["refined-competition-dough", ["고급 컴피티션 루어"]],
       ["secret-bloodworm", ["레드 미끼", "적색 벌레 특제 미끼"]]
     ];
-    const ids = [];
+    const matches = [];
     aliases.forEach(([id, keys]) => {
-      if (keys.some(key => value.includes(key))) ids.push(id);
+      const item = all.find(x => x.id === id);
+      if (!item) return;
+      let best = null;
+      keys.forEach(key => {
+        const at = value.indexOf(key);
+        if (at >= 0 && (!best || at < best.at)) best = { at, alias: key };
+      });
+      if (best) matches.push({ item, alias: best.alias, at: best.at, note: trailingParen(value, best.at + best.alias.length) });
     });
-    return [...new Set(ids)].map(id => all.find(x => x.id === id)).filter(Boolean);
+    return matches.sort((a, b) => a.at - b.at);
+  }
+
+  // "…루어(실전 추천)"처럼 이름에 바로 붙은 괄호만 그 아이템 설명으로 본다
+  function trailingParen(text, from) {
+    const open = text[from];
+    if (open !== "(" && open !== "（") return "";
+    const close = text.indexOf(open === "(" ? ")" : "）", from);
+    return close < 0 ? "" : text.slice(from, close + 1);
   }
 
   /* 추천 장비 데이터: 분류별로 실제 장비 아이템 + 부연 설명을 뽑는다 */
@@ -162,6 +177,7 @@
     const isTradeFish = gearGroup("reels").some(r => (r.tradeFish || []).some(x => x.fishId === f.id));
 
     const entry = (item, kind) => item ? { item, kind } : null;
+    const withNote = (e, note) => e ? Object.assign(e, { note }) : null;
     const rod = id => entry(gearById("rods", id), "rod");
     const reel = tier => entry(gearGroup("reels").find(x => x.tier === tier), "reel");
     const line = tier => entry(gearGroup("lines").find(x => x.tier === tier), "line");
@@ -176,18 +192,15 @@
         /금속/.test(text) ? rod("metal-lure-rod") : null,
         /하이카본/.test(text) ? rod("high-carbon-lure-rod") : null
       ].filter(Boolean);
-      rodNote = rodEntries.length ? setupRest(text, rodEntries) : text;
+      rodNote = rodEntries.length ? dropGeneric(setupRest(text, rodEntries)) : text;
     } else if (hasFloat && !hasLure) {
       rodEntries = [rod("starter-float-rod")].filter(Boolean);
     } else if (isRed || (f.rarity === "희귀" && isBig)) {
       rodEntries = [rod("high-carbon-lure-rod")].filter(Boolean);
-      rodNote = "권장";
     } else if (f.rarity === "희귀") {
       rodEntries = [rod("metal-lure-rod")].filter(Boolean);
-      rodNote = "이상 권장";
     } else if (hasLure) {
       rodEntries = [rod("fiberglass-lure-rod")].filter(Boolean);
-      rodNote = "이상";
     } else {
       rodEntries = [rod("starter-float-rod")].filter(Boolean);
     }
@@ -196,50 +209,53 @@
     let reelNote = "";
     if (hasLure) {
       if (isRed || isTradeFish) {
-        reelEntries = [reel(4), reel(5)].filter(Boolean);
-        reelNote = "이상 * 4000D 해금 시 4000D 권장";
+        reelEntries = [reel(4), withNote(reel(5), "* 권장")].filter(Boolean);
       } else if (certFish && certFish.cert.level >= 40) {
         reelEntries = [reel(4)].filter(Boolean);
-        reelNote = "이상 권장";
       } else if ((certFish && certFish.cert.level >= 30) || f.rarity === "희귀" || isBig) {
         reelEntries = [reel(3)].filter(Boolean);
-        reelNote = "이상 권장";
       } else {
         reelEntries = [reel(2)].filter(Boolean);
-        reelNote = "이상";
       }
     }
 
     let lineEntries;
     let lineNote = "";
-    if (certFish && certFish.info.line) {
+    if (Array.isArray(f.lineTiers) && f.lineTiers.length) {
+      // 어종 데이터에 쓸 수 있는 낚싯줄 클래스를 직접 적어둔 경우 (마지막 값이 권장)
+      lineEntries = f.lineTiers.map(line).filter(Boolean);
+      if (lineEntries.length && f.lineNote) lineEntries[lineEntries.length - 1].note = f.lineNote;
+    } else if (certFish && certFish.info.line) {
       const text = certFish.info.line;
       const tier = /60|골드/.test(text) ? 5 : /40|퍼플/.test(text) ? 4 : /25/.test(text) ? 3 : 2;
       lineEntries = [line(tier)].filter(Boolean);
-      lineNote = setupRest(text, lineEntries) || text;
+      lineNote = dropGeneric(setupRest(text, lineEntries)) || text;
     } else if (isRed || isTradeFish || f.size === "거대") {
       lineEntries = [line(5)].filter(Boolean);
-      lineNote = "권장";
     } else if (f.rarity === "희귀" || isBig) {
       lineEntries = [line(4)].filter(Boolean);
-      lineNote = "권장";
     } else {
       lineEntries = [line(3)].filter(Boolean);
-      lineNote = "이상";
     }
 
     const baitText = f.bait || "";
     const floatBaits = gearGroup("floatBaits");
-    const baitEntries = baitGearItems(baitText)
-      .map(item => entry(item, floatBaits.some(x => x.nameKr === item.nameKr) ? "bait" : "lure"))
-      .filter(Boolean);
+    const baitEntries = baitGearMatches(baitText).map(match => ({
+      item: match.item,
+      kind: floatBaits.some(x => x.nameKr === match.item.nameKr) ? "bait" : "lure",
+      alias: match.alias,
+      note: match.note
+    }));
     const baitNote = baitEntries.length ? setupRest(baitText, baitEntries) : (baitText || "정보 없음");
 
+    // 한 줄에 여러 장비가 오면 낮은 클래스부터 나열
+    const byTier = entries => entries.slice().sort((a, b) => (a.item.tier || 0) - (b.item.tier || 0));
+
     return [
-      { label: "낚싯대", entries: rodEntries, note: rodNote },
-      { label: "릴", entries: reelEntries, note: reelNote },
-      { label: "낚시줄", entries: lineEntries, note: lineNote },
-      { label: "미끼/루어", entries: baitEntries, note: baitNote }
+      { label: "낚싯대", entries: byTier(rodEntries), note: rodNote },
+      { label: "릴", entries: byTier(reelEntries), note: reelNote },
+      { label: "낚싯줄", entries: byTier(lineEntries), note: lineNote },
+      { label: "미끼/루어", entries: byTier(baitEntries), note: baitNote }
     ];
   }
 
@@ -262,9 +278,9 @@
 
   function setupValue(row) {
     if (!row.entries.length) return row.note ? esc(row.note) : "–";
-    const badges = row.entries.map(entry => gradeBadge(entry.item)).join("");
-    const lead = row.entries[0].item;
-    return `${badges}<span class="setup-name">${esc(lead.nameKr || lead.nameEn)}</span>${setupNote(row.note)}`;
+    const last = row.entries.length - 1;
+    const items = row.entries.map((entry, i) => `<span class="setup-item">${gradeBadge(entry.item)}<span class="setup-name">${esc(entry.item.nameKr || entry.item.nameEn)}</span>${setupNote(entry.note)}${i < last ? '<span class="setup-comma">,</span>' : ""}</span>`);
+    return `${items.join("")}${setupNote(row.note)}`;
   }
 
   /* 부연 설명 출력 — "*"로 시작하는 조각은 강조색으로 따로 뺀다 */
@@ -283,11 +299,16 @@
     return /[(（]/.test(text) ? esc(text) : `(${esc(text)})`;
   }
 
+  // "권장 / 이상 / 이상 권장"처럼 뱃지·장비명으로 이미 드러나는 부연은 버린다
+  function dropGeneric(note) {
+    return /^(이상\s*권장|권장\s*이상|이상|권장)$/.test(String(note || "").trim()) ? "" : note;
+  }
+
   // 장비명이 그대로 적힌 설명은 이름을 걷어내고 남은 부연("이상 권장" 등)만 남긴다
   function setupRest(text, entries) {
     let rest = String(text || "");
     entries.forEach(entry => {
-      [entry.item.nameKr, entry.item.nameEn].forEach(name => {
+      [entry.note, entry.alias, entry.item.nameKr, entry.item.nameEn].forEach(name => {
         if (name) rest = rest.split(name).join(" ");
       });
     });
@@ -321,7 +342,7 @@
         </div>
         <dl class="prep-list">
           <dt>필요 낚싯대</dt><dd>${esc(x.rod || "정보 없음")}</dd>
-          <dt>낚시줄</dt><dd>${esc(x.line || "정보 없음")}</dd>
+          <dt>낚싯줄</dt><dd>${esc(x.line || "정보 없음")}</dd>
           <dt>미끼/루어</dt><dd>${esc(bait)}</dd>
           <dt>출현장소</dt><dd>${fishLocLinks(f)}</dd>
           ${x.note ? `<dt>팁</dt><dd>${tipList(x.note, "tip-list-compact")}</dd>` : ""}
@@ -393,7 +414,7 @@
       <a href="#/missions"><div class="q-title">📈 승급 가이드</div><div class="q-sub">낚시 해금부터 10·20·30·40레벨 승급 준비물</div></a>
       <a href="#/red"><div class="q-title">🔴 빨간 물고기</div><div class="q-sub">소장급 ${redCount}종 — 잡는 곳과 준비물</div></a>
       <a href="#/npc"><div class="q-title">🎣 낚시꾼 NPC</div><div class="q-sub">조 리드(낚시꾼) 스폰위치 & 역할</div></a>
-      <a href="#/gear"><div class="q-title">🧰 장비 · 미끼</div><div class="q-sub">낚싯대·릴·낚시줄·미끼·루어 정리</div></a>
+      <a href="#/gear"><div class="q-title">🧰 장비 · 미끼</div><div class="q-sub">낚싯대·릴·낚싯줄·미끼·루어 정리</div></a>
     </div>
     <h2>시작하기 요약</h2>
     <div class="notice"><ul>${DATA.missions.unlock.conditions.map(conditionItem).join("")}</ul></div>`;
@@ -443,9 +464,9 @@
       const fishes = fishInSpot(s.id);
       const fishHtml = !fishes.length
         ? '<div class="fish-links"><span class="none">확인된 주요 어종 정보 없음 (일반 어종 출현)</span></div>'
-        : `<div class="fish-rows">${fishes.map(f => `<a href="#/fish/${f.id}">${fishThumb(f)}<span class="fish-row-name">${fishName(f)}</span><span class="fish-row-badges">${rarityBadge(f)}</span></a>`).join("")}</div>`;
+        : `<div class="fish-rows">${fishes.map(f => `<a href="#/fish/${f.id}">${fishThumb(f)}<span class="fish-row-name">${fishName(f)}</span></a>`).join("")}</div>`;
       return `<div class="spot-card">
-        <h3>${esc(s.nameKr)} ${s.nameConfirmed ? "" : '<span class="badge badge-unconfirmed">명칭 미확인</span>'}</h3>
+        <h3>${esc(s.nameKr)} ${s.nameEn ? `<span class="badge badge-spot-en">${esc(s.nameEn)}</span>` : ""}</h3>
         <div class="desc">${esc(s.description)}</div>
         ${fishHtml}
       </div>`;
@@ -662,14 +683,14 @@
       [priceText(b.price), b.note ? esc(b.note) : null].filter(Boolean).join("<br>") || null,
       tierTone(b));
     return `<h1>장비 · 미끼</h1>
-    <p class="page-desc">낚싯대는 승급 보상으로 해금. 릴·낚시줄은 클래스(등급)가 높을수록 상위 어종 대응.</p>
+    <p class="page-desc">낚싯대는 승급 보상으로 해금. 릴·낚싯줄은 클래스(등급)가 높을수록 상위 어종 대응.</p>
     <h2>낚싯대</h2>
     <div class="cards-2">${g.rods.map(r => itemCard(r, "rod", rodTitle(r),
       null,
       [priceText(r.price, r.currencyLabel), `🔓 ${esc(r.unlock)}`, r.note ? esc(r.note) : null].filter(Boolean).join("<br>"), tierTone(r))).join("")}</div>
     <h2>스피닝 릴</h2>
     <div class="cards-2">${g.reels.map(reelCard).join("")}</div>
-    <h2>낚시줄</h2>
+    <h2>낚싯줄</h2>
     <div class="cards-2">${g.lines.map(tierCard("line")).join("")}</div>
     <h2>찌낚시 미끼</h2>
     <div class="cards-2">${g.floatBaits.map(namedCard("bait")).join("")}</div>

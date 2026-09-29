@@ -421,7 +421,7 @@
       "image": "img/fish/platinum-silver-arowana.png?v=dex2",
       "nameEn": "Platinum Silver Arowana",
       "nameKr": "플래티넘 실버 아로와나",
-      "nameKrConfirmed": false,
+      "nameKrConfirmed": true,
       "rarity": "레드",
       "size": "대형",
       "method": [
@@ -438,8 +438,9 @@
       "image": "img/fish/giant-brown-trout.png?v=red3",
       "nameEn": "Giant Brown Trout",
       "nameKr": "자이언트 브라운 송어",
-      "nameKrConfirmed": false,
+      "nameKrConfirmed": true,
       "rarity": "레드",
+      "rarityAlt": "골드",
       "size": "대형",
       "method": [
         "루어"
@@ -447,11 +448,14 @@
       "spotIds": [
         "longbow-waterway",
         "zerodam-riverbank",
-        "az3-offshore",
         "az3-waterway"
       ],
+      "lineTiers": [
+        4,
+        5
+      ],
       "bait": "심해 대형 어류 진동 루어 / 정밀 포식 루어",
-      "tips": "그로브 수로·댐 강변 양쪽에서 포획 사례 확인. 근거리 수로 파이팅이 어려운 편. 4000D 헤비 드래그 릴 해금 트레이드 요구 무게: 4.5kg."
+      "tips": "그로브 수로·댐 강변 양쪽에서 포획 사례 확인. 근거리 수로 파이팅이 어려운 편."
     },
     {
       "id": "baby-shark",
@@ -480,8 +484,9 @@
       "image": "img/fish/atlantic-salmon.png?v=red3",
       "nameEn": "Atlantic Salmon",
       "nameKr": "대서양 연어",
-      "nameKrConfirmed": false,
+      "nameKrConfirmed": true,
       "rarity": "레드",
+      "rarityAlt": "골드",
       "size": "대형",
       "method": [
         "루어"
@@ -490,7 +495,7 @@
         "longbow-canal",
         "az3-offshore"
       ],
-      "bait": "골드 컴피티션 루어 / 고빈도 테일 웜",
+      "bait": "골드 컴피티션 루어 / 고빈도 테일 웜 / 스틸볼 사운드 루어",
       "tips": "최고 난도로 꼽히는 레드. 노리다 보면 새끼상어·타폰이 대신 걸리는 일이 잦음. 깊고 먼 포인트 위주. 4000D 헤비 드래그 릴 해금 트레이드 요구 무게: 15kg."
     },
     {
@@ -498,8 +503,9 @@
       "image": "img/fish/tigerfish.png?v=red3",
       "nameEn": "Tigerfish",
       "nameKr": "타이거피시",
-      "nameKrConfirmed": false,
+      "nameKrConfirmed": true,
       "rarity": "레드",
+      "rarityAlt": "골드",
       "size": "대형",
       "method": [
         "루어"
@@ -507,15 +513,19 @@
       "spotIds": [
         "longbow-serenity-bay"
       ],
-      "bait": "스틸볼 사운드 루어(실전 추천) / 영역 자극 루어(인게임 추천) / 골드 루어",
-      "tips": "그로브 베이(우물낚시터 · 고요한 만) 유일 출현(조 리드 집 근처, 맵 좌상단). 줄을 멀리 끌지 않는 대신 순간 장력이 급상승하는 타입 — 장력 레드존 주의. 4000D 헤비 드래그 릴 해금 트레이드 요구 무게: 6kg."
+      "lineTiers": [
+        4,
+        5
+      ],
+      "bait": "스틸볼 사운드 루어 / 영역 자극 루어 / 골드 루어",
+      "tips": "그로브 베이(우물낚시터 · 고요한 만) 유일 출현(조 리드 집 근처, 맵 좌상단). 줄을 멀리 끌지 않는 대신 순간 장력이 급상승하는 타입 — 장력 레드존 주의."
     },
     {
       "id": "bigeye-tarpon",
       "image": "img/fish/bigeye-tarpon.png?v=crate1",
       "nameEn": "Bigeye Tarpon (Indo-Pacific Tarpon)",
       "nameKr": "빅아이 타폰",
-      "nameKrConfirmed": false,
+      "nameKrConfirmed": true,
       "rarity": "레드",
       "size": "거대",
       "method": [
@@ -524,6 +534,10 @@
       "spotIds": [
         "longbow-canal",
         "az3-offshore"
+      ],
+      "lineTiers": [
+        4,
+        5
       ],
       "bait": "골드 컴피티션 루어 / 심층 탐지 루어 (공식 추천 미끼 없음)",
       "tips": "2x4 초대형 소장급. 포획 시 전용 배지 획득. 운하·AZ3 외해에서 출현. 첨부 상자 미리보기에서 임시 이미지를 추출했으며, 고화질 도감 컷 확보 시 교체 예정."
