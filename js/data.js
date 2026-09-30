@@ -160,7 +160,7 @@ const DATA = {
       "note": "낚시터 1곳.",
       "mapImage": "img/zero-dam.jpg",
       "layerMap": {
-        "base": "img/maps/zero-dam/base.jpg?v=1",
+        "base": "img/maps/zero-dam/base.jpg?v=2",
         "layers": [
           {
             "spotId": "zerodam-riverbank",
