@@ -9,6 +9,32 @@ const DATA = {
       "difficulty": "정규",
       "note": "낚시터 5곳으로 가장 많음. 낚시꾼 NPC(조 리드) 스폰 유일 맵. 피콕하인드(방사능 그루퍼)를 제외한 전 어종을 이 맵에서 잡을 수 있음. 낚시는 현재 정규 난이도(롱보우·AZ3·제로댐)에서만 가능.",
       "mapImage": "img/longbow.jpg",
+      "layerMap": {
+        "_note": "layers는 위에 쌓이는 순서 (첫 항목이 가장 위)",
+        "base": "img/maps/longbow/base.jpg?v=2",
+        "layers": [
+          {
+            "spotId": "longbow-cavern",
+            "image": "img/maps/longbow/cavern.png?v=1"
+          },
+          {
+            "spotId": "longbow-canal",
+            "image": "img/maps/longbow/canal.png?v=1"
+          },
+          {
+            "spotId": "longbow-storage-dock",
+            "image": "img/maps/longbow/storage-dock.png?v=3"
+          },
+          {
+            "spotId": "longbow-serenity-bay",
+            "image": "img/maps/longbow/serenity-bay.png?v=1"
+          },
+          {
+            "spotId": "longbow-waterway",
+            "image": "img/maps/longbow/waterway.png?v=1"
+          }
+        ]
+      },
       "fishMapImage": "img/longbow-fish-map.jpg?v=3",
       "fishMapSource": {
         "label": "X @50413836perfect",
@@ -133,6 +159,15 @@ const DATA = {
       "difficulty": "정규",
       "note": "낚시터 1곳.",
       "mapImage": "img/zero-dam.jpg",
+      "layerMap": {
+        "base": "img/maps/zero-dam/base.jpg?v=1",
+        "layers": [
+          {
+            "spotId": "zerodam-riverbank",
+            "image": "img/maps/zero-dam/riverbank.png?v=1"
+          }
+        ]
+      },
       "fishMapImage": "img/zero-dam-fish-map.jpg",
       "fishMapSource": {
         "label": "X @50413836perfect",
@@ -173,6 +208,19 @@ const DATA = {
       "difficulty": "정규",
       "note": "낚시터 2곳. 40레벨 승급용 피콕하인드 출현 (지도 이미지는 임시본, 교체 예정)",
       "mapImage": "img/az3.webp",
+      "layerMap": {
+        "base": "img/maps/az3/base.jpg?v=1",
+        "layers": [
+          {
+            "spotId": "az3-offshore",
+            "image": "img/maps/az3/offshore.png?v=1"
+          },
+          {
+            "spotId": "az3-waterway",
+            "image": "img/maps/az3/waterway.png?v=1"
+          }
+        ]
+      },
       "fishMapImage": "img/az3-fish-map.png?v=2",
       "fishMapSource": {
         "label": "X @50413836perfect",
@@ -227,7 +275,7 @@ const DATA = {
   "fish": [
     {
       "id": "tilapia",
-      "image": "img/fish/tilapia.png?v=fish-cutout",
+      "image": "img/fish/tilapia.png?v=fish4",
       "nameEn": "Tilapia",
       "nameKr": "틸라피아",
       "nameKrConfirmed": true,
@@ -253,7 +301,7 @@ const DATA = {
     },
     {
       "id": "sharpbelly",
-      "image": "img/fish/sharpbelly.png?v=fish-cutout",
+      "image": "img/fish/sharpbelly.png?v=fish4",
       "nameEn": "Sharpbelly",
       "nameKr": "피라미",
       "nameKrConfirmed": true,
@@ -269,7 +317,7 @@ const DATA = {
     },
     {
       "id": "banded-barb",
-      "image": "img/fish/banded-barb.png?v=fish-cutout",
+      "image": "img/fish/banded-barb.png?v=fish4",
       "nameEn": "Banded Barb",
       "nameKr": "줄무늬 물고기",
       "nameKrConfirmed": true,
@@ -285,7 +333,7 @@ const DATA = {
     },
     {
       "id": "redtail",
-      "image": "img/fish/redtail.png?v=fish-cutout",
+      "image": "img/fish/redtail.png?v=fish4",
       "nameEn": "Redtail",
       "nameKr": "레드테일캣피시",
       "nameKrConfirmed": true,
@@ -309,7 +357,7 @@ const DATA = {
     },
     {
       "id": "bighead-carp",
-      "image": "img/fish/bighead-carp.png?v=fish-cutout",
+      "image": "img/fish/bighead-carp.png?v=fish4",
       "nameEn": "Bighead Carp",
       "nameKr": "대두어",
       "nameKrConfirmed": true,
@@ -326,7 +374,7 @@ const DATA = {
     },
     {
       "id": "black-carp",
-      "image": "img/fish/black-carp.png?v=fish-cutout",
+      "image": "img/fish/black-carp.png?v=fish4",
       "nameEn": "Black Carp",
       "nameKr": "청어",
       "nameKrConfirmed": true,
@@ -345,7 +393,7 @@ const DATA = {
     },
     {
       "id": "striped-bass",
-      "image": "img/fish/striped-bass.png?v=fish-cutout",
+      "image": "img/fish/striped-bass.png?v=fish4",
       "nameEn": "Striped Bass",
       "nameKr": "줄무늬농어",
       "nameKrConfirmed": true,
@@ -369,7 +417,7 @@ const DATA = {
     },
     {
       "id": "mullet",
-      "image": "img/fish/mullet.png?v=fish-cutout",
+      "image": "img/fish/mullet.png?v=fish4",
       "nameEn": "Mullet",
       "nameKr": "숭어",
       "nameKrConfirmed": true,
@@ -394,7 +442,7 @@ const DATA = {
     },
     {
       "id": "zander",
-      "image": "img/fish/zander.png?v=fish-cutout",
+      "image": "img/fish/zander.png?v=fish4",
       "nameEn": "Zander",
       "nameKr": "파이크퍼치(잰더)",
       "nameKrConfirmed": true,
@@ -416,7 +464,7 @@ const DATA = {
     },
     {
       "id": "ruby-cichlid",
-      "image": "img/fish/ruby-cichlid.png?v=fish-cutout",
+      "image": "img/fish/ruby-cichlid.png?v=fish4",
       "nameEn": "Ruby Cichlid",
       "nameKr": "루비피시",
       "nameKrConfirmed": true,
@@ -433,7 +481,7 @@ const DATA = {
     },
     {
       "id": "shortnose-bichir",
-      "image": "img/fish/shortnose-bichir.png?v=fish-cutout",
+      "image": "img/fish/shortnose-bichir.png?v=fish4",
       "nameEn": "Shortnose Bichir",
       "nameKr": "숏노즈 폴립테루스",
       "nameKrConfirmed": true,
@@ -457,7 +505,7 @@ const DATA = {
     },
     {
       "id": "longnose-elephantfish",
-      "image": "img/fish/longnose-elephantfish.png?v=fish-cutout",
+      "image": "img/fish/longnose-elephantfish.png?v=fish4",
       "nameEn": "Longnose Elephantfish",
       "nameKr": "엘리펀트노즈피시",
       "nameKrConfirmed": true,
@@ -474,7 +522,7 @@ const DATA = {
     },
     {
       "id": "topmouth-culter",
-      "image": "img/fish/topmouth-culter.png?v=fish-cutout",
+      "image": "img/fish/topmouth-culter.png?v=fish4",
       "nameEn": "Topmouth Culter",
       "nameKr": "백조어(톱마우스 컬터)",
       "nameKrConfirmed": true,
@@ -492,7 +540,7 @@ const DATA = {
     },
     {
       "id": "giraffe-catfish",
-      "image": "img/fish/giraffe-catfish.png?v=fish-cutout",
+      "image": "img/fish/giraffe-catfish.png?v=fish4",
       "nameEn": "Giraffe Catfish",
       "nameKr": "지라프캣피시",
       "nameKrConfirmed": true,
@@ -513,7 +561,7 @@ const DATA = {
     },
     {
       "id": "saddled-bichir",
-      "image": "img/fish/saddled-bichir.png?v=fish-cutout",
+      "image": "img/fish/saddled-bichir.png?v=fish4",
       "nameEn": "Ansorge's Bichir (Saddled Bichir)",
       "nameKr": "엔드리케리 폴립테루스",
       "nameKrConfirmed": true,
@@ -535,7 +583,7 @@ const DATA = {
     },
     {
       "id": "mirror-carp",
-      "image": "img/fish/mirror-carp.png?v=fish-cutout",
+      "image": "img/fish/mirror-carp.png?v=fish4",
       "nameEn": "Mirror Carp",
       "nameKr": "거울잉어(미러카프)",
       "nameKrConfirmed": true,
@@ -554,7 +602,7 @@ const DATA = {
     },
     {
       "id": "pike",
-      "image": "img/fish/pike.png?v=fish-cutout",
+      "image": "img/fish/pike.png?v=fish4",
       "nameEn": "Pike",
       "nameKr": "강꼬치고기(파이크)",
       "nameKrConfirmed": true,
@@ -573,7 +621,7 @@ const DATA = {
     },
     {
       "id": "african-butterflyfish",
-      "image": "img/fish/african-butterflyfish.png?v=fish-cutout",
+      "image": "img/fish/african-butterflyfish.png?v=fish4",
       "nameEn": "African Butterflyfish",
       "nameKr": "아프리카나비고기",
       "nameKrConfirmed": true,
@@ -590,7 +638,7 @@ const DATA = {
     },
     {
       "id": "north-african-catfish",
-      "image": "img/fish/north-african-catfish.png?v=fish-cutout",
+      "image": "img/fish/north-african-catfish.png?v=fish4",
       "nameEn": "North African Catfish",
       "nameKr": "북아프리카메기",
       "nameKrConfirmed": true,
@@ -608,7 +656,7 @@ const DATA = {
     },
     {
       "id": "radioactive-grouper",
-      "image": "img/fish/radioactive-grouper.png?v=fish-cutout",
+      "image": "img/fish/radioactive-grouper.png?v=fish4",
       "nameEn": "Radioactive Grouper",
       "nameKr": "피콕하인드(방사능 그루퍼)",
       "nameKrConfirmed": true,
@@ -625,7 +673,7 @@ const DATA = {
     },
     {
       "id": "sapphire-snakehead",
-      "image": "img/fish/sapphire-snakehead.png?v=fish-cutout",
+      "image": "img/fish/sapphire-snakehead.png?v=fish4",
       "nameEn": "Sapphire Snakehead",
       "nameKr": "사파이어 오스카",
       "nameKrConfirmed": true,
@@ -642,7 +690,7 @@ const DATA = {
     },
     {
       "id": "platinum-silver-arowana",
-      "image": "img/fish/platinum-silver-arowana.png?v=dex2",
+      "image": "img/fish/platinum-silver-arowana.png?v=fish4",
       "nameEn": "Platinum Silver Arowana",
       "nameKr": "플래티넘 실버 아로와나",
       "nameKrConfirmed": true,
@@ -659,7 +707,7 @@ const DATA = {
     },
     {
       "id": "giant-brown-trout",
-      "image": "img/fish/giant-brown-trout.png?v=red3",
+      "image": "img/fish/giant-brown-trout.png?v=fish4",
       "nameEn": "Giant Brown Trout",
       "nameKr": "자이언트 브라운 송어",
       "nameKrConfirmed": true,
@@ -683,7 +731,7 @@ const DATA = {
     },
     {
       "id": "baby-shark",
-      "image": "img/fish/baby-shark.png?v=dex2",
+      "image": "img/fish/baby-shark.png?v=fish4",
       "nameEn": "Baby Shark",
       "nameKr": "새끼상어",
       "nameKrConfirmed": true,
@@ -705,7 +753,7 @@ const DATA = {
     },
     {
       "id": "atlantic-salmon",
-      "image": "img/fish/atlantic-salmon.png?v=red3",
+      "image": "img/fish/atlantic-salmon.png?v=fish4",
       "nameEn": "Atlantic Salmon",
       "nameKr": "대서양 연어",
       "nameKrConfirmed": true,
@@ -724,7 +772,7 @@ const DATA = {
     },
     {
       "id": "tigerfish",
-      "image": "img/fish/tigerfish.png?v=red3",
+      "image": "img/fish/tigerfish.png?v=fish4",
       "nameEn": "Tigerfish",
       "nameKr": "타이거피시",
       "nameKrConfirmed": true,
@@ -746,7 +794,7 @@ const DATA = {
     },
     {
       "id": "bigeye-tarpon",
-      "image": "img/fish/bigeye-tarpon.png?v=crate1",
+      "image": "img/fish/bigeye-tarpon.png?v=fish4",
       "nameEn": "Bigeye Tarpon (Indo-Pacific Tarpon)",
       "nameKr": "빅아이 타폰",
       "nameKrConfirmed": true,
@@ -930,8 +978,7 @@ const DATA = {
     "image2": "img/npc/joe-reed-2.jpg?v=npc3",
     "image2Caption": "부두에서 낚시 중인 조 리드 — F 키로 대화",
     "imageSource": "인게임 캡처",
-    "spawnMapImage": "img/npc/joe-reed-spawn-map.jpg?v=spawnmap",
-    "spawnMapCaption": "롱보우(정규) 낚시꾼 NPC 스폰 위치 3곳 — 빨간 점 표시",
+    "spawnMapImage": "img/npc/joe-reed-spawn-map.jpg?v=spawnmap3",
     "spawnRule": "한 매치에 롱보우(정규) 낚시터 3곳 중 1곳에 랜덤 스폰. 그로브 베이(우물낚시터 · 고요한 만) 집 주변이 스폰 지점 중 하나로 확인됨. 누군가 NPC를 죽이면 그 매치에서는 더 이상 등장하지 않음.",
     "spawnSpots": [
       {

@@ -8,6 +8,17 @@
       "difficulty": "정규",
       "note": "낚시터 5곳으로 가장 많음. 낚시꾼 NPC(조 리드) 스폰 유일 맵. 피콕하인드(방사능 그루퍼)를 제외한 전 어종을 이 맵에서 잡을 수 있음. 낚시는 현재 정규 난이도(롱보우·AZ3·제로댐)에서만 가능.",
       "mapImage": "img/longbow.jpg",
+      "layerMap": {
+        "_note": "layers는 위에 쌓이는 순서 (첫 항목이 가장 위)",
+        "base": "img/maps/longbow/base.jpg?v=2",
+        "layers": [
+          { "spotId": "longbow-cavern", "image": "img/maps/longbow/cavern.png?v=1" },
+          { "spotId": "longbow-canal", "image": "img/maps/longbow/canal.png?v=1" },
+          { "spotId": "longbow-storage-dock", "image": "img/maps/longbow/storage-dock.png?v=3" },
+          { "spotId": "longbow-serenity-bay", "image": "img/maps/longbow/serenity-bay.png?v=1" },
+          { "spotId": "longbow-waterway", "image": "img/maps/longbow/waterway.png?v=1" }
+        ]
+      },
       "fishMapImage": "img/longbow-fish-map.jpg?v=3",
       "fishMapSource": {
         "label": "X @50413836perfect",
@@ -132,6 +143,12 @@
       "difficulty": "정규",
       "note": "낚시터 1곳.",
       "mapImage": "img/zero-dam.jpg",
+      "layerMap": {
+        "base": "img/maps/zero-dam/base.jpg?v=1",
+        "layers": [
+          { "spotId": "zerodam-riverbank", "image": "img/maps/zero-dam/riverbank.png?v=1" }
+        ]
+      },
       "fishMapImage": "img/zero-dam-fish-map.jpg",
       "fishMapSource": {
         "label": "X @50413836perfect",
@@ -172,6 +189,13 @@
       "difficulty": "정규",
       "note": "낚시터 2곳. 40레벨 승급용 피콕하인드 출현 (지도 이미지는 임시본, 교체 예정)",
       "mapImage": "img/az3.webp",
+      "layerMap": {
+        "base": "img/maps/az3/base.jpg?v=1",
+        "layers": [
+          { "spotId": "az3-offshore", "image": "img/maps/az3/offshore.png?v=1" },
+          { "spotId": "az3-waterway", "image": "img/maps/az3/waterway.png?v=1" }
+        ]
+      },
       "fishMapImage": "img/az3-fish-map.png?v=2",
       "fishMapSource": {
         "label": "X @50413836perfect",

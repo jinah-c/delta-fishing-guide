@@ -435,6 +435,30 @@
     </div>`;
   }
 
+  /* 낚시터별 정보 레이어를 맵 위에 쌓고 탭으로 골라 보는 지도
+     (layerMap.layers는 위→아래 순서라 DOM에는 뒤집어 넣는다) */
+  function mapLayerStack(m) {
+    const layers = (m.layerMap.layers || []).filter(l => l.image);
+    if (!layers.length) return "";
+    const spotName = id => {
+      const s = m.spots.find(x => x.id === id);
+      return s ? s.nameKr.replace(/\s*\(.*\)\s*/g, "") : id;
+    };
+    const tabs = [{ key: "all", label: "전체" }]
+      .concat(m.spots
+        .filter(sp => layers.some(l => l.spotId === sp.id))
+        .map(sp => ({ key: sp.id, label: spotName(sp.id) })));
+    return `<div class="map-stack" data-layer-map>
+      <div class="map-stack-tabs" role="tablist" aria-label="${esc(m.nameKr)} 낚시터 레이어">
+        ${tabs.map((t, i) => `<button type="button" class="map-tab${i === 0 ? " active" : ""}" role="tab" aria-selected="${i === 0}" data-layer="${esc(t.key)}">${esc(t.label)}</button>`).join("")}
+      </div>
+      <div class="map-stack-view">
+        <img class="map-stack-base" src="${esc(m.layerMap.base)}" alt="${esc(m.nameKr)} 지도">
+        ${layers.slice().reverse().map(l => `<img class="map-stack-layer is-on" data-layer="${esc(l.spotId)}" src="${esc(l.image)}" alt="${esc(spotName(l.spotId))} 출현 어종" loading="lazy">`).join("")}
+      </div>
+    </div>`;
+  }
+
   function pageMapDetail(id) {
     const m = mapById(id);
     if (!m) return pageNotFound();
@@ -452,7 +476,7 @@
         <span class="pin-label" style="left:${s.coord.x}%;top:${s.coord.y}%">${esc(s.nameKr)}</span>`).join("")}
     </div>
     ${pins.length === 0 ? `<div class="notice base-map-note is-screen-hidden" aria-hidden="true">지도 위 핀 좌표는 아직 준비 중이에요. 아래 낚시터 설명의 위치 안내를 참고해 주세요.</div>` : ""}
-    ${m.fishMapImage ? `
+    ${m.layerMap ? mapLayerStack(m) : m.fishMapImage ? `
     <h2>물고기 분포도</h2>
     <div class="map-wrap fish-map">
       <img src="${esc(m.fishMapImage)}" alt="${esc(m.nameKr)} 물고기 분포도" loading="lazy">
@@ -619,7 +643,6 @@
     ${n.spawnMapImage ? `<h2>스폰 위치</h2>
     <figure class="npc-spawn-map">
       <img src="${esc(n.spawnMapImage)}" alt="${esc(n.nameKr)} 스폰 위치 지도" loading="lazy">
-      <figcaption>${esc(n.spawnMapCaption || "스폰 위치 지도")}</figcaption>
     </figure>` : ""}
     <h2>역할</h2>
     <div class="cards-2">${n.roles.map(r => `<div class="row">${esc(r)}</div>`).join("")}</div>
@@ -713,6 +736,24 @@
 
   /* ── Router ── */
 
+  // 레이어 지도 탭: 전체는 모두 켜고, 개별 탭은 해당 낚시터 레이어만 켠다
+  function initMapStack() {
+    document.querySelectorAll("[data-layer-map]").forEach(stack => {
+      const tabs = [...stack.querySelectorAll(".map-tab")];
+      const layers = [...stack.querySelectorAll(".map-stack-layer")];
+      tabs.forEach(tab => tab.addEventListener("click", () => {
+        // 이미 선택된 탭을 다시 누르면 해제 — 맵 이미지만 남는다
+        const key = tab.classList.contains("active") ? null : tab.dataset.layer;
+        tabs.forEach(t => {
+          const on = key !== null && t === tab;
+          t.classList.toggle("active", on);
+          t.setAttribute("aria-selected", String(on));
+        });
+        layers.forEach(l => l.classList.toggle("is-on", key === "all" || (key !== null && l.dataset.layer === key)));
+      }));
+    });
+  }
+
   function route() {
     const raw = location.hash.replace(/^#\/?/, "");
     const [pathPart, queryPart] = raw.split("?");
@@ -738,6 +779,7 @@
     else html = pageNotFound();
 
     app.innerHTML = html;
+    initMapStack();
     document.title = (title ? title + " — " : "") + "낚시할사람 — 델타포스 낚시 가이드";
     document.querySelectorAll("#nav a").forEach(a => {
       const active = a.dataset.nav === navKey;
