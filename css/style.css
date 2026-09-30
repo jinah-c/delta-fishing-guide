@@ -394,6 +394,8 @@ h3 { font-size: 17px; margin: 18px 0 8px; font-weight: 900; }
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 18px;
   margin-bottom: 14px;
 }
 /* 이 화면에서 가장 먼저 누르게 되는 버튼이라 크고 또렷하게 */
