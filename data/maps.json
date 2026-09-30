@@ -146,7 +146,7 @@
       "layerMap": {
         "base": "img/maps/zero-dam/base.jpg?v=2",
         "layers": [
-          { "spotId": "zerodam-riverbank", "image": "img/maps/zero-dam/riverbank.png?v=1" }
+          { "spotId": "zerodam-riverbank", "image": "img/maps/zero-dam/riverbank.png?v=2" }
         ]
       },
       "fishMapImage": "img/zero-dam-fish-map.jpg",
@@ -192,7 +192,7 @@
       "layerMap": {
         "base": "img/maps/az3/base.jpg?v=1",
         "layers": [
-          { "spotId": "az3-offshore", "image": "img/maps/az3/offshore.png?v=1" },
+          { "spotId": "az3-offshore", "image": "img/maps/az3/offshore.png?v=2" },
           { "spotId": "az3-waterway", "image": "img/maps/az3/waterway.png?v=1" }
         ]
       },

@@ -164,7 +164,7 @@ const DATA = {
         "layers": [
           {
             "spotId": "zerodam-riverbank",
-            "image": "img/maps/zero-dam/riverbank.png?v=1"
+            "image": "img/maps/zero-dam/riverbank.png?v=2"
           }
         ]
       },
@@ -213,7 +213,7 @@ const DATA = {
         "layers": [
           {
             "spotId": "az3-offshore",
-            "image": "img/maps/az3/offshore.png?v=1"
+            "image": "img/maps/az3/offshore.png?v=2"
           },
           {
             "spotId": "az3-waterway",
