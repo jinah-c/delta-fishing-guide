@@ -53,7 +53,7 @@
   --shadow-hot: 0 18px 54px rgba(255, 62, 181, .18);
   --shadow-deep: 0 18px 44px rgba(0, 0, 0, .42);
   --radius: 18px;
-  --maxw: 1600px;
+  --maxw: 1680px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -382,21 +382,18 @@ h3 { font-size: 17px; margin: 18px 0 8px; font-weight: 900; }
 }
 .map-wrap.fish-map img { filter: none; }
 /* ── 레이어 지도: 맵 위에 낚시터별 정보 레이어를 쌓고 탭으로 전환 ── */
-/* 지도는 본문(1600px)보다 넓게 — 탭과 이미지 영역만 2000px까지 펼친다 */
 .map-stack {
   position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(2000px, calc(100vw - 36px));
-  margin-bottom: 22px;
+  width: min(1680px, 100%);
+  margin: 0 auto 22px;
 }
 .map-stack-tabs {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   margin-top: 18px;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 /* 이 화면에서 가장 먼저 누르게 되는 버튼이라 크고 또렷하게 */
 .map-tab {
