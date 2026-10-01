@@ -104,6 +104,25 @@
     return locs.map(l => `<a href="#/map/${l.map.id}">${esc(l.map.nameKr)} · ${esc(l.spot.nameKr)}</a>`).join(", ");
   }
 
+  function spotListName(spot) {
+    if (spot.id === "az3-offshore") return "외해(상어바다)";
+    if (spot.id === "longbow-serenity-bay") return "우물낚시터";
+    return spot.nameKr.replace(/\s+\(/g, "(");
+  }
+
+  function fishLocGroupedLines(locs) {
+    const groups = [];
+    locs.forEach(loc => {
+      let group = groups.find(g => g.map.id === loc.map.id);
+      if (!group) {
+        group = { map: loc.map, spots: [] };
+        groups.push(group);
+      }
+      group.spots.push(spotListName(loc.spot));
+    });
+    return groups.map(g => `<span class="fish-loc-line">${esc(g.map.nameKr)} - ${esc(g.spots.join(" / "))}</span>`).join("");
+  }
+
   function tipItems(text) {
     return String(text || "")
       .replace(/\s+—\s+/g, "\n")
@@ -519,7 +538,7 @@
     if (method !== "전체") list = list.filter(f => f.method.includes(method));
     const link = (r, m) => `#/fish?rarity=${encodeURIComponent(r)}&method=${encodeURIComponent(m)}`;
     const rarityChipClass = { "전체": "chip-all", "일반": "chip-common", "희귀": "chip-rare", "레드": "chip-red" };
-    const methodChipClass = { "전체": "chip-all", "찌낚시": "chip-float", "루어": "chip-lure" };
+    const methodChipClass = { "전체": "chip-method-all", "찌낚시": "chip-float", "루어": "chip-lure" };
     return `<h1>물고기 도감</h1>
     <p class="page-desc">전체 ${DATA.fish.length}종. 물고기를 누르면 잡는 곳·낚시법·미끼를 볼 수 있어요.</p>
     <div class="filters filter-group">
@@ -588,8 +607,8 @@
     <div class="fish-info-panel">
       <section class="fish-info-section">
         <h2>잡는 곳</h2>
-        <div>${locs.length
-          ? locs.map(l => `<a href="#/map/${l.map.id}">${esc(l.map.nameKr)} — ${esc(l.spot.nameKr)}</a>`).join("<br>")
+        <div class="fish-loc-list">${locs.length
+          ? fishLocGroupedLines(locs)
           : (f.spotNote ? esc(f.spotNote) : "출현 수역 미확정 (인게임 도감 확인 필요)")}</div>
       </section>
       <section class="fish-info-section">

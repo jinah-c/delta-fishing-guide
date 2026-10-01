@@ -363,11 +363,13 @@ h3 { font-size: 17px; margin: 18px 0 8px; font-weight: 900; }
     0 6px 16px color-mix(in srgb, var(--chip-color) 20%, transparent);
 }
 /* 등급 필터는 사이트의 등급 뱃지와 같은 색으로 활성화 */
+.chip-all.active { --chip-color: #f5f5f7; }
 .chip-common.active { --chip-color: #d8d1dc; }
 .chip-rare.active { --chip-color: var(--purple); }
 .chip-red.active { --chip-color: var(--class-6); }
 .chip-float.active { --chip-color: #6cc6ff; }
 .chip-lure.active { --chip-color: #6f97ff; }
+.chip-method-all.active { --chip-color: #6cc6ff; }
 
 .map-wrap {
   position: relative;
@@ -1257,6 +1259,13 @@ a.item-card:hover {
   margin: 0;
   color: var(--accent-2);
   font-size: 16px;
+}
+.fish-loc-list {
+  display: grid;
+  gap: 4px;
+}
+.fish-loc-line {
+  display: block;
 }
 .fish-setup-list {
   display: grid;
