@@ -438,13 +438,14 @@ const DATA = {
         "az3-waterway"
       ],
       "bait": "일반 미끼 찌낚시 권장 (루어로도 가능)",
-      "tips": "20레벨 승급 제출 대상 (1.5kg 초과 개체). 여러 수역에 폭넓게 출현 — 찌낚시로 큰 개체를 노리는 게 편함."
+      "tips": "20레벨 승급 재료(1.5kg 이상) 여러 낚시터에폭넓게 출현 — 찌낚시로 큰 개체를 노리는 게 편함."
     },
     {
       "id": "zander",
       "image": "img/fish/zander.png?v=fish4",
       "nameEn": "Zander",
-      "nameKr": "파이크퍼치(잰더)",
+      "nameKr": "파이크퍼치",
+      "nameAlt": "잰더",
       "nameKrConfirmed": true,
       "rarity": "일반",
       "size": "중형",
@@ -460,7 +461,7 @@ const DATA = {
         "az3-waterway"
       ],
       "bait": "그린 스피너 2종 또는 정밀 포식 루어",
-      "tips": "20레벨 승급 제출 대상 (2.5kg 초과 개체). 루어 전용이며 숭어보다 출현 수역이 적음."
+      "tips": "20레벨 승급 재료(2.5kg 이상). 루어 전용이며 숭어보다 잡히는 곳이 적음."
     },
     {
       "id": "ruby-cichlid",
@@ -469,6 +470,7 @@ const DATA = {
       "nameKr": "루비피시",
       "nameKrConfirmed": true,
       "rarity": "희귀",
+      "rarityAlt": "골드",
       "size": "소형",
       "method": [
         "찌낚시"
@@ -510,6 +512,7 @@ const DATA = {
       "nameKr": "엘리펀트노즈피시",
       "nameKrConfirmed": true,
       "rarity": "희귀",
+      "rarityAlt": "골드",
       "size": "소형",
       "method": [
         "찌낚시"
@@ -524,7 +527,8 @@ const DATA = {
       "id": "topmouth-culter",
       "image": "img/fish/topmouth-culter.png?v=fish4",
       "nameEn": "Topmouth Culter",
-      "nameKr": "백조어(톱마우스 컬터)",
+      "nameKr": "백조어",
+      "nameAlt": "톱마우스 컬터",
       "nameKrConfirmed": true,
       "rarity": "희귀",
       "size": "대형",
@@ -536,7 +540,7 @@ const DATA = {
         "zerodam-riverbank"
       ],
       "bait": "고대비 자극 스푼 / 정밀 포식 루어 / 고빈도 테일 웜",
-      "tips": "30레벨 승급 제출 대상. 그로브 베이(우물낚시터 · 고요한 만)·댐 강변 2곳에서만 출현. 블루·퍼플 등급 모두 제출 인정."
+      "tips": "30레벨 승급 재료. 롱보우:우물낚시터·제로댐:강변 2곳에서만 출현. 블루·퍼플 등급 모두 제출 인정."
     },
     {
       "id": "giraffe-catfish",
@@ -566,6 +570,7 @@ const DATA = {
       "nameKr": "엔드리케리 폴립테루스",
       "nameKrConfirmed": true,
       "rarity": "희귀",
+      "rarityAlt": "골드",
       "size": "중형",
       "method": [
         "찌낚시",
@@ -579,13 +584,14 @@ const DATA = {
         "az3-waterway"
       ],
       "bait": "찌낚시·루어 모두 가능 — 편한 방식으로",
-      "tips": "30레벨 승급 제출 대상(컬터 제출 후 순차 요구). 베이·동굴·부두·댐 등 널리 출현. 일부 가이드의 '엔들리허 비커' 표기는 오역으로 알려짐."
+      "tips": "30레벨 승급 재료(백조어 제출 후 순차 요구) 여러 낚시터에서 널리 출현."
     },
     {
       "id": "mirror-carp",
       "image": "img/fish/mirror-carp.png?v=fish4",
       "nameEn": "Mirror Carp",
-      "nameKr": "거울잉어(미러카프)",
+      "nameKr": "거울잉어",
+      "nameAlt": "미러카프",
       "nameKrConfirmed": true,
       "rarity": "희귀",
       "size": "중형",
@@ -604,9 +610,11 @@ const DATA = {
       "id": "pike",
       "image": "img/fish/pike.png?v=fish4",
       "nameEn": "Pike",
-      "nameKr": "강꼬치고기(파이크)",
+      "nameKr": "강꼬치고기",
+      "nameAlt": "파이크",
       "nameKrConfirmed": true,
       "rarity": "희귀",
+      "rarityAlt": "골드",
       "size": "대형",
       "method": [
         "루어"
@@ -626,6 +634,7 @@ const DATA = {
       "nameKr": "아프리카나비고기",
       "nameKrConfirmed": true,
       "rarity": "희귀",
+      "rarityAlt": "골드",
       "size": "초소형",
       "method": [
         "찌낚시"
@@ -643,6 +652,7 @@ const DATA = {
       "nameKr": "북아프리카메기",
       "nameKrConfirmed": true,
       "rarity": "희귀",
+      "rarityAlt": "골드",
       "size": "대형",
       "method": [
         "루어"
@@ -652,15 +662,17 @@ const DATA = {
         "longbow-canal"
       ],
       "bait": "심층 탐지 루어(딥워터 프로브) 권장, 딥워터 다이버도 가능 — 깊이 들어가는 루어가 유리",
-      "tips": "40레벨 승급 제출 대상(1번째). 그로브 수로·운하에서만 출현. 퍼플·골드 등급 모두 제출 인정."
+      "tips": "40레벨 승급 재료(1번째). 롱보우 수로·운하(아랫수역)에서만 출현. 퍼플·골드 등급 모두 제출 인정."
     },
     {
       "id": "radioactive-grouper",
       "image": "img/fish/radioactive-grouper.png?v=fish4",
       "nameEn": "Radioactive Grouper",
-      "nameKr": "피콕하인드(방사능 그루퍼)",
+      "nameKr": "피콕하인드",
+      "nameAlt": "방사능 그루퍼",
       "nameKrConfirmed": true,
       "rarity": "희귀",
+      "rarityAlt": "골드",
       "size": "대형",
       "method": [
         "루어"

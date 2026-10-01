@@ -43,8 +43,15 @@
     `<span class="badge ${RARITY_BADGE[f.rarity] || "badge-common"}">${esc(f.rarity)}</span>` +
     (f.rarityAlt ? ` <span class="badge badge-gold">${esc(f.rarityAlt)}</span>` : "");
 
+  // 낚시법 라벨 — 둘 다 가능하면 "찌/루어" 하나로 묶는다
+  function methodLabels(f) {
+    const ms = f.method || [];
+    if (ms.includes("찌낚시") && ms.includes("루어")) return ["찌/루어"];
+    return ms.map(m => (m === "루어" ? "루어낚시" : m));
+  }
+
   const methodBadges = f =>
-    f.method.map(m => `<span class="badge badge-method">${esc(m)}</span>`).join(" ");
+    methodLabels(f).map(m => `<span class="badge badge-method">${esc(m)}</span>`).join(" ");
 
   /* ── 썸네일: data의 image 경로가 있으면 실제 이미지, 없으면 종류별 플레이스홀더 ── */
 
@@ -356,7 +363,7 @@
       ${fishThumb(f)}
       <div class="item-body">
         <div class="item-title">${fishName(f, true)}</div>
-        <div class="item-badges">${rarityBadge(f)} ${methodBadges(f)} <span class="badge badge-size">${esc(f.size)}</span></div>
+        <div class="item-badges">${rarityBadge(f)} ${methodBadges(f)}</div>
         <div class="item-meta">📍 ${fishLocText(f)}</div>
       </div>
       <span class="item-go" aria-hidden="true">›</span>
@@ -402,7 +409,6 @@
   /* ── Pages ── */
 
   function pageHome() {
-    const redCount = DATA.fish.filter(f => f.rarity === "레드").length;
     return `
     <div class="hero">
       <h1>델타포스 낚시 가이드</h1>
@@ -412,7 +418,6 @@
       <a href="#/maps"><div class="q-title">🗺️ 맵 · 낚시터</div><div class="q-sub">낚시 가능한 맵 ${DATA.maps.length}곳, 낚시터 ${DATA.maps.reduce((n, m) => n + m.spots.length, 0)}곳</div></a>
       <a href="#/fish"><div class="q-title">🐟 물고기 도감</div><div class="q-sub">전체 ${DATA.fish.length}물고기종류·등급·낚시법 필터</div></a>
       <a href="#/missions"><div class="q-title">📈 승급 가이드</div><div class="q-sub">낚시 해금부터 10·20·30·40레벨 승급 준비물</div></a>
-      <a href="#/red"><div class="q-title">🔴 빨간 물고기</div><div class="q-sub">소장급 ${redCount}종 — 잡는 곳과 준비물</div></a>
       <a href="#/npc"><div class="q-title">🎣 낚시꾼 NPC</div><div class="q-sub">조 리드(낚시꾼) 스폰위치 & 역할</div></a>
       <a href="#/gear"><div class="q-title">🧰 장비 · 미끼</div><div class="q-sub">낚싯대·릴·낚싯줄·미끼·루어 정리</div></a>
     </div>
@@ -523,21 +528,62 @@
     </div>
     <div class="filters filter-group">
       <span class="filter-label">낚시법</span>
-      ${methods.map(m => `<a class="chip ${methodChipClass[m]} ${m === method ? "active" : ""}" ${m === method ? 'aria-current="true"' : ""} href="${link(rarity, m)}">${esc(m)}</a>`).join("")}
+      ${methods.map(m => `<a class="chip ${methodChipClass[m]} ${m === method ? "active" : ""}" ${m === method ? 'aria-current="true"' : ""} href="${link(rarity, m)}">${esc(m === "루어" ? "루어낚시" : m)}</a>`).join("")}
     </div>
     ${list.length ? `<div class="cards-2">${list.map(fishCard).join("")}</div>` : "<p>조건에 맞는 물고기가 없어요.</p>"}`;
+  }
+
+  /* 물고기가 나오는 낚시터별 지도 — 맵 배경 + 그 낚시터 레이어를 한 쌍으로 묶어 탭 전환 */
+  function spotShortName(spot) {
+    return spot.nameKr.replace(/\s*\(.*\)\s*/g, "");
+  }
+
+  function spotLayerArt(map, spotId) {
+    const lm = map.layerMap;
+    if (!lm) return null;
+    const hit = (lm.layers || []).find(l => l.spotId === spotId && l.image);
+    return hit ? { base: lm.base, image: hit.image } : null;
+  }
+
+  function fishSpotStack(locs) {
+    const items = locs
+      .map(loc => {
+        const art = spotLayerArt(loc.map, loc.spot.id);
+        return art ? { loc, base: art.base, image: art.image } : null;
+      })
+      .filter(Boolean);
+    if (!items.length) return "";
+    const label = it => `${it.loc.map.nameKr} · ${spotShortName(it.loc.spot)}`;
+    return `<h2>낚시터 지도</h2>
+    <div class="map-stack" data-layer-map data-require-selection>
+      <div class="map-stack-tabs" role="tablist" aria-label="출현 낚시터 지도">
+        ${items.map((it, i) => `<button type="button" class="map-tab${i === 0 ? " active" : ""}" role="tab" aria-selected="${i === 0}" data-layer="${esc(it.loc.spot.id)}">${esc(label(it))}</button>`).join("")}
+      </div>
+      <div class="map-stack-view">
+        ${items.map((it, i) => `<div class="map-stack-group map-stack-layer${i === 0 ? " is-on" : ""}" data-layer="${esc(it.loc.spot.id)}">
+          <img class="map-stack-base" src="${esc(it.base)}" alt="${esc(it.loc.map.nameKr)} 지도" loading="lazy">
+          <img src="${esc(it.image)}" alt="${esc(label(it))} 출현 어종" loading="lazy">
+        </div>`).join("")}
+      </div>
+    </div>`;
   }
 
   function pageFishDetail(id) {
     const f = fishById(id);
     if (!f) return pageNotFound();
+    return `<a class="back" href="#/fish">← 도감으로</a>
+    ${fishDetailBody(f)}`;
+  }
+
+  /* 물고기 상세 본문 — 상세 페이지와 팝업이 같은 내용을 쓴다 */
+  function fishDetailBody(f) {
     const locs = fishSpots(f);
     const certs = DATA.missions.certifications.filter(c => c.fish.some(x => x.fishId === f.id));
-    return `<a class="back" href="#/fish">← 도감으로</a>
-    <div class="fish-hero">
+    return `<div class="fish-hero">
     ${fishThumb(f, "lg")}
     <div class="fish-hero-body">
     <div class="detail-head"><h1>${fishName(f, true)}</h1></div>
+    <p class="fish-altnames">${esc(f.nameEn)}${f.nameAlt ? ` <span class="sep">·</span> ${esc(f.nameAlt)}` : ""}</p>
     <p>${rarityBadge(f)} ${methodBadges(f)} <span class="badge badge-size">${esc(f.size)}</span></p>
     <div class="fish-info-panel">
       <section class="fish-info-section">
@@ -559,14 +605,14 @@
     </div>
     </div>
     </div>
-    ${locs.length ? locs.map(l => `
+    ${fishSpotStack(locs) || (locs.length ? locs.map(l => `
       <h2>${esc(l.map.nameKr)} 위치</h2>
       <div class="map-wrap">
         <img src="${esc(l.map.mapImage)}" alt="${esc(l.map.nameKr)} 지도" loading="lazy">
         ${l.spot.coord ? `<span class="pin" style="left:${l.spot.coord.x}%;top:${l.spot.coord.y}%">📍</span><span class="pin-label" style="left:${l.spot.coord.x}%;top:${l.spot.coord.y}%">${esc(l.spot.nameKr)}</span>` : ""}
       </div>
       ${l.spot.coord ? "" : `<div class="notice">정확한 핀 좌표는 준비 중 — "${esc(l.spot.nameKr)}" 수역: ${esc(l.spot.description)}</div>`}
-    `).join("") : ""}`;
+    `).join("") : "")}`;
   }
 
   /* 승급어 제출 방법 (조 리드 옆 통발) — 승급 가이드·NPC 페이지 공용 */
@@ -594,7 +640,7 @@
   function pageMissions() {
     const ms = DATA.missions;
     return `<h1>승급 가이드</h1>
-    <p class="page-desc">낚시 레벨 상한 50. 10/20/30/40레벨마다 조 리드에게 승급 평가를 통과해야 다음 구간 진행 가능.</p>
+    <p class="page-desc">낚시 만렙은 50이고, 10/20/30/40레벨마다 NPC를 만나 승급평가를 통과해야 다음 레벨로 올라갈 수 있다.</p>
     <h2>낚시 해금조건</h2>
     <div class="notice"><ul>${ms.unlock.conditions.map(conditionItem).join("")}</ul></div>
     <h2>승급어 제출 방법</h2>
@@ -611,14 +657,6 @@
     </div>`).join("")}
     </div>
     <div class="notice">${lineList(ms._note, "notice-list")}</div>`;
-  }
-
-  function pageRed() {
-    const reds = DATA.fish.filter(f => f.rarity === "레드");
-    return `<h1>빨간 물고기 (소장급)</h1>
-    <p class="page-desc">가장 희귀한 소장급 ${reds.length}종. 대부분 루어 낚시로만 잡을 수 있어요.</p>
-    <div class="cards-2">${reds.map(fishCard).join("")}</div>
-    <div class="notice">출현 수역·추천 루어는 만렙 유저 공략 영상 기준 — 인게임 표기·한국어 명칭은 확인되는 대로 계속 보강 예정.</div>`;
   }
 
   function pageNpc() {
@@ -737,13 +775,43 @@
   /* ── Router ── */
 
   // 레이어 지도 탭: 전체는 모두 켜고, 개별 탭은 해당 낚시터 레이어만 켠다
+  /* 물고기 상세 팝업 — 목록에서 물고기를 누르면 페이지 이동 없이 띄운다 */
+  function openFishModal(id) {
+    const f = fishById(id);
+    if (!f) return false;
+    closeFishModal();
+    const wrap = document.createElement("div");
+    wrap.className = "fish-modal";
+    wrap.innerHTML = `<div class="fish-modal-backdrop" data-close></div>
+      <div class="fish-modal-panel" role="dialog" aria-modal="true" aria-label="${esc(f.nameKr || f.nameEn)} 정보">
+        <button type="button" class="fish-modal-close" data-close aria-label="닫기">✕</button>
+        <div class="fish-modal-body">${fishDetailBody(f)}</div>
+      </div>`;
+    document.body.appendChild(wrap);
+    document.body.classList.add("modal-open");
+    wrap.addEventListener("click", e => { if (e.target.closest("[data-close]")) closeFishModal(); });
+    initMapStack();
+    const closeBtn = wrap.querySelector(".fish-modal-close");
+    if (closeBtn) closeBtn.focus();
+    return true;
+  }
+
+  function closeFishModal() {
+    document.querySelectorAll(".fish-modal").forEach(el => el.remove());
+    document.body.classList.remove("modal-open");
+  }
+
   function initMapStack() {
     document.querySelectorAll("[data-layer-map]").forEach(stack => {
+      if (stack.dataset.stackBound) return;
+      stack.dataset.stackBound = "1";
       const tabs = [...stack.querySelectorAll(".map-tab")];
       const layers = [...stack.querySelectorAll(".map-stack-layer")];
       tabs.forEach(tab => tab.addEventListener("click", () => {
         // 이미 선택된 탭을 다시 누르면 해제 — 맵 이미지만 남는다
-        const key = tab.classList.contains("active") ? null : tab.dataset.layer;
+        // (data-require-selection이 붙은 스택은 항상 하나가 켜져 있어야 한다)
+        const canClear = !stack.hasAttribute("data-require-selection");
+        const key = canClear && tab.classList.contains("active") ? null : tab.dataset.layer;
         tabs.forEach(t => {
           const on = key !== null && t === tab;
           t.classList.toggle("active", on);
@@ -773,7 +841,6 @@
     }
     else if (seg[0] === "fish") { html = pageFish(params); title = "물고기 도감"; }
     else if (seg[0] === "missions") { html = pageMissions(); title = "승급 가이드"; }
-    else if (seg[0] === "red") { html = pageRed(); title = "빨간 물고기"; }
     else if (seg[0] === "npc") { html = pageNpc(); title = "낚시꾼 NPC"; }
     else if (seg[0] === "gear") { html = pageGear(); title = "장비·미끼"; }
     else html = pageNotFound();
@@ -790,6 +857,20 @@
     window.scrollTo(0, 0);
   }
 
+  // 물고기 링크는 페이지 이동 대신 팝업으로 (새 탭·수정키 클릭은 그대로 둔다)
+  document.addEventListener("click", e => {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    const link = e.target.closest('a[href^="#/fish/"]');
+    if (!link) return;
+    const id = link.getAttribute("href").slice("#/fish/".length);
+    if (openFishModal(id)) e.preventDefault();
+  });
+
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") closeFishModal();
+  });
+
+  window.addEventListener("hashchange", closeFishModal);
   window.addEventListener("hashchange", route);
   route();
 })();
