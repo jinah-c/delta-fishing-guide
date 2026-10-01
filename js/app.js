@@ -552,7 +552,7 @@
     ${list.length ? `<div class="cards-2">${list.map(fishCard).join("")}</div>` : "<p>조건에 맞는 물고기가 없어요.</p>"}`;
   }
 
-  /* 물고기가 나오는 낚시터별 지도 — 맵 배경 + 그 낚시터 레이어를 한 쌍으로 묶어 탭 전환 */
+  /* 물고기가 나오는 지도 — 같은 맵의 낚시터 레이어는 한 탭 안에 함께 쌓는다 */
   function spotShortName(spot) {
     return spot.nameKr.replace(/\s*\(.*\)\s*/g, "");
   }
@@ -565,23 +565,36 @@
   }
 
   function fishSpotStack(locs) {
-    const items = locs
-      .map(loc => {
-        const art = spotLayerArt(loc.map, loc.spot.id);
-        return art ? { loc, base: art.base, image: art.image } : null;
-      })
-      .filter(Boolean);
-    if (!items.length) return "";
-    const label = it => `${it.loc.map.nameKr} · ${spotShortName(it.loc.spot)}`;
+    const groups = [];
+    locs.forEach(loc => {
+      const art = spotLayerArt(loc.map, loc.spot.id);
+      if (!art) return;
+      let group = groups.find(g => g.map.id === loc.map.id);
+      if (!group) {
+        group = { map: loc.map, base: art.base, locs: [], spotIds: new Set() };
+        groups.push(group);
+      }
+      group.locs.push(loc);
+      group.spotIds.add(loc.spot.id);
+    });
+    if (!groups.length) return "";
+    const groupLayers = group => (group.map.layerMap.layers || [])
+      .filter(l => group.spotIds.has(l.spotId) && l.image)
+      .slice()
+      .reverse();
+    const layerAlt = (group, layer) => {
+      const loc = group.locs.find(x => x.spot.id === layer.spotId);
+      return loc ? `${group.map.nameKr} · ${spotShortName(loc.spot)} 출현 어종` : `${group.map.nameKr} 출현 어종`;
+    };
     return `<h2>낚시터 지도</h2>
     <div class="map-stack" data-layer-map data-require-selection>
       <div class="map-stack-tabs" role="tablist" aria-label="출현 낚시터 지도">
-        ${items.map((it, i) => `<button type="button" class="map-tab${i === 0 ? " active" : ""}" role="tab" aria-selected="${i === 0}" data-layer="${esc(it.loc.spot.id)}">${esc(label(it))}</button>`).join("")}
+        ${groups.map((group, i) => `<button type="button" class="map-tab${i === 0 ? " active" : ""}" role="tab" aria-selected="${i === 0}" data-layer="${esc(group.map.id)}">${esc(group.map.nameKr)}</button>`).join("")}
       </div>
       <div class="map-stack-view">
-        ${items.map((it, i) => `<div class="map-stack-group map-stack-layer${i === 0 ? " is-on" : ""}" data-layer="${esc(it.loc.spot.id)}">
-          <img class="map-stack-base" src="${esc(it.base)}" alt="${esc(it.loc.map.nameKr)} 지도" loading="lazy">
-          <img src="${esc(it.image)}" alt="${esc(label(it))} 출현 어종" loading="lazy">
+        ${groups.map((group, i) => `<div class="map-stack-group map-stack-layer${i === 0 ? " is-on" : ""}" data-layer="${esc(group.map.id)}">
+          <img class="map-stack-base" src="${esc(group.base)}" alt="${esc(group.map.nameKr)} 지도" loading="lazy">
+          ${groupLayers(group).map(layer => `<img src="${esc(layer.image)}" alt="${esc(layerAlt(group, layer))}" loading="lazy">`).join("")}
         </div>`).join("")}
       </div>
     </div>`;
