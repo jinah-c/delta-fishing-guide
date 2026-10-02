@@ -897,6 +897,7 @@ body.modal-open { overflow: hidden; }
 .fish-modal-panel {
   position: relative;
   width: 100%;
+  max-width: 1920px;
   max-height: calc(100vh - 32px);
   overflow: auto;
   padding: 26px 26px 30px;
