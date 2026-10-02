@@ -927,6 +927,28 @@ body.modal-open { overflow: hidden; }
 }
 .fish-modal-body > :first-child { margin-top: 0; }
 .fish-modal-body .map-stack { left: auto; transform: none; width: 100%; }
+.fish-modal-foot {
+  margin-top: 26px;
+  display: flex;
+  justify-content: center;
+}
+.fish-modal-close-bottom {
+  min-width: 220px;
+  padding: 13px 34px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, .18);
+  background: rgba(10, 10, 14, .8);
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 800;
+  font-family: inherit;
+  cursor: pointer;
+}
+.fish-modal-close-bottom:hover {
+  color: var(--accent-2);
+  border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+  background: color-mix(in srgb, var(--accent) 14%, rgba(10, 10, 14, .8));
+}
 
 @media (max-width: 760px) {
   .fish-modal { padding: 14px 10px; }

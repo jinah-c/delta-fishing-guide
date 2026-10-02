@@ -818,6 +818,9 @@
       <div class="fish-modal-panel" role="dialog" aria-modal="true" aria-label="${esc(f.nameKr || f.nameEn)} 정보">
         <button type="button" class="fish-modal-close" data-close aria-label="닫기">✕</button>
         <div class="fish-modal-body">${fishDetailBody(f)}</div>
+        <div class="fish-modal-foot">
+          <button type="button" class="fish-modal-close-bottom" data-close>닫기</button>
+        </div>
       </div>`;
     document.body.appendChild(wrap);
     document.body.classList.add("modal-open");
