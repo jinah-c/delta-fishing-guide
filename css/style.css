@@ -905,6 +905,29 @@ body.modal-open { overflow: hidden; }
   border: 1px solid rgba(255, 255, 255, .12);
   background: linear-gradient(180deg, rgba(255, 255, 255, .045), rgba(255, 255, 255, .015)), var(--bg-soft);
   box-shadow: var(--shadow-hot), 0 30px 80px rgba(0, 0, 0, .6);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, .18) transparent;
+}
+.fish-modal-panel::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.fish-modal-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+.fish-modal-panel::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, .16);
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+.fish-modal-panel::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, .28);
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+.fish-modal-panel::-webkit-scrollbar-corner {
+  background: transparent;
 }
 .fish-modal-close {
   position: absolute;
