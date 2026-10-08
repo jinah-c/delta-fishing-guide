@@ -39,9 +39,12 @@
     return html;
   }
 
-  const rarityBadge = f =>
-    `<span class="badge ${RARITY_BADGE[f.rarity] || "badge-common"}">${esc(f.rarity)}</span>` +
-    (f.rarityAlt ? ` <span class="badge badge-gold">${esc(f.rarityAlt)}</span>` : "");
+  const rarityBadge = f => {
+    const badges = [];
+    if (f.rarityAlt) badges.push(` <span class="badge badge-gold">${esc(f.rarityAlt)}</span>`);
+    badges.unshift(`<span class="badge ${RARITY_BADGE[f.rarity] || "badge-common"}">${esc(f.rarity)}</span>`);
+    return badges.join("");
+  };
 
   // 낚시법 라벨 — 둘 다 가능하면 "찌/루어" 하나로 묶는다
   function methodLabels(f) {
@@ -397,6 +400,12 @@
 
   function rodMethodBadge(obj) {
     if (!obj.method) return "";
+    const name = obj.nameKr || obj.nameEn || "";
+    // 이름에 이미 "루어" 또는 "찌"가 포함되어 있으면 라벨 생략
+    if ((obj.method === "루어" && name.includes("루어")) ||
+        (obj.method === "찌낚시" && (name.includes("찌낚시") || name.includes("찌낚싯대")))) {
+      return "";
+    }
     const cls = obj.method === "찌낚시" ? "gear-method-float" : "gear-method-lure";
     return `<span class="gear-method-badge ${cls}">${esc(obj.method)}</span>`;
   }
