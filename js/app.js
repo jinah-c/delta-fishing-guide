@@ -362,7 +362,7 @@
     if (!f) return "";
     const bait = x.bait || f.bait || "정보 없음";
     return `<div class="mission-fish-card">
-      ${fishThumb(f)}
+      <a href="#/fish/${f.id}" class="mission-fish-thumb-link">${fishThumb(f)}</a>
       <div class="mission-fish-body">
         <div class="mission-fish-title">
           <a href="#/fish/${f.id}">${fishName(f, true)}</a>
@@ -373,7 +373,7 @@
           <dt>필요 낚싯대</dt><dd>${esc(x.rod || "정보 없음")}</dd>
           <dt>낚싯줄</dt><dd>${esc(x.line || "정보 없음")}</dd>
           <dt>미끼/루어</dt><dd>${esc(bait)}</dd>
-          <dt>출현장소</dt><dd>${fishLocLinks(f)}</dd>
+          <dt>출현장소</dt><dd>${fishLocText(f)}</dd>
           ${x.note ? `<dt>팁</dt><dd>${tipList(x.note, "tip-list-compact")}</dd>` : ""}
         </dl>
       </div>
