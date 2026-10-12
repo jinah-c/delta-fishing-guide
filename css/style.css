@@ -1411,7 +1411,7 @@ a.item-card:hover {
   border-radius: 14px;
 }
 .side-banner:hover {
-  transform: translateY(-50%) scale(1.02);
+  transform: translateY(calc(-50% - 4px));
   box-shadow: 0 6px 24px rgba(0, 0, 0, .38);
 }
 @media (min-width: 1801px) {
