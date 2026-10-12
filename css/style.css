@@ -95,7 +95,7 @@ a:hover { text-decoration: none; }
   width: 46px; height: 46px;
 }
 
-.nav { display: flex; gap: 8px; flex-wrap: wrap; overflow-x: auto; scrollbar-width: none; }
+.nav { display: flex; gap: 8px; flex-wrap: wrap; overflow-x: auto; scrollbar-width: none; padding-right: 3px; }
 .nav::-webkit-scrollbar { display: none; }
 .nav a {
   padding: 7px 12px;
