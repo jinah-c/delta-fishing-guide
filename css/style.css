@@ -1393,7 +1393,8 @@ a.item-card:hover {
 /* 사이드 플로팅 배너 */
 .side-banner {
   position: fixed;
-  right: calc((100vw - 1680px) / 2 - 151px - 24px);
+  /* 공간이 충분하면 메인(최대 1680px) 오른쪽 24px 간격, 좁으면 우측 가장자리 16px에 고정 */
+  left: min(calc(50% + 864px), calc(100% - 167px));
   top: 50%;
   transform: translateY(-50%);
   z-index: 900;
@@ -1413,6 +1414,6 @@ a.item-card:hover {
   transform: translateY(-50%) scale(1.02);
   box-shadow: 0 6px 24px rgba(0, 0, 0, .38);
 }
-@media (min-width: 2062px) {
+@media (min-width: 1801px) {
   .side-banner { display: block; }
 }
