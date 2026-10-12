@@ -751,14 +751,14 @@
       const f = fishById(x.fishId);
       if (!f) return "";
       return `<div class="mission-fish-card">
-        ${fishThumb(f)}
+        <a href="#/fish/${f.id}" class="mission-fish-thumb-link">${fishThumb(f)}</a>
         <div class="mission-fish-body">
           <div class="mission-fish-title">
             <a href="#/fish/${f.id}">${fishName(f, true)}</a>
             ${rarityBadge(f)}
           </div>
           <dl class="prep-list">
-            <dt>출현 장소</dt><dd>${fishLocLinks(f)}</dd>
+            <dt>출현 장소</dt><dd>${fishLocText(f)}</dd>
             <dt>낚싯줄</dt><dd>${esc(x.line || "정보 없음")}</dd>
             <dt>미끼/루어</dt><dd>${esc(f.bait || "정보 없음")}</dd>
           </dl>
