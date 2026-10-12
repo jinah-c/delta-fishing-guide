@@ -40,9 +40,22 @@
   }
 
   const rarityBadge = f => {
+    const rarityOrder = { "일반": 1, "희귀": 2, "레드": 4 };
+    const rarityLevel = rarityOrder[f.rarity] || 0;
+    const goldLevel = 3;
     const badges = [];
-    if (f.rarityAlt) badges.push(` <span class="badge badge-gold">${esc(f.rarityAlt)}</span>`);
-    badges.unshift(`<span class="badge ${RARITY_BADGE[f.rarity] || "badge-common"}">${esc(f.rarity)}</span>`);
+
+    // 낮은 순서부터 배치 (일반 → 희귀 → 골드 → 레드)
+    if (rarityLevel > goldLevel && f.rarityAlt) {
+      // 레드(4) + 골드(3) → 골드 먼저
+      badges.push(` <span class="badge badge-gold">${esc(f.rarityAlt)}</span>`);
+    }
+    badges.push(`<span class="badge ${RARITY_BADGE[f.rarity] || "badge-common"}">${esc(f.rarity)}</span>`);
+    if (rarityLevel <= goldLevel && f.rarityAlt) {
+      // 희귀(2) + 골드(3) → 골드 나중
+      badges.push(` <span class="badge badge-gold">${esc(f.rarityAlt)}</span>`);
+    }
+
     return badges.join("");
   };
 
