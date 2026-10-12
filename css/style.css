@@ -1389,3 +1389,30 @@ a.item-card:hover {
   .fish-setup-list li { grid-template-columns: 74px minmax(0, 1fr); gap: 8px; }
   .setup-gallery .thumb { height: 92px; }
 }
+
+/* 사이드 플로팅 배너 */
+.side-banner {
+  position: fixed;
+  right: calc((100vw - 1680px) / 2 - 151px - 24px);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 900;
+  display: none;
+  line-height: 0;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, .28);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.side-banner img {
+  display: block;
+  width: 151px;
+  height: 380px;
+  border-radius: 14px;
+}
+.side-banner:hover {
+  transform: translateY(-50%) scale(1.02);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, .38);
+}
+@media (min-width: 2062px) {
+  .side-banner { display: block; }
+}
