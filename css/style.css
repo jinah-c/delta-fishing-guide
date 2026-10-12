@@ -1432,5 +1432,5 @@ a.item-card:hover {
 .nav a.nav-promo:hover {
   color: #fff3a8;
   background: rgba(255, 224, 107, .16);
-  transform: translateY(-3px);
+  transform: translateX(2px);
 }
