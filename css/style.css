@@ -1420,8 +1420,9 @@ a.item-card:hover {
   display: inline-flex; align-items: center; gap: 7px;
   padding: 7px 12px;
   border-radius: 999px;
-  border: 1px solid var(--accent);
-  color: var(--accent-2);
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  background: rgba(255, 224, 107, .08);
   font-size: 15px;
   font-weight: 900;
   white-space: nowrap;
@@ -1429,5 +1430,5 @@ a.item-card:hover {
 .nav a.nav-promo img { display: block; width: 18px; height: 18px; }
 .nav a.nav-promo:hover {
   color: #fff;
-  background: rgba(255, 62, 181, .12);
+  background: rgba(255, 224, 107, .16);
 }
