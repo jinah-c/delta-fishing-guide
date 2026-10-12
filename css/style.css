@@ -1426,9 +1426,11 @@ a.item-card:hover {
   font-size: 15px;
   font-weight: 900;
   white-space: nowrap;
+  transition: transform .15s ease, background .15s ease, color .15s ease;
 }
 .nav a.nav-promo img { display: block; width: 18px; height: 18px; }
 .nav a.nav-promo:hover {
-  color: #fff;
+  color: #fff3a8;
   background: rgba(255, 224, 107, .16);
+  transform: translateY(-3px);
 }
