@@ -1414,6 +1414,20 @@ a.item-card:hover {
   transform: translateY(calc(-50% - 4px));
   box-shadow: 0 6px 24px rgba(0, 0, 0, .38);
 }
-@media (min-width: 1801px) {
-  .side-banner { display: block; }
+
+/* 메인 메뉴 프로모 라벨 */
+.nav a.nav-promo {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  color: var(--accent-2);
+  font-size: 15px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+.nav a.nav-promo img { display: block; width: 18px; height: 18px; }
+.nav a.nav-promo:hover {
+  color: #fff;
+  background: rgba(255, 62, 181, .12);
 }
