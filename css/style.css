@@ -974,6 +974,20 @@ body.modal-open { overflow: hidden; }
   background: color-mix(in srgb, var(--accent) 14%, rgba(10, 10, 14, .8));
 }
 
+@media (min-width: 1024px) {
+  .fish-modal {
+    padding: 16px;
+    justify-items: auto;
+  }
+  .fish-modal-panel {
+    width: calc(100vw - 32px);
+    height: calc(100vh - 32px);
+    max-width: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
+
 @media (max-width: 760px) {
   .fish-modal { padding: 14px 10px; }
   .fish-modal-panel { padding: 18px 14px 22px; max-height: calc(100vh - 28px); }
@@ -1305,6 +1319,10 @@ a.item-card:hover {
   margin: 0;
   color: var(--accent-2);
   font-size: 16px;
+}
+.fish-location-heading {
+  font-size: 18px !important;
+  font-weight: 700;
 }
 .fish-loc-list {
   display: grid;

@@ -641,7 +641,7 @@
     <p>${rarityBadge(f)} ${methodBadges(f)} <span class="badge badge-size">${esc(f.size)}</span></p>
     <div class="fish-info-panel">
       <section class="fish-info-section">
-        <h2>잡는 곳</h2>
+        <h2 class="fish-location-heading">${esc(f.nameKr || f.nameEn)} 출현 낚시터 🐟</h2>
         <div class="fish-loc-list">${locs.length
           ? fishLocGroupedLines(locs)
           : (f.spotNote ? esc(f.spotNote) : "출현 수역 미확정 (인게임 도감 확인 필요)")}</div>
