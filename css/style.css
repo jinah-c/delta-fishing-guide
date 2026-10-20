@@ -1342,7 +1342,7 @@ a.item-card:hover {
   .fish-info-panel {
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: 20px;
+    gap: 50px;
   }
 
   /* 추천 장비를 왼쪽에 고정 */
@@ -1356,7 +1356,13 @@ a.item-card:hover {
     grid-column: 2;
   }
 
-  .fish-info-section + .fish-info-section {
+  /* 추천장비 위 구분선 제거 */
+  .fish-info-section:nth-child(3) + .fish-info-section {
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .fish-info-section + .fish-info-section:not(:first-child) {
     padding-top: 0;
     border-top: none;
   }
@@ -1365,6 +1371,7 @@ a.item-card:hover {
   display: grid;
   gap: 8px;
   min-width: 0;
+  align-items: start;
 }
 .fish-info-section + .fish-info-section {
   padding-top: 13px;
