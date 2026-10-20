@@ -1294,9 +1294,40 @@ a.item-card:hover {
 .tone-lime { --tone: var(--lime); }
 
 /* 물고기 상세: 큰 이미지 왼쪽 + 정보 오른쪽 */
-.fish-hero { display: flex; gap: 26px; align-items: flex-start; margin-bottom: 8px; }
-.fish-hero-body { flex: 1; min-width: 0; }
+.fish-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  margin-bottom: 8px;
+}
+
+.fish-hero-header {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.fish-hero-header .thumb-lg {
+  width: 360px;
+  aspect-ratio: 16 / 9;
+  flex-shrink: 0;
+}
+
+.fish-hero-meta {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fish-hero-body {
+  flex: 1;
+  min-width: 0;
+}
+
 .fish-hero .kv { margin-bottom: 0; }
+
 .fish-info-panel {
   display: grid;
   gap: 13px;
@@ -1305,6 +1336,18 @@ a.item-card:hover {
   border-radius: var(--radius);
   border: 1px solid rgba(255, 255, 255, .08);
   background: rgba(255, 255, 255, .035);
+}
+
+@media (min-width: 1024px) {
+  .fish-info-panel {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .fish-info-section + .fish-info-section {
+    padding-top: 0;
+    border-top: none;
+  }
 }
 .fish-info-section {
   display: grid;

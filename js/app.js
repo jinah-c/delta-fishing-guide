@@ -634,11 +634,15 @@
     const locs = fishSpots(f);
     const certs = DATA.missions.certifications.filter(c => c.fish.some(x => x.fishId === f.id));
     return `<div class="fish-hero">
-    ${fishThumb(f, "lg")}
+    <div class="fish-hero-header">
+      ${fishThumb(f, "lg")}
+      <div class="fish-hero-meta">
+        <div class="detail-head"><h1>${fishName(f, true)}</h1></div>
+        <p class="fish-altnames">${esc(f.nameEn)}${f.nameAlt ? ` <span class="sep">·</span> ${esc(f.nameAlt)}` : ""}</p>
+        <p>${rarityBadge(f)} ${methodBadges(f)} <span class="badge badge-size">${esc(f.size)}</span></p>
+      </div>
+    </div>
     <div class="fish-hero-body">
-    <div class="detail-head"><h1>${fishName(f, true)}</h1></div>
-    <p class="fish-altnames">${esc(f.nameEn)}${f.nameAlt ? ` <span class="sep">·</span> ${esc(f.nameAlt)}` : ""}</p>
-    <p>${rarityBadge(f)} ${methodBadges(f)} <span class="badge badge-size">${esc(f.size)}</span></p>
     <div class="fish-info-panel">
       <section class="fish-info-section">
         <h2 class="fish-location-heading">${esc(f.nameKr || f.nameEn)} 출현 낚시터 🐟</h2>
@@ -659,8 +663,9 @@
     </div>
     </div>
     </div>
+    </div>
     ${fishSpotStack(locs) || (locs.length ? locs.map(l => `
-      <h2>${esc(l.map.nameKr)} 위치</h2>
+      <h2>${esc(f.nameKr || f.nameEn)} 출현위치 (${esc(l.map.nameKr)})</h2>
       <div class="map-wrap">
         <img src="${esc(l.map.mapImage)}" alt="${esc(l.map.nameKr)} 지도" loading="lazy">
         ${l.spot.coord ? `<span class="pin" style="left:${l.spot.coord.x}%;top:${l.spot.coord.y}%">📍</span><span class="pin-label" style="left:${l.spot.coord.x}%;top:${l.spot.coord.y}%">${esc(l.spot.nameKr)}</span>` : ""}
