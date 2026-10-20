@@ -1345,10 +1345,10 @@ a.item-card:hover {
     gap: 50px;
   }
 
-  /* 추천 장비를 왼쪽에 고정 */
+  /* 추천 장비를 왼쪽에 고정 (최대 50%) */
   .fish-info-section:nth-child(3) {
     grid-column: 1;
-    grid-row: 1 / -1;
+    max-width: 100%;
   }
 
   /* 나머지는 오른쪽 한 줄로 */
@@ -1395,6 +1395,7 @@ a.item-card:hover {
 }
 .fish-setup-list {
   display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
   gap: 8px;
   margin: 0;
   padding: 0;
