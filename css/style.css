@@ -387,6 +387,9 @@ h3 { font-size: 17px; margin: 18px 0 8px; font-weight: 900; }
 }
 .map-wrap.fish-map img { filter: none; }
 /* ── 레이어 지도: 맵 위에 낚시터별 정보 레이어를 쌓고 탭으로 전환 ── */
+.map-stack-heading {
+  font-size: 24px;
+}
 .map-stack {
   position: relative;
   width: min(1680px, 100%);
@@ -868,6 +871,7 @@ h3 { font-size: 17px; margin: 18px 0 8px; font-weight: 900; }
   .hero h1 { font-size: 34px; }
   h1 { font-size: 30px; }
   h2 { font-size: 20px; }
+  .map-stack-heading { font-size: 22px; }
   .grid { grid-template-columns: 1fr; }
   .submit-guide { flex-direction: column; }
   .submit-figures, .submit-figure, .submit-figure .thumb { width: 100%; max-width: 100%; }
@@ -1332,10 +1336,6 @@ a.item-card:hover {
   display: grid;
   gap: 13px;
   margin: 18px 0 0;
-  padding: 16px;
-  border-radius: var(--radius);
-  border: 1px solid rgba(255, 255, 255, .08);
-  background: rgba(255, 255, 255, .035);
 }
 
 @media (min-width: 1024px) {
@@ -1343,11 +1343,13 @@ a.item-card:hover {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 50px;
+    align-items: start;
   }
 
   /* 추천 장비를 왼쪽에 고정 (최대 50%) */
   .fish-info-section:nth-child(3) {
     grid-column: 1;
+    grid-row: 1 / span 4;
     max-width: 100%;
   }
 
@@ -1395,7 +1397,7 @@ a.item-card:hover {
 }
 .fish-setup-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  grid-template-columns: 1fr;
   gap: 8px;
   margin: 0;
   padding: 0;
@@ -1464,9 +1466,15 @@ a.item-card:hover {
   .mission-fish-card .thumb { width: 100%; max-width: 220px; align-self: center; }
   .prep-list { grid-template-columns: 82px minmax(0, 1fr); font-size: 14px; }
   .fish-hero { flex-direction: column; gap: 16px; }
+  .fish-hero-header { flex-direction: column; gap: 12px; }
+  .fish-hero-header .thumb-lg { width: 100%; }
+  .fish-hero-meta { width: 100%; gap: 8px; }
+  .fish-hero-meta .detail-head,
+  .fish-hero-meta h1,
+  .fish-hero-meta p { margin: 0; }
   .thumb-lg { width: 100%; max-width: 100%; aspect-ratio: 16 / 9; align-self: center; }
   .thumb-lg .thumb-ph { display: block; }
-  .fish-info-panel { padding: 14px; gap: 12px; }
+  .fish-info-panel { margin-top: 0; padding: 0 14px; gap: 12px; }
   .fish-setup-list li { grid-template-columns: 74px minmax(0, 1fr); gap: 8px; }
   .setup-gallery .thumb { height: 92px; }
 }

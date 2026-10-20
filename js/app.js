@@ -608,7 +608,7 @@
       const loc = group.locs.find(x => x.spot.id === layer.spotId);
       return loc ? `${group.map.nameKr} · ${spotShortName(loc.spot)} 출현 어종` : `${group.map.nameKr} 출현 어종`;
     };
-    return `<h2>낚시터 지도</h2>
+    return `<h2 class="map-stack-heading">🗺️ 낚시터 지도</h2>
     <div class="map-stack" data-layer-map data-require-selection>
       <div class="map-stack-tabs" role="tablist" aria-label="출현 낚시터 지도">
         ${groups.map((group, i) => `<button type="button" class="map-tab${i === 0 ? " active" : ""}" role="tab" aria-selected="${i === 0}" data-layer="${esc(group.map.id)}">${esc(group.map.nameKr)}</button>`).join("")}
@@ -660,7 +660,6 @@
       </section>
       ${f.tips ? `<section class="fish-info-section"><h2>팁</h2>${tipList(f.tips)}</section>` : ""}
       ${certs.length ? `<section class="fish-info-section"><h2>승급 연관</h2><div>${certs.map(c => `<a href="#/missions">레벨 ${c.level} ${esc(c.nameKr)}</a>`).join("<br>")}</div></section>` : ""}
-    </div>
     </div>
     </div>
     </div>
