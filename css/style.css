@@ -1340,8 +1340,20 @@ a.item-card:hover {
 
 @media (min-width: 1024px) {
   .fish-info-panel {
-    grid-template-columns: 1fr 1fr;
+    display: grid;
+    grid-template-columns: auto 1fr;
     gap: 20px;
+  }
+
+  /* 추천 장비를 왼쪽에 고정 */
+  .fish-info-section:nth-child(3) {
+    grid-column: 1;
+    grid-row: 1 / -1;
+  }
+
+  /* 나머지는 오른쪽 한 줄로 */
+  .fish-info-section:not(:nth-child(3)) {
+    grid-column: 2;
   }
 
   .fish-info-section + .fish-info-section {
