@@ -1477,6 +1477,10 @@ a.item-card:hover {
   .fish-info-panel { margin-top: 0; padding: 0 14px; gap: 12px; }
   .fish-setup-list li { grid-template-columns: 74px minmax(0, 1fr); gap: 8px; }
   .setup-gallery .thumb { height: 92px; }
+  /* 장비명은 중간에서 끊지 않고, "* 권장" 부연은 통째로 다음 줄로 */
+  .setup-item { flex-wrap: wrap; row-gap: 2px; }
+  .setup-name { word-break: keep-all; }
+  .setup-item .gear-note-hot { flex-basis: 100%; }
 }
 
 /* 사이드 플로팅 배너 */

@@ -206,8 +206,8 @@ const DATA = {
       "nameEn": "AZ3",
       "nameCn": "AZ3(核电站)",
       "difficulty": "정규",
-      "note": "낚시터 2곳. 40레벨 승급용 피콕하인드 출현 (지도 이미지는 임시본, 교체 예정)",
-      "mapImage": "img/az3.webp",
+      "note": "낚시터 2곳. 40레벨 승급용 피콕하인드 출현",
+      "mapImage": "img/maps/az3/base.jpg?v=1",
       "layerMap": {
         "base": "img/maps/az3/base.jpg?v=1",
         "layers": [
