@@ -226,7 +226,9 @@
 
     let rodEntries;
     let rodNote = "";
-    if (certFish && certFish.info.rod) {
+    if (f.recommendedRodId) {
+      rodEntries = [rod(f.recommendedRodId)].filter(Boolean);
+    } else if (certFish && certFish.info.rod) {
       const text = certFish.info.rod;
       rodEntries = [
         /입문용|찌낚싯대/.test(text) ? rod("starter-float-rod") : null,
@@ -250,7 +252,9 @@
     let reelEntries = [];
     let reelNote = "";
     if (hasLure) {
-      if (isRed || isTradeFish) {
+      if (f.recommendedReelTier) {
+        reelEntries = [reel(f.recommendedReelTier)].filter(Boolean);
+      } else if (isRed || isTradeFish) {
         reelEntries = [reel(4), withNote(reel(5), "* 권장")].filter(Boolean);
       } else if (certFish && certFish.cert.level >= 40) {
         reelEntries = [reel(4)].filter(Boolean);
