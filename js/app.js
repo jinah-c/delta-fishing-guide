@@ -738,7 +738,7 @@
     </div>` : ""}
     <dl class="kv">
       <dt>등장 맵</dt><dd><a href="#/map/${m.id}">${esc(m.nameKr)}</a> (유일)</dd>
-      <dt>스폰 규칙</dt><dd>${esc(n.spawnRule)}</dd>
+      <dt>스폰 규칙</dt><dd>${esc(n.spawnRule).replace(/\n/g, "<br>")}</dd>
     </dl>
     ${n.spawnMapImage ? `<h2>스폰 위치</h2>
     <figure class="npc-spawn-map">
@@ -826,8 +826,7 @@
     <div class="mission"><div class="mission-head"><h3>루어 낚시</h3></div><div class="guide">${esc(g.mechanics.lure)}</div></div>
     </div>
     ${g.tips && g.tips.length ? `<h2>실전 꿀팁</h2>
-    <div class="tips-grid">${g.tips.map(t => `<div class="notice tip-panel">${tipList(t)}</div>`).join("")}</div>` : ""}
-    <div class="notice">${esc(g._note)}</div>`;
+    <div class="tips-grid">${g.tips.map(t => `<div class="notice tip-panel">${tipList(t)}</div>`).join("")}</div>` : ""}`;
   }
 
   function pageNotFound() {
